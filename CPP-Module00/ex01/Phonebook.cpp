@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 03:37:58 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/21 09:30:28 by caonguye         ###   ########.fr       */
+/*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
+/*   Updated: 2025/02/21 18:24:13 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <Contact.hpp>
+#include <Phonebook.hpp>
 
-int	main(int ac, char **av)
+Phonebook::Phonebook(){};
+
+Phonebook::~Phonebook(){};
+
+std::string	input(std::string noti)
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNREADABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-				std::cout << (char)std::toupper(av[i][j]);
-			std::cout << std::endl;
-		}
-	}
-	return (0);
+	std::string	info = "";
+	if (std::cin.eof())
+		return (info);
+	std::cout << noti << std::endl;
+	std::getline(std::cin, info);
+	return (info);
 }
+

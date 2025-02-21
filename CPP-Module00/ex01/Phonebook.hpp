@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 03:37:58 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/21 09:30:28 by caonguye         ###   ########.fr       */
+/*   Created: 2025/02/21 13:15:42 by caonguye          #+#    #+#             */
+/*   Updated: 2025/02/21 17:44:10 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
 
-int	main(int ac, char **av)
+ #define PHONEBOOK_HPP
+
+#include <iostream>
+#include <string>
+
+class	Phonebook
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNREADABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-				std::cout << (char)std::toupper(av[i][j]);
-			std::cout << std::endl;
-		}
-	}
-	return (0);
-}
+	public:
+		Phonebook();
+
+		void	add();
+		void	search() const;
+
+		~Phonebook();
+
+	private:
+		std::string list[8];
+		id_t		qtt;
+
+};
+
+std::string	input(std::string noti);
+
+#endif;
