@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:15:48 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/22 14:08:54 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:03:57 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ class	Contact
 {
 	public:
 		Contact();
-		
+
 		Contact(
+			int					_id,
 			const std::string	firstname,
 			const std::string	lastname,
 			const std::string	nickname,
@@ -33,6 +34,7 @@ class	Contact
 		~Contact();
 
 	private:
+			int			_id;
 			std::string	firstname;
 			std::string	lastname;
 			std::string	nickname;
