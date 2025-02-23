@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/22 17:10:30 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 07:56:27 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ void	Phonebook::search() const
 
 	if (_qtt < 1)
 		return;
+	for (int i = 0; i < _qtt; i++)
+		_list[i].display_minibook();
 	request = input("Search person at index : ");
-	if (request.at(0) < '0' || request.at(0) > '7'
-		|| request.at(0) - '1' + 1 > _qtt)
+	if (request.length() != 1 || request.at(0) - '0' + 1 > _qtt
+		||request.at(0) < '0' || request.at(0) > '7')
 		return;
+	_list[request.at(0) - '0'].display_minibook();
 }

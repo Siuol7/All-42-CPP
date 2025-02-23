@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:15:48 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/22 16:03:57 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 08:03:36 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ class	Contact
 			const std::string	darkest_secret);
 
 		~Contact();
+
+		void	display_minibook();
+		void	display_fullbook();
 
 	private:
 			int			_id;

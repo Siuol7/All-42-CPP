@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 14:47:11 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/22 16:04:56 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 08:03:47 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,11 @@ Contact::Contact( int	_id,
 	this->darkest_secret = darkest_secret;
 }
 
+void	Contact::display_minibook()
+{
+
+}
+void	Contact::display_fullbook()
+{
+	
+}
