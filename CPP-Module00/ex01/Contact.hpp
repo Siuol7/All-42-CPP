@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:15:48 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 08:07:24 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 09:33:57 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,17 @@ class	Contact
 
 		~Contact();
 
+		void	display_title()	const;
 		void	display_minibook() const;
 		void	display_fullbook() const;
 
 	private:
 			int			_id;
-			std::string	firstname;
-			std::string	lastname;
-			std::string	nickname;
-			std::string	phone_number;
-			std::string	darkest_secret;
+			std::string	_firstname;
+			std::string	_lastname;
+			std::string	_nickname;
+			std::string	_phone_number;
+			std::string	_darkest_secret;
 
 };
 
