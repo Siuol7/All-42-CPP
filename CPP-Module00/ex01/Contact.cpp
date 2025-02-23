@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 14:47:11 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 09:45:55 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 11:08:45 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,11 @@ void	Contact::display_minibook() const
 	std::cout << std::setw(10) << ft_truncate(_darkest_secret) << std::endl;
 }
 
-void	Contact::display_fullbook() const
+void	Contact::display_contact() const
 {
-	
+	std::cout << "Person id" << _id << "information :" << std::endl;
+	std::cout << "First name is : " << _firstname << std::endl;
+	std::cout << "Last name is : " << _lastname << std::endl;
+	std::cout << "Nickname is : " << _nickname << std::endl;
+	std::cout << "Darkest secret is : " << _darkest_secret << std::endl;
 }

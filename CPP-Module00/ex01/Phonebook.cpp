@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 07:56:27 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 09:59:41 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,17 @@ void	Phonebook::search() const
 
 	if (_qtt < 1)
 		return;
+
+	//Displaying mini phonebook
 	for (int i = 0; i < _qtt; i++)
 		_list[i].display_minibook();
 	request = input("Search person at index : ");
 	if (request.length() != 1 || request.at(0) - '0' + 1 > _qtt
 		||request.at(0) < '0' || request.at(0) > '7')
+	{
+		std::cout << "Wrong input index" << std::endl;
 		return;
-	_list[request.at(0) - '0'].display_minibook();
+	}
+	//Displaying full information of input id
+	_list[request.at(0) - '0'].display_contact();
 }

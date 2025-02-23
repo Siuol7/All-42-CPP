@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:15:48 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 09:33:57 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/23 10:00:01 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	Contact
 
 		void	display_title()	const;
 		void	display_minibook() const;
-		void	display_fullbook() const;
+		void	display_contact() const;
 
 	private:
 			int			_id;
