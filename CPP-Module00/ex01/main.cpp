@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:34:13 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 17:14:29 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:17:34 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main()
 {
-	Phonebook book = Phonebook                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ();
+	Phonebook book = Phonebook();
 	std::string command;
 
 	while (!std::cin.eof())

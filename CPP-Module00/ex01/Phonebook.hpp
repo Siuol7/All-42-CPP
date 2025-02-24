@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:15:42 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 17:14:29 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:15:27 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class	Phonebook
 {
 	public:
 		Phonebook();
-
 		void	add();
 		void	search() const;
 

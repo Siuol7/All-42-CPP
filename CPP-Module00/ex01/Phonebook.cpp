@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/23 17:14:29 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:43:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,17 @@ void	Phonebook::add()
 	std::string phone_number = input("Phone number is: ");
 	std::string darkest_secret = input("Darkest secret is: ");
 
+	//Prevent empty input
+	if (firstname.empty() || lastname.empty() || nickname.empty()
+		|| phone_number.empty() || darkest_secret.empty())
+		std::cout << "Empty input" << std::endl;
+
 	//Create contact instance -> add to phonebook
+	_id = (_id == 8) ? 0 : _id;
 	Contact person(_id, firstname, lastname, nickname, phone_number, darkest_secret);
 	_list[_id++ % 8] = person;
-	_qtt += (_qtt == 8) ? 1 : 0;
+	_qtt += (_qtt == 8) ? 0 : 1;
+	std::cout << "quantity : " << _qtt << std::endl;
 }
 
 void	Phonebook::search() const
@@ -53,6 +60,7 @@ void	Phonebook::search() const
 		return;
 
 	//Displaying mini phonebook
+	display_title();
 	for (int i = 0; i < _qtt; i++)
 		_list[i].display_minibook();
 	request = input("Search person at index : ");
