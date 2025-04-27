@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new#include "Zombie.hpp"ombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 14:24:11 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/25 14:24:40 by caonguye         ###   ########.fr       */
+/*   Created: 2025/04/27 13:48:15 by caonguye          #+#    #+#             */
+/*   Updated: 2025/04/27 13:49:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <string>
 
-Zombie	*newZombie(std::string name)
+int main()
 {
-	try
 	{
-		Zombie	*newzb = new Zombie(name);
-		return (newzb);
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	catch (std::bad_alloc &error)
 	{
-		std::cerr << "Memory allocation failed: " << error.what() << std::endl;
-		return (nullptr);
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
 	}
+	return 0;
 }
