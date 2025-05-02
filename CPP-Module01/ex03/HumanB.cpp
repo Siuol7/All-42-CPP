@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 19:57:07 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/02 21:05:12 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/02 22:20:04 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ HumanB::HumanB(std::string name) : _name(name.empty()? "Undefined" : name){};
 
 void	HumanB::attack(void) const
 {
-	std::cout << _name << "attacks with their" << _weapon->getType() << std::endl;
+	std::cout << _name << "attacks with their " << _weapon->getType() << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon &weapon)
+void	HumanB::setWeapon(Weapon& weapon)
 {
-
+	_weapon = &weapon;
 }
