@@ -6,7 +6,7 @@
 #    By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/27 13:55:49 by caonguye          #+#    #+#              #
-#    Updated: 2025/05/02 22:19:38 by caonguye         ###   ########.fr        #
+#    Updated: 2025/05/02 22:26:12 by caonguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(NAME) : $(OBJS)
 clean :
 		@$(RM) $(OBJS)
 
-flcean : clean
+fclean : clean
 		@echo "Clear"
 		@$(RM) $(NAME)
 
