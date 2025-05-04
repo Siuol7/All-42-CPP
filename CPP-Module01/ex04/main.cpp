@@ -6,13 +6,14 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 22:58:29 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 02:01:30 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 02:43:49 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 
 int	valid_check(std::ifstream& inf, std::ofstream& outf, std::string file)
 {
@@ -21,6 +22,20 @@ int	valid_check(std::ifstream& inf, std::ofstream& outf, std::string file)
 	if (!inf || !outf)
 		return (0);
 	return (1);
+}
+void	read_in(std::string& lines, std::ifstream& inf)
+{
+	std::stringstream	buffer;
+
+	buffer << inf.rdbuf();
+	lines = buffer.str();
+}
+void	search_and_replace(std::ifstream& inf, std::ofstream& outf,
+							std::string org_str, std::string new_str)
+{
+	std::string lines;
+
+	read_in(lines, inf);
 }
 
 int	main(int ac, char **av)
@@ -42,7 +57,7 @@ int	main(int ac, char **av)
 	}
 	if (org_str.empty())
 		return;
-	search_and_replace(inf, org_str, new_str);
+	search_and_replace(inf, outf, org_str, new_str);
 	inf.close();
 	outf.close();
 }
