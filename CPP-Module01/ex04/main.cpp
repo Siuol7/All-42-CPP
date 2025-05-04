@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 22:58:29 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 02:00:24 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 02:01:30 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	std::ifstream	inf;
 	std::ofstream	outf;
 	std::string		org_str = av[2];
-	std::string		rnew_str = av[3];
+	std::string		new_str = av[3];
 
 	if (ac != 4)
 	{
@@ -42,4 +42,7 @@ int	main(int ac, char **av)
 	}
 	if (org_str.empty())
 		return;
+	search_and_replace(inf, org_str, new_str);
+	inf.close();
+	outf.close();
 }
