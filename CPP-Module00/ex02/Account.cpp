@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:32:36 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/24 17:26:54 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:09:05 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	Account::makeDeposit(int deposit)
 	std::cout << ";p_amount:" << _amount - deposit;
 	std::cout << ";deposit:" << deposit;
 	std::cout << ";amount:" << _amount;
-	std::cout << ";deposits:" << _nbDeposits << std::endl;
+	std::cout << ";nb_deposits:" << _nbDeposits << std::endl;
 };
 
 bool	Account::makeWithdrawal(int	withdrawal)
@@ -113,7 +113,7 @@ bool	Account::makeWithdrawal(int	withdrawal)
 		_displayTimestamp();
 		std::cout << " index:" << _accountIndex;
 		std::cout << ";p_amount:" << _amount;
-		std::cout << ";withdrawal:refused:" << std::endl;
+		std::cout << ";withdrawal:refused" << std::endl;
 		return (0);
 	}
 	//Common status
@@ -128,7 +128,7 @@ bool	Account::makeWithdrawal(int	withdrawal)
 	std::cout << ";p_amount:" << _amount + withdrawal;
 	std::cout << ";withdrawal:" << withdrawal;
 	std::cout << ";amount:" << _amount;
-	std::cout << ";withdrawal:" << _nbWithdrawals << std::endl;
+	std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
 	return (1);
 };
 
@@ -143,5 +143,5 @@ void	Account::displayStatus() const
 	std::cout << " index:" << _accountIndex;
 	std::cout << ";amount:" << _amount;
 	std::cout << ";deposits:" << _nbDeposits;
-	std::cout << ";withdrawal:" << _nbWithdrawals << std::endl;
+	std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
 };

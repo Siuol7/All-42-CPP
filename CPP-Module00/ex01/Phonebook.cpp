@@ -6,14 +6,14 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/24 11:43:40 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:02:49 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook() {
+Phonebook::Phonebook() { 
 	_id = 0;
 	_qtt = 0;
 };
