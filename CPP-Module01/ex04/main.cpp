@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 22:58:29 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 03:06:46 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:02:59 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	}
 	if (org_str.empty())
-		return;
+		return (0);
 	search_and_replace(inf, outf, org_str, new_str);
 	inf.close();
 	outf.close();
