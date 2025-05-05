@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 22:58:29 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 02:52:13 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 03:06:46 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,19 @@ void	read_in(std::string& lines, std::ifstream& inf)
 void	search_and_replace(std::ifstream& inf, std::ofstream& outf,
 							std::string org_str, std::string new_str)
 {
-	size_t			pos = 0;
+	size_t		pos = 0;
+	size_t		o_len = org_str.length();
+	size_t		n_len = new_str.length();
 	std::string lines;
 
 	read_in(lines, inf);
-	while ((pos = lines.find(org_str, 0)) != std::string::npos)
+	while ((pos = lines.find(org_str, pos)) != std::string::npos)
 	{
-		 
+		lines.erase(pos, o_len);
+		lines.insert(pos, new_str);
+		pos += n_len;
 	}
+	outf << lines;
 }
 
 int	main(int ac, char **av)
@@ -65,4 +70,5 @@ int	main(int ac, char **av)
 	search_and_replace(inf, outf, org_str, new_str);
 	inf.close();
 	outf.close();
+	return (0);
 }
