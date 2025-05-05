@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 13:15:42 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/24 11:15:27 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:13:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 #include <string>
 #include "Contact.hpp"
 
-class	Phonebook
+class	PhoneBook
 {
 	public:
-		Phonebook();
+		PhoneBook();
 		void	add();
 		void	search() const;
 
-		~Phonebook();
+		~PhoneBook();
 
 	private:
 		Contact _list[8];

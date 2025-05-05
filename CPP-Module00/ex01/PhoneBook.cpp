@@ -6,19 +6,19 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/25 16:02:49 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:13:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
-Phonebook::Phonebook() { 
+PhoneBook::PhoneBook() {
 	_id = 0;
 	_qtt = 0;
 };
 
-Phonebook::~Phonebook() {};
+PhoneBook::~PhoneBook() {};
 
 std::string	input(std::string noti)
 {
@@ -30,7 +30,7 @@ std::string	input(std::string noti)
 	return (info);
 }
 
-void	Phonebook::add()
+void	PhoneBook::add()
 {
 	//Get input to create contact
 	std::string firstname = input("First name is: ");
@@ -52,7 +52,7 @@ void	Phonebook::add()
 	std::cout << "quantity : " << _qtt << std::endl;
 }
 
-void	Phonebook::search() const
+void	PhoneBook::search() const
 {
 	std::string	request;
 

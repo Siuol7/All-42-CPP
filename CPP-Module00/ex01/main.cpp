@@ -6,16 +6,16 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 18:34:13 by caonguye          #+#    #+#             */
-/*   Updated: 2025/02/24 11:17:34 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:13:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int	main()
 {
-	Phonebook book = Phonebook();
+	PhoneBook book = PhoneBook();
 	std::string command;
 
 	while (!std::cin.eof())
