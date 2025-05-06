@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 03:37:58 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/06 14:45:44 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/06 19:27:22 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 			if (i + 1 != ac)
 				std::cout << " ";
 		}
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
 	return (0);
 }
