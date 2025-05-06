@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 14:47:11 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 18:13:40 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/06 14:14:23 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ void	display_title()
 	std::cout << std::setw(10) << "ID" << '|';
 	std::cout << std::setw(10) << "Firstname" << '|';
 	std::cout << std::setw(10) << "Lastname" << '|';
-	std::cout << std::setw(10) << "Nickname" << '|';
-	std::cout << std::setw(10) << "Phone.No" << '|';
-	std::cout << std::setw(10) << "Darkestsec" << '|' << std::endl;
+	std::cout << std::setw(10) << "Nickname" << '|' << std::endl;
 }
 
 void	Contact::display_minibook() const
@@ -53,9 +51,7 @@ void	Contact::display_minibook() const
 	std::cout << std::setw(10) << _id << '|';
 	std::cout << std::setw(10) << ft_truncate(_firstname) << '|';
 	std::cout << std::setw(10) << ft_truncate(_lastname) << '|';
-	std::cout << std::setw(10) << ft_truncate(_nickname) << '|';
-	std::cout << std::setw(10) << ft_truncate(_phone_number) << '|';
-	std::cout << std::setw(10) << ft_truncate(_darkest_secret) << '|' << std::endl;
+	std::cout << std::setw(10) << ft_truncate(_nickname) << '|' << std::endl;
 }
 
 void	Contact::display_contact() const

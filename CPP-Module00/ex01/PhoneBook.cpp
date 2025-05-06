@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 18:13:40 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/06 14:15:23 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,14 @@ void	PhoneBook::add()
 		std::cout << "Empty input" << std::endl;
 
 	//Create contact instance -> add to phonebook
-	_id = (_id == 8) ? 0 : _id;
-	Contact person(_id, firstname, lastname, nickname, phone_number, darkest_secret);
-	_list[_id++ % 8] = person;
-	_qtt += (_qtt == 8) ? 0 : 1;
-	std::cout << "quantity : " << _qtt << std::endl;
+	else
+	{
+		_id = (_id == 8) ? 0 : _id;
+		Contact person(_id, firstname, lastname, nickname, phone_number, darkest_secret);
+		_list[_id++ % 8] = person;
+		_qtt += (_qtt == 8) ? 0 : 1;
+		std::cout << "quantity : " << _qtt << std::endl;
+	}
 }
 
 void	PhoneBook::search() const
