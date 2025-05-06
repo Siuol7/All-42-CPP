@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 14:47:11 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/06 14:14:23 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:13:31 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ std::string	ft_truncate(std::string info)
 
 void	display_title()
 {
-	std::cout << std::string(66, '_') << std::endl;
+	std::cout << std::string(44, '_') << std::endl;
 	std::cout << std::setw(10) << "ID" << '|';
 	std::cout << std::setw(10) << "Firstname" << '|';
 	std::cout << std::setw(10) << "Lastname" << '|';

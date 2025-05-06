@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:36:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/06 14:15:23 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:12:14 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ void	PhoneBook::search() const
 	std::string	request;
 
 	if (_qtt < 1)
+	{
+		std::cout << "Empty phonebook" << std::endl;
 		return;
+	}
 
 	//Displaying mini phonebook
 	display_title();
