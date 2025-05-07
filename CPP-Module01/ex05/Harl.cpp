@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:58:53 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/07 10:35:39 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:02:16 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,9 @@ void	Harl::complain(std::string msg)
 		&Harl::_error
 	};
 
-	
+	for (int i = 0; i < 4; i++)
+	{
+		if (msg == type[i])
+			(this->*complain_pack[i])();
+	}
 }
