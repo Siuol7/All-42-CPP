@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:58:53 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/07 11:02:16 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:09:10 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string msg)
 {
-	if (msg.empty())
-	{
-		std::cout << "Empty!" << std::endl;
-		return ;
-	}
-
 	std::string	type[4]=
 	{
 		"DEBUG",
