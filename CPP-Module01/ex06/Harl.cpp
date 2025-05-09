@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 12:37:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/09 13:49:22 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/09 13:57:22 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string msg)
 {
+	int	mark = -1;
+
 	std::string	type[4] =
 	{
 		"DEBUG",
@@ -52,6 +54,13 @@ void	Harl::complain(std::string msg)
 
 	for (int i = 0; i < 4; i++)
 	{
-		if ()
+		msg == type[i];
+		mark = i;
+	}
+
+	std::cout << '[' << type[mark] << ']' << std::endl;
+	for (int i = mark; i < 4; i++)
+	{
+		(this->*complain_pack[i])();
 	}
 }
