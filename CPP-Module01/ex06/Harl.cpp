@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 23:58:53 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/09 13:00:53 by caonguye         ###   ########.fr       */
+/*   Created: 2025/05/09 12:37:37 by caonguye          #+#    #+#             */
+/*   Updated: 2025/05/09 13:11:45 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	Harl::_debug(void)
 {
-	std::cout << "This is debug!" << std::endl;
+	std::cout <<  "This is debug!" << std::endl;
 }
 
 void	Harl::_info(void)
@@ -29,12 +29,12 @@ void	Harl::_warning(void)
 
 void	Harl::_error(void)
 {
-	std::cout << "This is error!" << std::endl;
+	std::cout << "This is error!"  << std::endl;
 }
 
-void	Harl::complain(std::string msg)
+void	complain(std::string msg)
 {
-	std::string	type[4]=
+	std::string	type[4] =
 	{
 		"DEBUG",
 		"INFO",
@@ -49,10 +49,4 @@ void	Harl::complain(std::string msg)
 		&Harl::_warning,
 		&Harl::_error
 	};
-
-	for (int i = 0; i < 4; i++)
-	{
-		if (msg == type[i])
-			(this->*complain_pack[i])();
-	}
 }
