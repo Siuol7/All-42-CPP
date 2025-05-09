@@ -23,15 +23,8 @@ int	main(int ac, char **av)
 	{
 		for (int i = 1; i < ac; i++)
 		{
-			len = strlen(av[i]);
 			for (int j = 0; av[i][j]; j++)
-			{
-				if (av[i][j] == ' ' && (j == 0 || j == len - 1))
-					continue ;
 				std::cout << (char)std::toupper(av[i][j]);
-			}
-			if (i + 1 != ac)
-				std::cout << " ";
 		}
 		std::cout << std::endl;
 	}
