@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 12:37:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/09 13:11:45 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/09 13:49:22 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	Harl::_error(void)
 	std::cout << "This is error!"  << std::endl;
 }
 
-void	complain(std::string msg)
+void	Harl::complain(std::string msg)
 {
 	std::string	type[4] =
 	{
@@ -49,4 +49,9 @@ void	complain(std::string msg)
 		&Harl::_warning,
 		&Harl::_error
 	};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if ()
+	}
 }
