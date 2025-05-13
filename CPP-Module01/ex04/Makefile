@@ -20,7 +20,7 @@ OBJ		= main.o
 all : $(NAME)
 
 %.o : %.cpp
-		$(CC) $(FLAG) -c $< -o $@
+		@$(CC) $(FLAG) -c $< -o $@
 
 $(NAME)	: $(OBJ)
 	@echo "Done"

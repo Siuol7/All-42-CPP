@@ -19,7 +19,7 @@ OBJ		= main.o
 
 all	: $(NAME)
 
-%.o	: %.c
+%.o	: %.cpp
 	@$(CC) $(FLAG) -c $< -o $@
 
 $(NAME)	: $(OBJ)
