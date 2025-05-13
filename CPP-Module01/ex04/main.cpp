@@ -18,7 +18,7 @@
 int	valid_check(std::ifstream& inf, std::ofstream& outf, std::string file)
 {
 	inf.open(file);
-	outf.open("outfile");
+	outf.open('<' + file + '>' +".replace");
 	if (!inf || !outf)
 		return (0);
 	return (1);
@@ -39,6 +39,11 @@ void	search_and_replace(std::ifstream& inf, std::ofstream& outf,
 	std::string lines;
 
 	read_in(lines, inf);
+	if (o_len == 0)
+	{
+		outf << lines;
+		return ;
+	}
 	while ((pos = lines.find(org_str, pos)) != std::string::npos)
 	{
 		lines.erase(pos, o_len);
@@ -65,8 +70,6 @@ int	main(int ac, char **av)
 		std::cerr << "Opening file failed" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	if (org_str.empty())
-		return (0);
 	search_and_replace(inf, outf, org_str, new_str);
 	inf.close();
 	outf.close();
