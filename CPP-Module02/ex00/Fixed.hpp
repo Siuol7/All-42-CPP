@@ -6,14 +6,13 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:11:33 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/13 14:36:08 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:15:22 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <string>
 
 class Fixed
 {
