@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:11:33 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/13 14:32:06 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/13 14:36:08 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ class Fixed
 		void	setRawBits(int const raw);
 
 	private:
-		int			_value;
-		int const 	_frac_bits = 8;
+		int					_value;
+		static int const 	_frac_bits = 8;
 };
