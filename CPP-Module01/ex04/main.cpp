@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 22:58:29 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/05 12:02:59 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/14 20:12:28 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,16 @@ int	main(int ac, char **av)
 {
 	std::ifstream	inf;
 	std::ofstream	outf;
-	std::string		org_str = av[2];
-	std::string		new_str = av[3];
+	std::string		org_str;
+	std::string		new_str;
 
 	if (ac != 4)
 	{
 		std::cout << "Invalid arguments" << std::endl;
 		return (EXIT_FAILURE);
 	}
+	org_str = av[2];
+	new_str = av[3];
 	if (!valid_check(inf, outf, av[1]))
 	{
 		std::cerr << "Opening file failed" << std::endl;
