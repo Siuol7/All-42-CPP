@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:57:42 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/14 17:34:12 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:39:27 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,7 @@ Fixed& Fixed::operator= (const Fixed &other)
 float	Fixed::toFloat(void) const {return (this->_value / (1 * this->_frac_bits));}
 
 int		Fixed::toInt(void) const {return (this->_value >> this->_frac_bits);}
+
+int		Fixed::getRawBits(void) const {return (this->_value);}
+
+void	Fixed::setRawBits(int const raw) {this->_value = raw;}
