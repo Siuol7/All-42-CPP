@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 12:37:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/09 14:07:23 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/18 16:43:33 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,11 @@ void	Harl::complain(std::string msg)
 		std::cout << "[ Probably complaining about insignificant problems ] " << std::endl;
 	else
 	{
-		std::cout << '[' << type[mark] << ']' << std::endl;
 		for (int i = mark; i < 4; i++)
+		{
+			std::cout << '[' << type[i] << ']' << std::endl;
 			(this->*complain_pack[i])();
+			std::cout << std::endl;
+		}
 	}
 }

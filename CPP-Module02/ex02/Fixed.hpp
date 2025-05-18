@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 14:24:06 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/18 16:43:56 by caonguye         ###   ########.fr       */
+/*   Created: 2025/05/18 15:35:19 by caonguye          #+#    #+#             */
+/*   Updated: 2025/05/18 16:06:04 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int	main(void)
+#include <iostream>
+#include <cmath>
+
+
+class Fixed
 {
-	Zombie z1 = Zombie();
-	z1.announce();
+	public:
+		Fixed();
+		Fixed(const int);
+		Fixed(const float);
+		~Fixed();
+		Fixed(const Fixed& other);
+		Fixed operator = (const Fixed& other);
 
-	Zombie *z2 = newZombie("x4cch3tc0d0n");
-	if(z2 == nullptr)
-		return (1);
-	z2->announce();
-	delete(z2);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 
-	randomChump("x4cch3td4tjnh");
-	return (0);
+		bool	
 }
