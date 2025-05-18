@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:57:46 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/14 19:56:51 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/18 15:25:22 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,4 @@ class	Fixed
 		static int const	_frac_bits = 8;
 };
 
-std::ostream& operator<<(std::ostream& os, Fixed& obj);
+std::ostream& operator<<(std::ostream& os, Fixed const& obj);

@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:57:42 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/18 15:20:42 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/18 15:23:25 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		Fixed::getRawBits(void) const {return (this->_value);}
 
 void	Fixed::setRawBits(int const raw) {this->_value = raw;}
 
-std::ostream& operator<<(std::ostream &os, const Fixed& obj)
+std::ostream& operator<<(std::ostream &os, Fixed const& obj)
 {
 	os << obj.toFloat();
 	return (os);
