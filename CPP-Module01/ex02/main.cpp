@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 11:54:10 by caonguye          #+#    #+#             */
-/*   Updated: 2025/03/05 17:03:02 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/18 16:49:20 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 	const std::string&	stringREF = string;
 
 	std::cout << "Address of string : " << &string << std::endl;
-	std::cout << "Address of pointer : " << &stringPTR << std::endl;
+	std::cout << "Address of pointer : " << stringPTR << std::endl;
 	std::cout << "Address of reference : " << &stringREF << std::endl;
 
 	std::cout << "Value of string : " << string << std::endl;
