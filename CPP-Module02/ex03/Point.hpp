@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:01:06 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 17:03:04 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 19:26:45 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class	Point
 		~Point();
 		Point(const Point& other);
 		Point& operator=(const Point& other);
+		void	IncreasePoint(const int i);
+		void	DecreasePoint(const int i);
 		Fixed get_x(void) const;
 		Fixed get_y(void) const;
 

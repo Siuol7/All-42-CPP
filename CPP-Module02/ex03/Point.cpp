@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:45:24 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 16:58:14 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 19:43:14 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,15 @@ Point&	Point::operator=(const Point& other)
 Fixed	Point::get_x(void) const {return _x;}
 
 Fixed	Point::get_y(void) const {return _y;}
+
+void	Point::IncreasePoint(const int i)
+{
+	this->_x = this->_x + i;
+	this->_y = this->_y + i;
+}
+
+void	Point::DecreasePoint(const int i)
+{
+	this->_x = this->_x - i;
+	this->_y = this->_y - i;
+}
