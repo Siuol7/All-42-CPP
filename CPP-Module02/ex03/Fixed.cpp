@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:08:34 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 15:44:40 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:04:51 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,3 +81,9 @@ Fixed&	Fixed::min(Fixed& a, Fixed& b) {return a < b ? a : b;}
 const Fixed&	Fixed::max(const Fixed& a, const Fixed& b) {return a > b ? a : b;}
 
 const Fixed&	Fixed::min(const Fixed& a, const Fixed& b) {return a < b ? a : b;}
+
+std::ostream& operator<<(std::ostream& os, Fixed& obj)
+{
+	os << obj.toFloat();
+	return (os);
+}
