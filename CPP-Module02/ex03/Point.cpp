@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:45:24 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 15:56:42 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 16:58:14 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ Point&	Point::operator=(const Point& other)
 {
 	if (this != &other)
 	{
-		this->_x = other.getx();
-		this->_y = other.gety();
+		this->_x = other.get_x();
+		this->_y = other.get_y();
 	}
 	return *this;
 }
 
-Fixed	Point::getx(void) const {return _x;}
+Fixed	Point::get_x(void) const {return _x;}
 
-Fixed	Point::gety(void) const {return _y;}
+Fixed	Point::get_y(void) const {return _y;}
