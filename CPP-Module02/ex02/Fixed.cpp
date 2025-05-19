@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:35:22 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 11:54:09 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:35:03 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ int		Fixed::toInt(void) const {return _value >> _frac_bits;}
 
 //COMPARE
 
-bool	Fixed::operator>(const Fixed& other) const {return (this->getRawBits() > other.getRawBits()) ? true : false;}
+bool	Fixed::operator>(const Fixed& other) const {return (this->getRawBits() > other.getRawBits());}
 
-bool	Fixed::operator<(const Fixed& other) const {return (this->getRawBits() < other.getRawBits()) ? true : false;}
+bool	Fixed::operator<(const Fixed& other) const {return (this->getRawBits() < other.getRawBits());}
 
-bool	Fixed::operator>=(const Fixed& other) const {return (this->getRawBits() >= other.getRawBits()) ? true : false;}
+bool	Fixed::operator>=(const Fixed& other) const {return (this->getRawBits() >= other.getRawBits());}
 
-bool	Fixed::operator<=(const Fixed& other) const {return (this->getRawBits() <= other.getRawBits()) ? true : false;}
+bool	Fixed::operator<=(const Fixed& other) const {return (this->getRawBits() <= other.getRawBits());}
 
-bool	Fixed::operator!=(const Fixed& other) const {return (this->getRawBits() != other.getRawBits()) ? true : false;}
+bool	Fixed::operator!=(const Fixed& other) const {return (this->getRawBits() != other.getRawBits());}
 
 //CALCULATING
 
