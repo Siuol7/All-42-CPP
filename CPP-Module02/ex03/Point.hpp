@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:01:06 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 15:08:22 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:53:58 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ class	Point
 		~Point();
 		Point(const Point& other);
 		Point& operator=(const Point& other);
+		Fixed getx(void) const;
+		Fixed gety(void) const;
 
 	private:
-		Fixed&	x;
-		Fixed&	y;
+		Fixed	_x;
+		Fixed	_y;
 };
