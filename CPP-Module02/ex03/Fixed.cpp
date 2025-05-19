@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:08:34 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 15:35:26 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:44:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,45 @@ int		Fixed::toInt(void) const {return _value >> _frac_bits;}
 
 bool	Fixed::operator>(const Fixed& other) const {return this->_value > other.getRawBits();}
 
-bool	
+bool	Fixed::operator<(const Fixed& other) const {return this->_value < other.getRawBits();}
+
+bool	Fixed::operator>=(const Fixed& other) const {return this->_value >= other.getRawBits();}
+
+bool	Fixed::operator<=(const Fixed& other) const {return this->_value <= other.getRawBits();}
+
+bool	Fixed::operator!=(const Fixed& other) const {return this->_value != other.getRawBits();}
+
+Fixed	Fixed::operator++(void)
+{
+	Fixed	temp(*this);
+	this->_value++;
+	return (temp);
+}
+
+Fixed	Fixed::operator--(void)
+{
+	Fixed	temp(*this);
+	this->_value--;
+	return (temp);
+}
+
+Fixed&	Fixed::operator++(int)
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed&	Fixed::operator--(int)
+{
+	this->_value--;
+	return (*this);
+}
+
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b) {return a > b ? a : b;}
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b) {return a < b ? a : b;}
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b) {return a > b ? a : b;}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b) {return a < b ? a : b;}
