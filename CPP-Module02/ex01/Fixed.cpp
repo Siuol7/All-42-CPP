@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:57:42 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/18 15:23:25 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/05/19 10:50:36 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,9 @@
 
 Fixed::Fixed(){std::cout << "Default constructor called" << std::endl;}
 
-Fixed::Fixed(const int nb) : _value(nb)
-{
-	std::cout << "Int constructor called" << std::endl;
-	this->_value = nb  << this->_frac_bits;
-}
+Fixed::Fixed(const int nb) : _value(nb << _frac_bits){std::cout << "Int constructor called" << std::endl;}
 
-Fixed::Fixed(const float nb) : _value(nb)
-{
-	std::cout << "Float constructor called" << std::endl;
-	this->_value = roundf(nb * ( 1 << this->_frac_bits));
-}
+Fixed::Fixed(const float nb) : _value(roundf(nb * ( 1 << this->_frac_bits))){std::cout << "Float constructor called" << std::endl;}
 
 Fixed::~Fixed(){std::cout << "Default destructor called" << std::endl;}
 
