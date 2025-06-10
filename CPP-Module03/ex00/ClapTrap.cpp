@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:09:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/10 11:07:10 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:15:48 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,21 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << "ClapTrap " << this->_name << " has no energy points to attack" << std::endl;
 	if (!this->_hit_points)
 		std::cout << "ClapTrap " << this->_name << " has no hit points to attack" << std::endl;
-	std::cout << "ClapTrap " << this->_name << " causing " << this->_attack_damage << " points of damage!" << std::endl;
+	else
+	{
+		std::cout << "ClapTrap " << this->_name << " causing " << this->_attack_damage << " points of DMG!" << std::endl;
+		this->_energy_points--;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	
+	if (!this->_hit_points)
+		std::cout << "ClapTrap " << this->_name << " has no hit points to take DMG" << std::endl;
+	else
+	{
+		
+	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
