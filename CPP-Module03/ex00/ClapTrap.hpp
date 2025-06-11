@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:24:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/20 16:10:21 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/10 15:40:35 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class	ClapTrap
 {
 	public:
 		ClapTrap();
+		ClapTrap(std::string name);
 		~ClapTrap();
 		ClapTrap(const ClapTrap& other);
 		ClapTrap&  operator=(const ClapTrap& other);

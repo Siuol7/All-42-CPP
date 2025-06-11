@@ -6,18 +6,26 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:09:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/10 12:04:30 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/10 16:08:50 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : _name("Undefined"),
-					_hit_points(),
-					_energy_points(),
-					_attack_damage()
+					_hit_points(10),
+					_energy_points(10),
+					_attack_damage(0)
 {
-	std::cout << "Default constructor called";
+	std::cout << "Default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) : _name(name),
+					_hit_points(10),
+					_energy_points(10),
+					_attack_damage(0)
+{
+	std::cout << "Default constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){std::cout << "Default destructor called" << std::endl;}
@@ -46,10 +54,10 @@ void	ClapTrap::attack(const std::string& target)
 	if (!this->_energy_points)
 		std::cout << "ClapTrap " << this->_name << " has no energy points to attack" << std::endl;
 	if (!this->_hit_points)
-		std::cout << "ClapTrap " << this->_name << " has no hit points to attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " causing " << this->_attack_damage << " points of DMG!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " caused " << this->_attack_damage << " points of DMG to " << target << std::endl;
 		this->_energy_points--;
 	}
 }
@@ -57,7 +65,7 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (!this->_hit_points)
-		std::cout << "ClapTrap " << this->_name << " has no hit points to take DMG" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_name << " got attacked and took " << amount << " DMG!" << std::endl;
@@ -71,9 +79,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_energy_points)
-		std::cout << "ClapTrap " << this->_name << " has no energy points to attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no energy points to get repaired" << std::endl;
 	if (!this->_hit_points)
-		std::cout << "ClapTrap " << this->_name << " has no hit points to attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_name << " got repaired " << amount << " hit points!" << std::endl;
