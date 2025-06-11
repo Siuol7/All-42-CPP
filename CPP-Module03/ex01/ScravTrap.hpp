@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/11 16:20:44 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/11 19:10:42 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
-class ScravTrap
+class ScravTrap : public ClapTrap
 {
 	public:
-		
+		ScravTrap();
+		ScravTrap(std::string name);
+		~ScravTrap() override;
+		Scrav
 }

@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:24:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/11 16:32:23 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/11 17:33:44 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class	ClapTrap
 		ClapTrap(const ClapTrap& other);
 		ClapTrap&  operator=(const ClapTrap& other);
 
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		virtual void	attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 	private:
 		std::string		_name;
 		unsigned int	_hit_points;
