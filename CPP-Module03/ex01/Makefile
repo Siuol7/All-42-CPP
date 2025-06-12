@@ -6,11 +6,11 @@
 #    By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 16:16:05 by caonguye          #+#    #+#              #
-#    Updated: 2025/06/11 16:18:34 by caonguye         ###   ########.fr        #
+#    Updated: 2025/06/12 11:15:27 by caonguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= CPP3_00
+NAME 	= CPP3_01
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf

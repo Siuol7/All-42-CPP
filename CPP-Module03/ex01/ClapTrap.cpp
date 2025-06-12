@@ -6,18 +6,18 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:09:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/10 16:08:50 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:16:04 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("Undefined"),
+ClapTrap::ClapTrap() : _name("Undefined ClapTrap"),
 					_hit_points(10),
 					_energy_points(10),
 					_attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name),
@@ -25,10 +25,10 @@ ClapTrap::ClapTrap(std::string name) : _name(name),
 					_energy_points(10),
 					_attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
-ClapTrap::~ClapTrap(){std::cout << "Default destructor called" << std::endl;}
+ClapTrap::~ClapTrap(){std::cout << "Default ClapTrap destructor called" << std::endl;}
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
