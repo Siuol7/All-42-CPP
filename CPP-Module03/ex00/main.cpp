@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:14:04 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/10 16:05:54 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:12:24 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	main(void)
 
 	for (int i = 0; i < 10; i++)
 	{
-		ct1.attack("B");
+		ct1.attack("suc va");
 		ct2.takeDamage(2);
 		ct2.beRepaired(1);
 	}
 
 	std::cout << std::endl << "Next match" << std::endl;
-	ct1.attack("B");
+	ct1.attack("chua te");
 	ct3.takeDamage(2);
 	ct3.beRepaired(1);
 }

@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:02 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/12 01:45:08 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:07:47 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,36 @@ ScravTrap::ScravTrap(std::string name) :
 
 ScravTrap::~ScravTrap(){std::cout << "Default ScravTrap destructor called" << std::endl;}
 
-ScravTrap::ScravTrap(const ScravTrap& other)
+ScravTrap::ScravTrap(const ScravTrap& other) : ClapTrap(other)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	std::cout << "Copy ScravTrap constructor called" << std::endl;
 }
 
 ScravTrap& ScravTrap::operator=(const ScravTrap& other)
 {
 	std::cout << "Copy assignment called" << std::endl;
 	if (this != &other)
-	{
-		this->_name = other._name;
-		this->_hit_points = other._hit_points;
-		this->_energy_points = other._energy_points;
-		this->_attack_damage = other._attack_damage;
-	}
+		ClapTrap::operator=(other);
 	return *this;
 }
 
 void	ScravTrap::attack(const std::string& target)
 {
-	
+	if (!this->_energy_points)
+		std::cout << "ScravTrap " << this->_name << " has no energy points to attack" << std::endl;
+	if (!this->_hit_points)
+		std::cout << "ScravTrap " << this->_name << " has been defeated" << std::endl;
+	else
+	{
+		std::cout << "ScravTrap " << this->_name << " caused " << this->_attack_damage << " points of DMG to " << target << std::endl;
+		this->_energy_points--;
+	}
+}
+
+void	ScravTrap::guardGate()
+{
+	if (!this->_hit_points)
+		std::cout << "ScravTrap " << this->_name << " has been defeated" << std::endl;
+	else
+		std::cout << "ScravTrap " << this->_name << " is on Gate keeper mode" << std::endl;
 }

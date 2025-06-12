@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/11 19:14:40 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:05:44 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ class ScravTrap : public ClapTrap
 		ScravTrap& operator=(const ScravTrap& other);
 
 		void	attack(const std::string& target) override;
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void	guardGate();
 
 	private:
 		std::string		_name;
