@@ -6,13 +6,13 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:09:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/12 01:39:27 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:16:51 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("ClapTrap Undefined"),
+ClapTrap::ClapTrap() : _name("Undefined ClapTrap "),
 					_hit_points(10),
 					_energy_points(10),
 					_attack_damage(0)
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap() : _name("ClapTrap Undefined"),
 }
 
 ClapTrap::ClapTrap(std::string name) :
-					_name(name.empty() ? "ClapTrap Undefined" : name),
+					_name(name.empty() ? "Undefined ClapTrap" : name),
 					_hit_points(10),
 					_energy_points(10),
 					_attack_damage(0)
