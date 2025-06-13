@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:02 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/13 09:36:55 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/13 11:04:26 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ ScravTrap::ScravTrap() : _name("Undefined ScravTrap"),
 						_attack_damage(20)
 {std::cout << "Default ScravTrap constructor called" << std::endl;}
 
-ScravTrap::ScravTrap(std::string name) :
-						_name(name.empty() ? "Undefined ScravTrap" : name),
-						_hit_points(100),
-						_energy_points(50),
-						_attack_damage(20)
-{std::cout << "Default ScravTrap constructor called" << std::endl;}
+ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
+{
+	this->_name = name.empty() ? "Undefined ScravTrap" : name;
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 20;
+	std::cout << "Default ScravTrap constructor called" << std::endl;
+}
 
 ScravTrap::~ScravTrap(){std::cout << "Default ScravTrap destructor called" << std::endl;}
 

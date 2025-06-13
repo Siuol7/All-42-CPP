@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:14:04 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/13 09:45:25 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/13 10:45:19 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ int	main(void)
 
 	std::cout << std::endl;
 	st2.guardGate();
+	st3.takeDamage(2);
 }
