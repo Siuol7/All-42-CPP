@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:09:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/12 11:16:04 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/13 09:37:56 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ ClapTrap::~ClapTrap(){std::cout << "Default ClapTrap destructor called" << std::
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy ClapTrap constructor called" << std::endl;
 	*this = other;
 }
 
 ClapTrap& ClapTrap::operator= (const ClapTrap& other)
 {
-	std::cout << "Copy assignment called" << std::endl;
+	std::cout << "Copy ClapTrap assignment called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -53,7 +53,7 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->_energy_points)
 		std::cout << "ClapTrap " << this->_name << " has no energy points to attack" << std::endl;
-	if (!this->_hit_points)
+	else if (!this->_hit_points)
 		std::cout << "ClapTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{
@@ -80,7 +80,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_energy_points)
 		std::cout << "ClapTrap " << this->_name << " has no energy points to get repaired" << std::endl;
-	if (!this->_hit_points)
+	else if (!this->_hit_points)
 		std::cout << "ClapTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{

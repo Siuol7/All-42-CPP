@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:14:04 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/12 11:35:32 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/13 09:45:25 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(void)
 	ClapTrap	ct2("A");
 	ClapTrap	ct3("B");
 	ScravTrap	st2("C");
+	ScravTrap 	st3(st2);
 
 	std::cout << std::endl << "First match" << std::endl;
 

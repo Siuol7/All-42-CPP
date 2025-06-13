@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:02 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/12 11:16:32 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/13 09:36:55 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ScravTrap::ScravTrap(const ScravTrap& other) : ClapTrap(other)
 
 ScravTrap& ScravTrap::operator=(const ScravTrap& other)
 {
-	std::cout << "Copy assignment called" << std::endl;
+	std::cout << "Copy ScravTrap assignment called" << std::endl;
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;
@@ -44,7 +44,7 @@ void	ScravTrap::attack(const std::string& target)
 {
 	if (!this->_energy_points)
 		std::cout << "ScravTrap " << this->_name << " has no energy points to attack" << std::endl;
-	if (!this->_hit_points)
+	else if (!this->_hit_points)
 		std::cout << "ScravTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{
