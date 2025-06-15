@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:24:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/11 17:33:44 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/15 14:08:28 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class	ClapTrap
 		virtual void	attack(const std::string& target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
-	private:
+		
+	protected:
 		std::string		_name;
 		unsigned int	_hit_points;
 		unsigned int	_energy_points;

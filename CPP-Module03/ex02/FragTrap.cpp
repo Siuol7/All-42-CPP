@@ -6,26 +6,28 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 10:34:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/13 23:57:38 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/15 14:13:41 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : _name("Undefined FragTrap"),
-					   _hit_points(100),
-					   _energy_points(100),
-					   _attack_damage(30)
-{std::cout << "Default FragTrap constructor called" << std::endl;}
-
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap() : ClapTrap()
 {
-	this->_name = name;
+	this->_name = "Undefined FragTrap";
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
 	std::cout << "Default FragTrap constructor called" << std::endl;
+}
 
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
+{
+	this->_name = name.empty() ? "Undefined FragTrap" : name;
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
+	std::cout << "Default FragTrap constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap(){std::cout << "Default FragTrap destructor called" << std::endl;}
