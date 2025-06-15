@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 16:19:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/15 14:21:36 by caonguye         ###   ########.fr       */
+/*   Created: 2025/06/13 10:34:34 by caonguye          #+#    #+#             */
+/*   Updated: 2025/06/15 14:12:18 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
 #include "ClapTrap.hpp"
 
-class ScravTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	public:
-		ScravTrap();
-		ScravTrap(std::string name);
-		~ScravTrap() override;
-		ScravTrap(const ScravTrap& other);
-		ScravTrap& operator=(const ScravTrap& other);
+		FragTrap();
+		FragTrap(std::string name);
+		virtual ~FragTrap();
+		FragTrap(const FragTrap& other);
+		FragTrap& operator=(const FragTrap& other);
 
-		void	attack(const std::string& target) override;
-		void	guardGate();
+		void highFivesGuys(void);
 };
