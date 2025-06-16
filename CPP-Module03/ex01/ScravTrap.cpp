@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:02 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/15 13:46:23 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:41:56 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScravTrap::ScravTrap() : ClapTrap()
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
-	std::cout << "Default ScravTrap constructor called" << std::endl;
+	std::cout << "ScravTrap : Default constructor called" << std::endl;
 }
 
 ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
@@ -27,19 +27,19 @@ ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
-	std::cout << "Default ScravTrap constructor called" << std::endl;
+	std::cout << "ScravTrap : Default constructor called" << std::endl;
 }
 
-ScravTrap::~ScravTrap(){std::cout << "Default ScravTrap destructor called" << std::endl;}
+ScravTrap::~ScravTrap(){std::cout << "ScravTrap : Default destructor called" << std::endl;}
 
 ScravTrap::ScravTrap(const ScravTrap& other) : ClapTrap(other)
 {
-	std::cout << "Copy ScravTrap constructor called" << std::endl;
+	std::cout << "ScravTrap : Copy constructor called" << std::endl;
 }
 
 ScravTrap& ScravTrap::operator=(const ScravTrap& other)
 {
-	std::cout << "Copy ScravTrap assignment called" << std::endl;
+	std::cout << "ScravTrap : Copy assignment called" << std::endl;
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;
