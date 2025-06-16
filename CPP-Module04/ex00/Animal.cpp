@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:31:41 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 16:22:27 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/16 16:43:20 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ Animal& Animal::operator=(const Animal& other)
 	return *this;
 }
 
-void	Animal::makeSound(void){std::cout << "Animal's sounds" << std::endl;}
+void	Animal::makeSound(void) const{std::cout << "Animal's sounds" << std::endl;}
 
-std::string	Animal::getType(void){return this->_type;}
+std::string	Animal::getType(void) const{return this->_type;}
