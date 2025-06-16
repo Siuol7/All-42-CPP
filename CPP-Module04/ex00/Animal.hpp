@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:31:52 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 16:43:27 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/16 19:33:27 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	Animal
 {
 	public :
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
 

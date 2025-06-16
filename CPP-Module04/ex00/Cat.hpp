@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:40:34 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 17:19:44 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/16 19:36:15 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ class Cat : public Animal
 		Cat(const Cat& other);
 		Cat& operator=(const Cat& other);
 
-		void	makeSound() const;
+		void	makeSound() const override;
 };
