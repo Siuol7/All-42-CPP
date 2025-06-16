@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:42:17 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 17:22:13 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:23:47 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "Animal.hpp"
 
-class Dog
+class Dog : public Animal
 {
 	public:
 		Dog();
