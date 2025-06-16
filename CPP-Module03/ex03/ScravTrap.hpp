@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/15 14:21:36 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/16 10:18:29 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScravTrap : public ClapTrap
+class ScravTrap : virtual public ClapTrap
 {
 	public:
 		ScravTrap();
