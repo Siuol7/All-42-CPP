@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 22:12:19 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/17 09:21:10 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/17 10:12:34 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,13 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other)
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
 	std::cout << "WA : Copy assignment called" << std::endl;
-	if ()
+	if (this != &other)
+		this->_type = other._type;
+	return *this;
 }
+
+void	WrongAnimal::makeSound() const
+{std::cout << "Wrong Animal sound" << std::endl;}
+
+std::string	WrongAnimal::getType() const
+{return this->_type;}
