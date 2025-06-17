@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 10:34:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 14:08:39 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/17 09:21:56 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
+	std::cout << "FragTrap : Copy assignment called" << std::endl;
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;
-	std::cout << "FragTrap : Copy assignment called" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)
