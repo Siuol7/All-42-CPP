@@ -15,8 +15,10 @@ CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
 SRCS	= Animal.cpp	\
-		  Cat.cpp	\
-		  Dog.cpp	\
+		  Cat.cpp		\
+		  Dog.cpp		\
+		  WrongAnimal.c	\
+		  WrongCat.c	\
 		  main.cpp
 OBJS	= ${SRCS:.cpp=.o}
 
