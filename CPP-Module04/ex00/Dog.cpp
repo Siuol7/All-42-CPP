@@ -12,11 +12,8 @@
 
 #include "Dog.hpp"
 
-Dog::Dog()
-{
-	this->_type = "Dog";
-	std::cout << "Dog : Default constructor called" << std::endl;
-}
+Dog::Dog() : _type("Dog")
+{std::cout << "Dog : Default constructor called" << std::endl;}
 
 Dog::~Dog(){std::cout << "Dog : Default destructor called" << std::endl;}
 

@@ -12,11 +12,8 @@
 
 #include "Cat.hpp"
 
-Cat::Cat()
-{
-	this->_type = "Cat";
-	std::cout << "Cat : Default constructor called" << std::endl;
-}
+Cat::Cat() : _type("Cat")
+{std::cout << "Cat : Default constructor called" << std::endl;}
 
 Cat::~Cat(){std::cout << "Cat : Default destructor called" << std::endl;}
 
