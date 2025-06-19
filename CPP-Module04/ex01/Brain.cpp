@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 10:29:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/19 12:52:53 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/19 13:59:16 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ Brain& Brain::operator=(const Brain& other)
         for (int i = 0; i < 100; i++)
             this->_ideas[i] = other._ideas[i];
     }
-    return *this
+    return *this;
 }
