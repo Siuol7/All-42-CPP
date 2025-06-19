@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:42:09 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/17 09:21:36 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:48:23 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : _type("Dog")
-{std::cout << "Dog : Default constructor called" << std::endl;}
+Dog::Dog()
+{
+	std::cout << "Dog : Default constructor called" << std::endl;
+	this->_type = "Dog"; 
+}
 
 Dog::~Dog(){std::cout << "Dog : Default destructor called" << std::endl;}
 

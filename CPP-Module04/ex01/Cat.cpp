@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:40:21 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/17 09:21:29 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:48:28 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : _type("Cat")
-{std::cout << "Cat : Default constructor called" << std::endl;}
+Cat::Cat()
+{
+	std::cout << "Cat : Default constructor called" << std::endl;
+	this->_type = "Cat";
+}
 
 Cat::~Cat(){std::cout << "Cat : Default destructor called" << std::endl;}
 
