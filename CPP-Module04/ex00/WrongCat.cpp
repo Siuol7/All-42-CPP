@@ -3,21 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:54:09 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/15 19:54:18 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:31:38 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : _type("WrongCat")
-{std::cout << "WrongCat : Default constructor called" << std::endl;}
+WrongCat::WrongCat()
+{
+    std::cout << "WrongCat : Default constructor called" << std::endl;
+    this->_type = "WrongCat";
+}
 
 WrongCat::~WrongCat(){std::cout << "WrongCat : Default destructor called" << std::endl;}
 
-WrongCat::WrongCat(const WrongCat& other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
     std::cout << "WrongCat : Copy constructor called" << std::endl;
     *this = other;
@@ -30,5 +33,5 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
     return *this;
 }
 
-void    WrongCat::makeSound(void)
+void    WrongCat::makeSound(void) const
 {std::cout << "WrongCat sound" << std::endl;}
