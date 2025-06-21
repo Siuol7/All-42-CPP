@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/21 12:32:26 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/21 14:12:31 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,3 +14,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
+int	main(int ac)
+{
+	Animal* arr[ac];
+}
