@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/22 16:08:56 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/22 18:56:19 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(void)
 	{
 		try
 		{
+			std::cout << "Time " << i << ": ";
 			arr[i] = new Dog();
 		}
 		catch(const std::exception& e)
@@ -44,6 +45,21 @@ int	main(void)
 	}
 	std::cout << std::endl;
 
-	
+	std::cout << "Cat generated" << std::endl;
+	for (int i = 0; i < ac / 2; i++)
+	{
+		try
+		{
+			std::cout << "Time " << i << ": ";
+			arr[i] = new Cat();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << "Bad alloc" << std::endl;
+			ft_clean(arr, i);
+			return (1);
+		}
+	}
+	std::cout << std::endl;
 		
 }
