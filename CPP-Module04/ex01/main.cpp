@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/21 14:30:35 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/22 16:08:56 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,36 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int	main(int ac)
+void	ft_clean(Animal** arr, int lim)
 {
+	for (int i = 0; i < lim; i++)
+		delete arr[i];
+}
+
+int	main(void)
+{
+	int ac = 10;
+	
 	std::cout << "Array of Animal" << std::endl;
 	Animal* arr[ac];
 	std::cout << std::endl;
 
+	std::cout << "Dog generated" << std::endl;
+	for (int i = 0; i < ac / 2; i++)
+	{
+		try
+		{
+			arr[i] = new Dog();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << "Bad alloc" << std::endl;
+			ft_clean(arr, i);
+			return (1);
+		}
+	}
+	std::cout << std::endl;
+
 	
+		
 }
