@@ -6,15 +6,15 @@
 #    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 17:42:15 by caonguye          #+#    #+#              #
-#    Updated: 2025/06/19 13:49:05 by siuol            ###   ########.fr        #
+#    Updated: 2025/06/23 01:27:25 by siuol            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= 0
+NAME 	= 2
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
-SRCS	= Animal.cpp		\
+SRCS	= AAnimal.cpp		\
 		  Cat.cpp			\
 		  Dog.cpp			\
 		  WrongAnimal.cpp	\
