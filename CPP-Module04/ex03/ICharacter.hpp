@@ -1,13 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 18:58:03 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/23 18:58:18 by siuol            ###   ########.fr       */
+/*   Created: 2025/06/23 22:19:49 by siuol             #+#    #+#             */
+/*   Updated: 2025/06/23 22:21:04 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#pragma once
+
+#include <iostream>
+#include <string>
+
+class ICharacter
+{
+    public:
+        virtual ~ICharacter() {}
+        virtual std::string const & getName() const = 0;
+        virtual void equip(AMateria* m) = 0;
+        virtual void unequip(int idx) = 0;
+        virtual void use(int idx, ICharacter& target) = 0;
+};
