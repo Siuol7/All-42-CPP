@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:58:03 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/24 01:40:59 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/24 01:48:49 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,4 @@ AMateria& AMateria::operator=(const AMateria& other)
     return *this;
 }
 
+void    AMateria::use(ICharacter& target){}
