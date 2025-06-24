@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/24 18:47:21 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/24 21:19:05 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,29 @@ Character::~Character(){std::cout << "Character : Default destructor called" << 
 Character::Character(const Character& other)
 {
     std::cout << "Character : Copy constructor called" << std::endl;
-    *this = other;
+    for (int i = 0; i < 4; i++)
+    {
+        if (other._inventory[i])
+            this->_inventory[i] = other._inventory[i]->clone();
+        else
+            this->_inventory[i] = nullptr;
+    }
 }
 
 Character& Character::operator=(const Character& other)
 {
     std::cout << "Character : Copy assignment called" << std::endl;
-    this->_name = other._name;
-    if (!this->_inventory)
+    if (this != &other)
     {
-        delete this->_inventory;
-        
+        this->_name = other._name;
+        for (int i = 0; i < 4; i++)
+        {
+            delete this->_inventory[i];
+            if (other._inventory[i])
+                this->_inventory[i] = other._inventory[i]->clone();
+            else
+                this->_inventory[i] = nullptr;
+        }
     }
+    return *this;
 }
