@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 22:19:49 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/23 22:21:04 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/24 17:19:52 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <string>
+#include "AMateria.hpp"
 
 class ICharacter
 {
