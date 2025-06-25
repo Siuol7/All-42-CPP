@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 22:16:25 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 22:08:14 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 22:52:16 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ Cure*   Cure::clone() const
 void    Cure::use(ICharacter& target)
 {
     std::cout << "Cure : use() called" << std::endl;
-    std::cout << "* heals" << target.getName() << "'s wounds *" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
