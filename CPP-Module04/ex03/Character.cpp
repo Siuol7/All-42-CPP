@@ -6,24 +6,32 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 20:39:25 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 21:03:23 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : _name("Undefined")
+Character::Character() : _name("Undefined"), _storageSize(4), _storageID(0)
 {
     std::cout << "Character : Default constructor called" << std::endl;
+    this->_storage = new AMateria*[this->_storageSize];
     for (int i = 0; i < 4; i++)
+    {
         this->_inventory[i] = nullptr;
+        this->_storage[i] = nullptr;
+    } 
 }
 
-Character::Character(std::string name) : _name(name)
+Character::Character(std::string name) : _name(name), _storageSize(4), _storageID(0)
 {
     std::cout << "Character : Constructor called" << std::endl;
+    this->_storage = new AMateria*[this->_storageSize];
     for (int i = 0; i < 4; i++)
+    {
         this->_inventory[i] = nullptr;
+        this->_storage[i] = nullptr;
+    } 
 }
 
 Character::~Character()
@@ -34,7 +42,9 @@ Character::~Character()
     this->cleanStorage();
 }
 
-Character::Character(const Character& other)
+Character::Character(const Character& other) :  _name(other._name),
+                                                _storageSize(other._storageSize),
+                                                _storageID(other._storageID)
 {
     std::cout << "Character : Copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
@@ -43,6 +53,14 @@ Character::Character(const Character& other)
             this->_inventory[i] = other._inventory[i]->clone();
         else
             this->_inventory[i] = nullptr;
+    }
+    this->_storage = new AMateria*[other._storageSize];
+    for (int i = 0; i < other._storageSize; i++)
+    {
+        if (other._storage[i])
+            this->_storage[i] = other._storage[i]->clone();
+        else
+            this->_storage[i] = nullptr;
     }
 }
 
@@ -110,6 +128,7 @@ void    Character::equip(AMateria* m)
 
 void    Character::unequip(int idx)
 {
+    std::cout << "Character : unequip() called" << std::endl;
     if (0 <= idx < 4 && this->_inventory[idx])
     {
         this->store(this->_inventory[idx]);
@@ -117,3 +136,9 @@ void    Character::unequip(int idx)
     }
 }
 
+void    Character::use(int idx, ICharacter& target)
+{
+    std::cout << "Character : use() called" << std::endl;
+    if (0 <= idx < 4 && this->_inventory[idx])
+        this->_inventory[idx]->use(target);
+}
