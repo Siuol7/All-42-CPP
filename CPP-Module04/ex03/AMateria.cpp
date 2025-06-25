@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:58:03 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/24 01:48:49 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 23:24:30 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ AMateria& AMateria::operator=(const AMateria& other)
     return *this;
 }
 
-void    AMateria::use(ICharacter& target){}
+std::string const& AMateria::getType() const
+{
+    std::cout << "AMateria : getType() called" << std::endl;
+    return this->_type;
+}
+
+void    AMateria::use(ICharacter& target){std::cout << "AMateria : use() called" << std::endl;} 

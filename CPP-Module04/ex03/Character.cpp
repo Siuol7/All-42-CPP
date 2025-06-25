@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 21:22:39 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 23:13:13 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ void    Character::equip(AMateria* m)
             return ;
         }
     }
+    std::cout << "Character : Inventory is full" << std::endl;
     delete  m;
     m = nullptr;
 }
