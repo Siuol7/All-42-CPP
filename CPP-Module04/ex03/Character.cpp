@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/24 21:19:05 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 13:23:01 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ Character::Character(std::string name) : _name(name)
         this->_inventory[i] = nullptr;
 }
 
-Character::~Character(){std::cout << "Character : Default destructor called" << std::endl;}
+Character::~Character()
+{
+    std::cout << "Character : Default destructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        delete this->_inventory[i];
+}
 
 Character::Character(const Character& other)
 {
