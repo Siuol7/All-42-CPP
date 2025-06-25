@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 21:03:23 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 21:22:39 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,17 @@ Character& Character::operator=(const Character& other)
             else
                 this->_inventory[i] = nullptr;
         }
+        this->cleanStorage();
+        this->_storageSize = other._storageSize;
+        this->_storageID = other._storageID;
+        this->_storage = new AMateria*[other._storageSize];
+        for (int i = 0; i < other._storageSize; i++)
+        {
+            if (other._storage[i])
+                this->_storage[i] = other._storage[i]->clone();
+            else
+                this->_storage[i] = nullptr;
+        }
     }
     return *this;
 }
@@ -129,7 +140,7 @@ void    Character::equip(AMateria* m)
 void    Character::unequip(int idx)
 {
     std::cout << "Character : unequip() called" << std::endl;
-    if (0 <= idx < 4 && this->_inventory[idx])
+    if (0 <= idx && idx < 4 && this->_inventory[idx])
     {
         this->store(this->_inventory[idx]);
         this->_inventory[idx] = nullptr;
@@ -139,6 +150,6 @@ void    Character::unequip(int idx)
 void    Character::use(int idx, ICharacter& target)
 {
     std::cout << "Character : use() called" << std::endl;
-    if (0 <= idx < 4 && this->_inventory[idx])
+    if (0 <= idx && idx < 4 && this->_inventory[idx])
         this->_inventory[idx]->use(target);
 }
