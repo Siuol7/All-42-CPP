@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:02:05 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 14:01:04 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 14:42:09 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,14 @@ MateriaSource&  MateriaSource::operator=(const MateriaSource& other)
                 this->_inventory[i] = nullptr; 
         }
     }
+}
+
+void    MateriaSource::learnMateria(AMateria* src)
+{
+    
+}
+
+AMateria*   MateriaSource::createMateria(std::string const& type)
+{
+    
 }

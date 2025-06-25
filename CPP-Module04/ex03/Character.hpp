@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:12 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 00:31:53 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/25 20:39:11 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,14 @@ class Character : public ICharacter
         virtual void unequip(int idx) override;
         virtual void use(int idx, ICharacter& target) override;
 
+        
     private :
-        std::string _name;
-        AMateria*    _inventory[4];
+        uint             _storageSize;
+        uint             _storageID;
+        std::string     _name;
+        AMateria*       _inventory[4];
+        AMateria**       _storage;
+        
+        void    cleanStorage(void);
+        void    store(AMateria* m);
 };
