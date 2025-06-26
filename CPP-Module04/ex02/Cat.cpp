@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:40:21 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/19 18:24:43 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 00:27:30 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Cat::Cat()
 {
-	std::cout << "Cat : Default constructor called" << std::endl;
+	LOG_GREEN("Cat : Default constructor called");
 	this->_type = "Cat";
 	try
 	{
@@ -30,19 +30,19 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-	std::cout << "Cat : Default destructor called" << std::endl;
+	LOG_GREEN("Cat : Default destructor called");
 	delete	this->_brain;
 }
 
 Cat::Cat(const Cat& other) : Animal(other), _brain(nullptr)
 {
-	std::cout << "Cat : Copy constructor called" << std::endl;
+	LOG_GREEN("Cat : Copy constructor called");
 	*this = other;
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
-	std::cout << "Cat : Copy assignment called" << std::endl;
+	LOG_GREEN("Cat : Copy assignment called");
 	if (this != &other)
 	{
 		this->_type = "Cat";

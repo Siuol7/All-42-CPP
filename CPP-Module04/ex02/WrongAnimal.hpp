@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:52:00 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/17 09:07:44 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/27 00:27:58 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include "system.hpp"
 
 class WrongAnimal
 {

@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   system.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 10:29:40 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 00:26:50 by siuol            ###   ########.fr       */
+/*   Created: 2025/06/27 00:08:53 by siuol             #+#    #+#             */
+/*   Updated: 2025/06/27 00:10:28 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "system.hpp"
+#include <iostream>
+#include <string>
 
-class Brain
-{
-    public:
-        Brain();
-        ~Brain();
-        Brain(const Brain& other);
-        Brain& operator=(const Brain& other);
-
-    private:
-        std::string _ideas[100];
-};
+#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
+#define LOG_RED(msg)   std::cout << "\033[31m" << msg << "\033[0m" << std::endl

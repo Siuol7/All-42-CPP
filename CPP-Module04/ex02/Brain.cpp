@@ -6,25 +6,25 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 10:29:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/19 13:59:16 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 00:27:13 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain(){std::cout << "Brain : Default constructor called" << std::endl;}
+Brain::Brain(){LOG_GREEN("Brain : Default constructor called");}
 
-Brain::~Brain(){std::cout << "Brain : Default destructor called" << std::endl;}
+Brain::~Brain(){LOG_GREEN("Brain : Default destructor called");}
 
 Brain::Brain(const Brain& other)
 {
-    std::cout << "Brain : Copy constructor called" << std::endl;
+    LOG_GREEN("Brain : Copy constructor called");
     *this = other;
 }
 
 Brain& Brain::operator=(const Brain& other)
 {
-    std::cout << "Brain : Copy assignment called" << std::endl;
+    LOG_GREEN("Brain : Copy assignment called");
     if (this != &other)
     {
         for (int i = 0; i < 100; i++)
