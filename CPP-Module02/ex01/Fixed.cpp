@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 14:57:42 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/22 08:38:04 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:44:28 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(){std::cout << "Default constructor called" << std::endl;}
+Fixed::Fixed(){LOG_GREEN("Fixed : Default constructor called");}
 
-Fixed::Fixed(const int nb) : _value(nb << _frac_bits){std::cout << "Int constructor called" << std::endl;}
+Fixed::Fixed(const int nb) : _value(nb << _frac_bits){LOG_GREEN("Fixed : Int constructor called");}
 
-Fixed::Fixed(const float nb) : _value(roundf(nb * ( 1 << this->_frac_bits))){std::cout << "Float constructor called" << std::endl;}
+Fixed::Fixed(const float nb) : _value(roundf(nb * ( 1 << this->_frac_bits))){LOG_GREEN("Fixed : Float constructor called");}
 
-Fixed::~Fixed(){std::cout << "Destructor called" << std::endl;}
+Fixed::~Fixed(){LOG_GREEN("Fixed : Default destructor called");}
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	LOG_GREEN("Fixed : Copy constructor called");
 	*this = other;
 }
 
 Fixed& Fixed::operator= (const Fixed &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	LOG_GREEN("Fixed : Copy assignment operator called");
 	if (this != &other)
 		this->_value = other.getRawBits();
 	return *this;
