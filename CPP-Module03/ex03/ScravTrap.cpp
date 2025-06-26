@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScravTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:02 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 14:09:14 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:54:36 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScravTrap::ScravTrap() : ClapTrap()
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
-	std::cout << "ScravTrap : Default constructor called" << std::endl;
+	LOG_GREEN("ScravTrap : Default constructor called");
 }
 
 ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
@@ -27,19 +27,19 @@ ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
-	std::cout << "ScravTrap : Default constructor called" << std::endl;
+	LOG_GREEN("ScravTrap : Default constructor called");
 }
 
-ScravTrap::~ScravTrap(){std::cout << "ScravTrap : Default destructor called" << std::endl;}
+ScravTrap::~ScravTrap(){LOG_GREEN("ScravTrap : Default destructor called");}
 
 ScravTrap::ScravTrap(const ScravTrap& other) : ClapTrap(other)
 {
-	std::cout << "ScravTrap : Copy constructor called" << std::endl;
+	LOG_GREEN("ScravTrap : Copy constructor called");
 }
 
 ScravTrap& ScravTrap::operator=(const ScravTrap& other)
 {
-	std::cout << "ScravTrap : Copy assignment called" << std::endl;
+	LOG_GREEN("ScravTrap : Copy assignment called");
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;

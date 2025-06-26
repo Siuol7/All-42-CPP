@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 10:34:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/17 09:22:20 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:53:58 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap() : ClapTrap()
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-	std::cout << "FragTrap : Default constructor called" << std::endl;
+	LOG_GREEN("FragTrap : Default constructor called");
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -27,19 +27,19 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-	std::cout << "FragTrap : Default constructor called" << std::endl;
+	LOG_GREEN("FragTrap : Default constructor called");
 }
 
-FragTrap::~FragTrap(){std::cout << "FragTrap : Default destructor called" << std::endl;}
+FragTrap::~FragTrap(){LOG_GREEN("FragTrap : Default destructor called");}
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
-	std::cout << "FragTrap : Copy constructor called" << std::endl;
+	LOG_GREEN("FragTrap : Copy constructor called");
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
-	std::cout << "FragTrap : Copy assignment called" << std::endl;
+	LOG_GREEN("FragTrap : Copy assignment called");
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:24:03 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/15 14:02:26 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:48:10 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <string>
+#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
+
 
 class	ClapTrap
 {

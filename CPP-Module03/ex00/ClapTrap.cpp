@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:09:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 14:42:22 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:47:42 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : _name("Undefined ClapTrap "),
 					_energy_points(10),
 					_attack_damage(0)
 {
-	std::cout << "ClapTrap : Default constructor called" << std::endl;
+	LOG_GREEN("ClapTrap : Default constructor called");
 }
 
 ClapTrap::ClapTrap(std::string name) :
@@ -26,20 +26,20 @@ ClapTrap::ClapTrap(std::string name) :
 					_energy_points(10),
 					_attack_damage(0)
 {
-	std::cout << "ClapTrap : Default constructor called" << std::endl;
+	LOG_GREEN("ClapTrap : Default constructor called");
 }
 
-ClapTrap::~ClapTrap(){std::cout << "ClapTrap : Default destructor called" << std::endl;}
+ClapTrap::~ClapTrap(){LOG_GREEN("ClapTrap : Default destructor called");}
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "ClapTrap : Copy constructor called" << std::endl;
+	LOG_GREEN("ClapTrap : Copy constructor called");
 	*this = other;
 }
 
 ClapTrap& ClapTrap::operator= (const ClapTrap& other)
 {
-	std::cout << "ClapTrap : Copy assignment called" << std::endl;
+	LOG_GREEN("ClapTrap : Copy assignment called");
 	if (this != &other)
 	{
 		this->_name = other._name;
