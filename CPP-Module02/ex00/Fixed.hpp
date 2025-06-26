@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:11:33 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/13 15:15:22 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:36:25 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 
 class Fixed
 {

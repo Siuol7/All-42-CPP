@@ -3,33 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:11:24 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/13 14:32:13 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/26 23:38:54 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _value(0)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+Fixed::Fixed() : _value(0){LOG_GREEN("Fixed : Default constructor called");}
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed(){LOG_GREEN("Fixed : Default destructor called");}
+
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	LOG_GREEN("Fixed : Copy constructor called");
 	*this = other;
 }
 
 Fixed& Fixed::operator= (const Fixed& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	LOG_GREEN("Fixed : Copy assignment operator called");
 	if (this != &other)
 		this->_value = other._value;
 	return *this;
