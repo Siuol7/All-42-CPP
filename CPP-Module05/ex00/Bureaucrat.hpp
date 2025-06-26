@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/26 23:16:58 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/26 23:28:20 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 class Bureaucrat
 {
     public  :
-        Bureaucrat();
+        Bureaucrat() = delete;
+        Bureaucrat(const std::string name, unsigned int grade);
         ~Bureaucrat();
         Bureaucrat(const Bureaucrat& other);
         Bureaucrat& operator=(const Bureaucrat& other);
