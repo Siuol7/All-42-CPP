@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+         #
+#    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 16:16:05 by caonguye          #+#    #+#              #
-#    Updated: 2025/06/13 10:35:13 by caonguye         ###   ########.fr        #
+#    Updated: 2025/06/27 00:05:38 by siuol            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= CPP3_01
+NAME 	= 2
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf

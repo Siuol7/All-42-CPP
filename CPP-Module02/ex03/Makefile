@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+         #
+#    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 17:56:10 by caonguye          #+#    #+#              #
-#    Updated: 2025/05/19 17:56:40 by caonguye         ###   ########.fr        #
+#    Updated: 2025/06/27 00:05:22 by siuol            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= OCF3
+NAME 	= 3
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
