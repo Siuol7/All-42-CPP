@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 18:31:41 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/16 16:43:20 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/06/27 00:10:43 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() : _type("Undefined Animal")
-{std::cout << "Animal: Default constructor called" << std::endl;}
+{LOG_GREEN("Animal: Default constructor called");}
 
-Animal::~Animal(){std::cout << "Animal: Default destructor called" << std::endl;}
+Animal::~Animal(){LOG_GREEN("Animal: Default destructor called");}
 
 Animal::Animal(const Animal& other)
 {
-	std::cout << "Animal : Copy constructor called" << std::endl;
+	LOG_GREEN("Animal : Copy constructor called");
 	*this = other;
 }
 
 Animal& Animal::operator=(const Animal& other)
 {
-	std::cout << "Animal : Copy assignment called" << std::endl;
+	LOG_GREEN("Animal : Copy assignment called");
 	if (this != &other)
 		this->_type = other._type;
 	return *this;

@@ -6,14 +6,13 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 10:29:40 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/18 10:58:15 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 00:17:18 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include "system.hpp"
 
 class Brain
 {
