@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:43:33 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:58:28 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name)
 {
     LOG_GREEN("Bureaucrat : Default constructor called");
     if  (grade < 1)
-        throw GradeTooHighException("Grade : Too high");
+        throw GradeTooHighException("Grade " + this->_name + " : Too high");
     else if (grade >150)
-        throw GradeTooLowException("Grade : Too low");
+        throw GradeTooLowException("Grade " + this->_name + " : Too low");
     else
         this->_grade = grade;
 }
@@ -49,7 +49,7 @@ void Bureaucrat::gradeIncrement()
 {
     LOG_GREEN("Grade : Increase grade");
     if  (this->_grade - 1 < 1)
-        throw GradeTooHighException("Grade : Too high");
+        throw GradeTooHighException("Grade " + this->_name + " : Too high");
     else
         this->_grade--;
 }
@@ -58,7 +58,7 @@ void Bureaucrat::gradeDecrement()
 {
     LOG_GREEN("Grade : Decrease grade");
     if  (this->_grade + 1 > 150)
-        throw GradeTooLowException("Grade : Too low");
+        throw GradeTooLowException("Grade " + this->_name + " : Too low");
     else
         this->_grade++;
 }

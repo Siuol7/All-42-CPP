@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:49:22 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:56:29 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 int main(void)
 {
-    Bureaucrat  A("A" , 2);
-    Bureaucrat  B("B", 149);
-    Bureaucrat  C("C", 0);
-    Bureaucrat  D("D", 151);
-
     try
     {
-        A.getName();
-        A.getGrade();
+        Bureaucrat  A("A" , 2);
+        std::cout << "Bureaucrat " << A.getName();
+        std::cout << " with " << A.getGrade() << std::endl;
         A.gradeIncrement();
-        A.getGrade();
+        std::cout << "Bureaucrat " << A.getName();
+        std::cout << " with " << A.getGrade() << std::endl;
         A.gradeIncrement();
-        A.getGrade();
+        std::cout << "Bureaucrat " << A.getName();
+        std::cout << " with " << A.getGrade() << std::endl;
         A.gradeIncrement();
-        A.getGrade();
+        std::cout << "Bureaucrat " << A.getName();
+        std::cout << " with " << A.getGrade() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -37,14 +36,18 @@ int main(void)
     
     try
     {
-        B.getName();
-        B.getGrade();
-        B.gradeIncrement();
-        B.getGrade();
-        B.gradeIncrement();
-        B.getGrade();
-        B.gradeIncrement();
-        B.getGrade();
+        Bureaucrat   B("B", 149);
+        std::cout << "Bureaucrat " << B.getName();
+        std::cout << " with " << B.getGrade() << std::endl;
+        B.gradeDecrement();
+        std::cout << "Bureaucrat " << B.getName();
+        std::cout << " with " << B.getGrade() << std::endl;
+        B.gradeDecrement();
+        std::cout << "Bureaucrat " << B.getName();
+        std::cout << " with " << B.getGrade() << std::endl;
+        B.gradeDecrement();
+        std::cout << "Bureaucrat " << B.getName();
+        std::cout << " with " << B.getGrade() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -53,14 +56,18 @@ int main(void)
 
     try
     {
-        C.getName();
-        C.getGrade();
+        Bureaucrat   C("C", 0);
+        std::cout << "Bureaucrat " << C.getName();
+        std::cout << " with " << C.getGrade() << std::endl;
         C.gradeIncrement();
-        C.getGrade();
+        std::cout << "Bureaucrat " << C.getName();
+        std::cout << " with " << C.getGrade() << std::endl;
         C.gradeIncrement();
-        C.getGrade();
+        std::cout << "Bureaucrat " << C.getName();
+        std::cout << " with " << C.getGrade() << std::endl;
         C.gradeIncrement();
-        C.getGrade();
+        std::cout << "Bureaucrat " << C.getName();
+        std::cout << " with " << C.getGrade() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -69,14 +76,18 @@ int main(void)
 
     try
     {
-        D.getName();
-        D.getGrade();
+        Bureaucrat   D("D", 151);
+        std::cout << "Bureaucrat " << D.getName();
+        std::cout << " with " << D.getGrade() << std::endl;
         D.gradeIncrement();
-        D.getGrade();
+        std::cout << "Bureaucrat " << D.getName();
+        std::cout << " with " << D.getGrade() << std::endl;
         D.gradeIncrement();
-        D.getGrade();
+        std::cout << "Bureaucrat " << D.getName();
+        std::cout << " with " << D.getGrade() << std::endl;
         D.gradeIncrement();
-        D.getGrade();
+        std::cout << "Bureaucrat " << D.getName();
+        std::cout << " with " << D.getGrade() << std::endl;
     }
     catch(const std::exception& e)
     {
