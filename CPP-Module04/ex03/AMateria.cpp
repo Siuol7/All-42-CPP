@@ -6,29 +6,29 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:58:03 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 23:24:30 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 08:58:16 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria() : _type("Undefined")
-{std::cout << "AMateria : Default constructor called" << std::endl;}
+{LOG_GREEN("AMateria : Default constructor called");}
 
 AMateria::AMateria(std::string const &type) : _type(type)
-{std::cout << "AMateria : Constructor called" << std::endl;}
+{LOG_GREEN("AMateria : Constructor called");}
 
-AMateria::~AMateria(){std::cout << "Default destructor called" << std::endl;}
+AMateria::~AMateria(){LOG_GREEN("Default destructor called");}
 
 AMateria::AMateria(const AMateria& other)
 {
-    std::cout << "AMateria : Copy constructor called" << std::endl;
+    LOG_GREEN("AMateria : Copy constructor called");
     *this = other;
 }
 
 AMateria& AMateria::operator=(const AMateria& other)
 {
-    std::cout << "AMateria : Copy assignment called" << std::endl;
+    LOG_GREEN("AMateria : Copy assignment called");
     if (this != &other)
         this->_type = other._type;
     return *this;
@@ -36,8 +36,8 @@ AMateria& AMateria::operator=(const AMateria& other)
 
 std::string const& AMateria::getType() const
 {
-    std::cout << "AMateria : getType() called" << std::endl;
+    LOG_GREEN("AMateria : getType() called");
     return this->_type;
 }
 
-void    AMateria::use(ICharacter& target){std::cout << "AMateria : use() called" << std::endl;} 
+void    AMateria::use(ICharacter& target){LOG_GREEN("AMateria : use() called");} 

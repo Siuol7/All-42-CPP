@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 01:15:17 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 22:52:08 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:03:42 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Ice::Ice()
 {
-    std::cout << "Ice : Default constructor called" << std::endl;
+    LOG_GREEN("Ice : Default constructor called");
     this->_type = "Ice";
 }
 
 Ice::Ice(std::string const& type) : AMateria(type)
 {
-    std::cout << "Ice : Constructor called" << std::endl;
+    LOG_GREEN("Ice : Constructor called");
     this->_type = type;
 }
 
-Ice::~Ice(){std::cout << "Ice : Default destructor called" << std::endl;}
+Ice::~Ice(){LOG_GREEN("Ice : Default destructor called");}
 
-Ice::Ice(const Ice& other) : AMateria(other){std::cout << "Ice : Copy constructor called" << std::endl;}
+Ice::Ice(const Ice& other) : AMateria(other){LOG_GREEN("Ice : Copy constructor called");}
 
 Ice&   Ice::operator=(const Ice& other)
 {
-    std::cout << "Ice : Copy assignment called" << std::endl;
+    LOG_GREEN("Ice : Copy assignment called");
     if (this != &other)
         AMateria::operator=(other);
     return *this;
@@ -38,12 +38,12 @@ Ice&   Ice::operator=(const Ice& other)
 
 Ice*   Ice::clone() const
 {
-    std::cout << "Ice : clone() called" << std::endl;
+    LOG_GREEN("Ice : clone() called");
     return (new Ice(*this));
 }
 
 void    Ice::use(ICharacter& target)
 {
-    std::cout << "Ice : use() called" << std::endl;
+    LOG_GREEN("Ice : use() called");
     std::cout << "* shoots an icebolt at " << target.getName() << " *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:02:05 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 23:19:03 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:05:51 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 MateriaSource::MateriaSource()
 {
-    std::cout << "MateriaSource : Default constructor called" << std::endl;
+    LOG_GREEN("MateriaSource : Default constructor called");
     for (int i = 0; i < 4; i++)
         this->_inventory[i] = nullptr;
 }
 
 MateriaSource::~MateriaSource()
 {
-    std::cout << "MateriaSource : Default destructor called" << std::endl;
+    LOG_GREEN("MateriaSource : Default destructor called");
     for (int i = 0; i < 4; i++)
         delete this->_inventory[i];
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other)
 {
-    std::cout << "MateriaSource : Copy constructor called" << std::endl;
+    LOG_GREEN("MateriaSource : Copy constructor called");
     for (int i = 0; i < 4; i++)
     {
         if (other._inventory[i])
@@ -40,7 +40,7 @@ MateriaSource::MateriaSource(const MateriaSource& other)
 
 MateriaSource&  MateriaSource::operator=(const MateriaSource& other)
 {
-    std::cout << "MateriaSource : Copy assignment called" << std::endl;
+    LOG_GREEN("MateriaSource : Copy assignment called");
     if (this != &other)
     {
         for (int i = 0; i < 4; i++)
@@ -56,7 +56,7 @@ MateriaSource&  MateriaSource::operator=(const MateriaSource& other)
 
 void    MateriaSource::learnMateria(AMateria* src)
 {
-    std::cout << "MateriaSource : learnMateria() called" << std::endl;
+    LOG_GREEN("MateriaSource : learnMateria() called");
     if (src == nullptr)
         return ;
     for (int i = 0; i < 4; i++)
@@ -67,14 +67,14 @@ void    MateriaSource::learnMateria(AMateria* src)
             return ;
         }
     }
-    std::cout << "MateriaSource : Inventory is full" << std::endl;
+    LOG_RED("MateriaSource : Inventory is full");
     delete src;
     src = nullptr;
 }
 
 AMateria*   MateriaSource::createMateria(std::string const& type)
 {
-    std::cout << "MateriaSource : createMateria() called" << std::endl;
+    LOG_GREEN("MateriaSource : createMateria() called");
     for (int i = 0; i < 4; i++)
     {
         if (this->_inventory[i] != nullptr && this->_inventory[i]->getType() == type)

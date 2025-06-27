@@ -6,14 +6,13 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 01:16:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 01:24:40 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 08:55:38 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include "system.hpp"
 #include "AMateria.hpp"
 
 class IMateriaSource

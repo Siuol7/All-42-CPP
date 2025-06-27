@@ -6,14 +6,13 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:58:21 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 00:29:34 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 08:55:18 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include "system.hpp"
 #include "ICharacter.hpp"
 
 class AMateria
