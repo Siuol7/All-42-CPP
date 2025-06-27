@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/26 23:28:20 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:27:42 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,22 @@ class Bureaucrat
 
         class GradeTooHighException : public std::exception
         {
-            GradeTooHighException(std::string err);
-            virtual const char* what() const noexcept override;
+            public :
+                GradeTooHighException(const std::string& err);
+                virtual const char* what() const noexcept override;
+
+            private :
+                const std::string _err;
         };
         
         class GradeTooLowException  : public std::exception
         {
-            GradeTooLowException(std::string err);
-            virtual const char* what() const noexcept override;
+            public :
+                GradeTooLowException(const std::string& err);
+                virtual const char* what() const noexcept override;
+
+            private :
+                const std::string _err;
         };
 
         const std::string&   getName() const;

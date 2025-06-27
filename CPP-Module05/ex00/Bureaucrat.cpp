@@ -6,15 +6,30 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/26 23:35:38 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:43:33 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name),
-                                                                    _grade(grade)
-{LOG_GREEN("Bureaucrat : Default constructor called");}
+Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
+
+const char* Bureaucrat::GradeTooHighException::what() const noexcept{return this->_err.c_str();}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string& err) : _err(err){}
+
+const char* Bureaucrat::GradeTooLowException::what() const noexcept{return this->_err.c_str();}
+
+Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name)
+{
+    LOG_GREEN("Bureaucrat : Default constructor called");
+    if  (grade < 1)
+        throw GradeTooHighException("Grade : Too high");
+    else if (grade >150)
+        throw GradeTooLowException("Grade : Too low");
+    else
+        this->_grade = grade;
+}
 
 Bureaucrat::~Bureaucrat(){LOG_GREEN("Bureaucrat : Default destructor called");}
 
@@ -29,3 +44,25 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
         this->_grade = other._grade;
     return *this;
 }
+
+void Bureaucrat::gradeIncrement()
+{
+    LOG_GREEN("Grade : Increase grade");
+    if  (this->_grade - 1 < 1)
+        throw GradeTooHighException("Grade : Too high");
+    else
+        this->_grade--;
+}
+
+void Bureaucrat::gradeDecrement()
+{
+    LOG_GREEN("Grade : Decrease grade");
+    if  (this->_grade + 1 > 150)
+        throw GradeTooLowException("Grade : Too low");
+    else
+        this->_grade++;
+}
+
+const std::string& Bureaucrat::getName() const{return this->_name;}
+
+unsigned int Bureaucrat::getGrade() const{return this->_grade;}
