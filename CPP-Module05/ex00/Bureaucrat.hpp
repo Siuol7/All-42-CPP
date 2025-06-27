@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:27:42 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/27 09:46:53 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
-#define LOG_RED(msg)   std::cout << "\033[31m" << msg << "\033[0m" << std::endl
+#define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
 
 class Bureaucrat
 {
