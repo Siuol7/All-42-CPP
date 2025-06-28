@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 05:29:34 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/28 22:21:36 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ class Form
 {
     public  :
         //OCF
-        Form();
+        Form() = delete;
+        Form(const std::string& name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
         ~Form();
         Form(const Form& other);
         Form&  operator=(const Form& other);
@@ -54,7 +55,7 @@ class Form
         
     private :
         const std::string   _name;
-        bool                _signed;
+        bool                _iSigned;
         const unsigned int  _signGrade;
         const unsigned int  _excGrade; 
 };
