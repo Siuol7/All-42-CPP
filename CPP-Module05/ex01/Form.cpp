@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 22:10:57 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 23:09:43 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 01:14:47 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,20 @@ Form::Form(const std::string& name, bool iSigned,
 
 Form::~Form(){LOG_GREEN("Form : Default destructor called");}
 
-Form::Form(const Form& other) : _
+Form::Form(const Form& other) : _name(other._name), _iSigned(other._iSigned),
+                                _signGrade(other._signGrade), _excGrade(other._excGrade)
 {LOG_GREEN("Form : Copy constructor called");}
+
+Form::GradeTooLowException::GradeTooLowException(const std::string& err) : _err(err){}
+
+const char* Form::GradeTooLowException::what() const noexcept
+{
+    return this->_err.c_str();
+}
+
+Form::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
+
+const char* Form::GradeTooHighException::what() const noexcept
+{
+    return this->_err.c_str();
+}

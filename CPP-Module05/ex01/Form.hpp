@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 22:21:36 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 00:12:49 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form
         Form(const std::string& name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
         ~Form();
         Form(const Form& other);
-        Form&  operator=(const Form& other);
+        Form&  operator=(const Form& other) = delete;
 
         //Exception
         class GradeTooLowException : public std::exception
