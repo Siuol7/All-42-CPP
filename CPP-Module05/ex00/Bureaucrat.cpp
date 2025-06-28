@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:58:28 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/28 05:00:17 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,9 @@ void Bureaucrat::gradeDecrement()
 const std::string& Bureaucrat::getName() const{return this->_name;}
 
 unsigned int Bureaucrat::getGrade() const{return this->_grade;}
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
+{
+    std::cout << src.getName() << ", bureaucrat grade " << src.getGrade() << ".";
+    return out;
+}

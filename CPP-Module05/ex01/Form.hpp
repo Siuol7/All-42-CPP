@@ -6,26 +6,24 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 04:43:50 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/28 05:29:34 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
-
-#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
-#define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
+#include "Bureaucrat.hpp"
 
 class Form
 {
     public  :
+        //OCF
         Form();
         ~Form();
         Form(const Form& other);
         Form&  operator=(const Form& other);
 
+        //Exception
         class GradeTooLowException : public std::exception
         {
             public  :
@@ -46,7 +44,13 @@ class Form
                 const std::string   _err;
         };
         
-        
+        //Getters
+        const std::string&  getName() const;
+        const bool          getSigned() const;
+        const unsigned int  getSGrade() const;
+        const unsigned int  getEGrade() const;
+
+        void    beSigned(const Bureaucrat& src);
         
     private :
         const std::string   _name;
@@ -54,3 +58,5 @@ class Form
         const unsigned int  _signGrade;
         const unsigned int  _excGrade; 
 };
+
+std::ostream& operator<<(std::ostream &out, const Form& src);

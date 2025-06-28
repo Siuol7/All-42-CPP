@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:46:53 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/28 04:50:00 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,5 @@ class Bureaucrat
         const std::string _name;
         unsigned int _grade;
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& src);
