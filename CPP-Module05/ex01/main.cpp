@@ -6,18 +6,21 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 05:02:08 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 12:49:40 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
     try
     {
         Bureaucrat  A("A" , 2);
+        Form        FA("FA", 0, 150, 151);
         std::cout << A << std::endl;
+        std::cout << FA << std::endl;
         A.gradeIncrement();
         std::cout << A << std::endl;
         A.gradeIncrement();
