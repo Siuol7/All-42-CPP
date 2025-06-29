@@ -6,11 +6,12 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 05:00:17 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 11:37:41 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
 
@@ -66,6 +67,11 @@ void Bureaucrat::gradeDecrement()
 const std::string& Bureaucrat::getName() const{return this->_name;}
 
 unsigned int Bureaucrat::getGrade() const{return this->_grade;}
+
+void    Bureaucrat::signForm(Form& form) const
+{
+    
+}
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
 {

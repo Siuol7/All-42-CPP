@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 00:12:49 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 11:18:25 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ class Form
         
         //Getters
         const std::string&  getName() const;
-        const bool          getSigned() const;
-        const unsigned int  getSGrade() const;
-        const unsigned int  getEGrade() const;
+        bool          getSigned() const;
+        unsigned int  getSGrade() const;
+        unsigned int  getEGrade() const;
 
         void    beSigned(const Bureaucrat& src);
         

@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/28 04:50:00 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 11:37:03 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ class Bureaucrat
         unsigned int        getGrade() const;
         void                gradeIncrement();
         void                gradeDecrement();
+        
+        void    signForm(Form& form) const;
         
     private :
         const std::string _name;
