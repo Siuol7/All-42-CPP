@@ -6,12 +6,12 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 19:03:18 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/30 00:22:51 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main(void)
 {

@@ -1,77 +1,77 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 22:10:57 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 19:02:57 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/30 00:25:38 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 static unsigned int gradeCheck(unsigned int grade, const std::string& type)
 {
     if (grade < 1)
-        throw Form::GradeTooLowException(type + "Grade : Too low");
+        throw AForm::GradeTooLowException(type + "Grade : Too low");
     else if (grade > 150)
-        throw Form::GradeTooHighException(type + "Grade : Too high");
+        throw AForm::GradeTooHighException(type + "Grade : Too high");
     return grade;
 }
 
 //OCF
-Form::Form(const std::string& name, bool iSigned,
+AForm::AForm(const std::string& name, bool iSigned,
             unsigned int signGrade, unsigned int excGrade) :
             _name(name), _iSigned(iSigned)
 {
-    LOG_GREEN("Form : Default constructor called");
-    this->_signGrade = gradeCheck(signGrade, "Form " + name + " : Required to Sign");
-    this->_excGrade = gradeCheck(excGrade, "Form " + name + " : Required to Execute");
+    LOG_GREEN("AForm : Default constructor called");
+    this->_signGrade = gradeCheck(signGrade, "AForm " + name + " : Required to Sign");
+    this->_excGrade = gradeCheck(excGrade, "AForm " + name + " : Required to Execute");
 }
 
-Form::~Form(){LOG_GREEN("Form : Default destructor called");}
+AForm::~AForm(){LOG_GREEN("AForm : Default destructor called");}
 
-Form::Form(const Form& other) : _name(other._name), _iSigned(other._iSigned),
+AForm::AForm(const AForm& other) : _name(other._name), _iSigned(other._iSigned),
                                 _signGrade(other._signGrade), _excGrade(other._excGrade)
-{LOG_GREEN("Form : Copy constructor called");}
+{LOG_GREEN("AForm : Copy constructor called");}
 
 //Exception
-Form::GradeTooLowException::GradeTooLowException(const std::string& err) : _err(err){}
+AForm::GradeTooLowException::GradeTooLowException(const std::string& err) : _err(err){}
 
-const char* Form::GradeTooLowException::what() const noexcept
+const char* AForm::GradeTooLowException::what() const noexcept
 {
     return this->_err.c_str();
 }
 
-Form::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
+AForm::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
 
-const char* Form::GradeTooHighException::what() const noexcept
+const char* AForm::GradeTooHighException::what() const noexcept
 {
     return this->_err.c_str();
 }
 
 //Getters
-const std::string&  Form::getName() const{return this->_name;}
+const std::string&  AForm::getName() const{return this->_name;}
 
-bool    Form::getSigned() const{return this->_iSigned;}
+bool    AForm::getSigned() const{return this->_iSigned;}
 
-unsigned int    Form::getSGrade() const{return this->_signGrade;}
+unsigned int    AForm::getSGrade() const{return this->_signGrade;}
 
-unsigned int    Form::getEGrade() const{return this->_excGrade;}
+unsigned int    AForm::getEGrade() const{return this->_excGrade;}
 
-void    Form::beSigned(const Bureaucrat& src)
+void    AForm::beSigned(const Bureaucrat& src)
 {
     if (src.getGrade() > this->_signGrade)
-        throw   Form::GradeTooLowException(src.getName() + " couldn't sign "
+        throw   AForm::GradeTooLowException(src.getName() + " couldn't sign "
                                 + this->_name + " because " + "Required to Sign Grade : Too low");
     this->_iSigned = true;
 }
 
-std::ostream& operator<<(std::ostream& out, const Form& src)
+std::ostream& operator<<(std::ostream& out, const AForm& src)
 {
-    std::cout << "The " <<  src.getName() << " form is "
+    std::cout << "The " <<  src.getName() << " AForm is "
                 << (src.getSigned() ? "signed " : "unsigned ")
                 << "with required to sign grade : " << src.getSGrade()
                 << " and required to execute grade : " << src.getEGrade()

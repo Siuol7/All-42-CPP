@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 17:57:11 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/30 00:24:06 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class Form
+class AForm
 {
     public  :
         //OCF
-        Form() = delete;
-        Form(const std::string& name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
-        ~Form();
-        Form(const Form& other);
-        Form&  operator=(const Form& other) = delete;
+        AForm() = delete;
+        AForm(const std::string& name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
+        ~AForm();
+        AForm(const Form& other);
+        AForm&  operator=(const AForm& other) = delete;
 
         //Exception
         class GradeTooLowException : public std::exception
