@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 22:10:57 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 12:46:48 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 19:02:57 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ Form::Form(const std::string& name, bool iSigned,
             _name(name), _iSigned(iSigned)
 {
     LOG_GREEN("Form : Default constructor called");
-    this->_signGrade = gradeCheck(signGrade, "Required to Sign");
-    this->_excGrade = gradeCheck(excGrade, "Required to Execute");
+    this->_signGrade = gradeCheck(signGrade, "Form " + name + " : Required to Sign");
+    this->_excGrade = gradeCheck(excGrade, "Form " + name + " : Required to Execute");
 }
 
 Form::~Form(){LOG_GREEN("Form : Default destructor called");}
@@ -64,7 +64,7 @@ unsigned int    Form::getEGrade() const{return this->_excGrade;}
 void    Form::beSigned(const Bureaucrat& src)
 {
     if (src.getGrade() > this->_signGrade)
-        throw   Form::GradeTooLowException(src.getName() + "couldn't sign "
+        throw   Form::GradeTooLowException(src.getName() + " couldn't sign "
                                 + this->_name + " because " + "Required to Sign Grade : Too low");
     this->_iSigned = true;
 }
@@ -74,6 +74,7 @@ std::ostream& operator<<(std::ostream& out, const Form& src)
     std::cout << "The " <<  src.getName() << " form is "
                 << (src.getSigned() ? "signed " : "unsigned ")
                 << "with required to sign grade : " << src.getSGrade()
-                << " with required to execute grade : " << src.getEGrade()
+                << " and required to execute grade : " << src.getEGrade()
                 << std::endl; 
+    return out;
 }

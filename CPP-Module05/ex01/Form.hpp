@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 11:49:10 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 17:57:11 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
     public  :

@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 12:30:09 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 19:02:35 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void    Bureaucrat::signForm(Form& form) const
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what();
+        std::cerr << e.what() << std::endl;
     }
     
 }
