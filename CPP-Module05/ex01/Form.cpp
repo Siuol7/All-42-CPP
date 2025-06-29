@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 22:10:57 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 12:35:08 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/29 12:46:48 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,13 @@ void    Form::beSigned(const Bureaucrat& src)
         throw   Form::GradeTooLowException(src.getName() + "couldn't sign "
                                 + this->_name + " because " + "Required to Sign Grade : Too low");
     this->_iSigned = true;
+}
+
+std::ostream& operator<<(std::ostream& out, const Form& src)
+{
+    std::cout << "The " <<  src.getName() << " form is "
+                << (src.getSigned() ? "signed " : "unsigned ")
+                << "with required to sign grade : " << src.getSGrade()
+                << " with required to execute grade : " << src.getEGrade()
+                << std::endl; 
 }
