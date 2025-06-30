@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:37 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 11:27:34 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 01:31:27 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class RobotomyRequestForm : public AForm
 {
     public  :
-        RobotomyRequestForm();
-        RobotomyRequestForm(std::string name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
+        RobotomyRequestForm() = delete;
+        explicit RobotomyRequestForm(std::string target);
         virtual ~RobotomyRequestForm() override;
         RobotomyRequestForm(const RobotomyRequestForm& other);
-        RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+        RobotomyRequestForm& operator=(const RobotomyRequestForm& other) = delete;
 
         virtual void    execute(const Bureaucrat& executor) const override;
 

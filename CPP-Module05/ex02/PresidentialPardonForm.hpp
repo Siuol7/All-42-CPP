@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:59 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 11:27:58 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 01:31:16 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class PresidentialPardonForm : public AForm
 {
     public  :
-        PresidentialPardonForm();
-        PresidentialPardonForm(std::string name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
+        PresidentialPardonForm() = delete;
+        PresidentialPardonForm(std::string target);
         virtual ~PresidentialPardonForm() override;
         PresidentialPardonForm(const PresidentialPardonForm& other);
-        PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& other) = delete;
 
         virtual void    execute(const Bureaucrat& executor) const override;
 

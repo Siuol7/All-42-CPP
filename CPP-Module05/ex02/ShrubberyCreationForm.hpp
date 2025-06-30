@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:17 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 11:26:49 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 01:22:18 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class ShrubberyCreationForm : public AForm
 {
     public  :
-        ShrubberyCreationForm();
-        ShrubberyCreationForm(std::string name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
+        ShrubberyCreationForm() = delete;
+        explicit ShrubberyCreationForm(std::string target);
         virtual ~ShrubberyCreationForm() override;
         ShrubberyCreationForm(const ShrubberyCreationForm& other);
-        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other) = delete;
 
         virtual void    execute(const Bureaucrat& executor) const override;
 
