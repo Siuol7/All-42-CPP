@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 00:24:06 by siuol            ###   ########.fr       */
+/*   Updated: 2025/06/30 10:57:39 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class AForm
         //OCF
         AForm() = delete;
         AForm(const std::string& name, bool iSigned, unsigned int signGrade, unsigned int excGrade);
-        ~AForm();
-        AForm(const Form& other);
+        virtual ~AForm();
+        AForm(const AForm& other);
         AForm&  operator=(const AForm& other) = delete;
 
         //Exception
@@ -53,6 +53,7 @@ class AForm
         unsigned int  getEGrade() const;
 
         void    beSigned(const Bureaucrat& src);
+        virtual void    execute(const Bureaucrat& executor) const = 0; 
         
     private :
         const std::string   _name;
