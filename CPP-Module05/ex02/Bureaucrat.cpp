@@ -6,13 +6,17 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 18:54:38 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:42:24 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
 
+//OCF
 Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
 
 const char* Bureaucrat::GradeTooHighException::what() const noexcept{return this->_err.c_str();}
@@ -64,16 +68,27 @@ void Bureaucrat::gradeDecrement()
         this->_grade++;
 }
 
+
+//Getter
 const std::string& Bureaucrat::getName() const{return this->_name;}
 
 unsigned int Bureaucrat::getGrade() const{return this->_grade;}
+
+
+//Execution
+static  std::string formType(const AForm& form)
+{
+    if (const ShrubberyCreationForm* scf = dynamic_cast<const ShrubberyCreationForm*>(&form))
+        return ("Shrub")
+        
+}
 
 void    Bureaucrat::signForm(AForm& form) const
 {
     try
     {
         form.beSigned(*this);
-        std::cout << this->_name << " signed " << form.getName() << std::endl;
+        std::cout << this->_name << " signed " << form.getTarget() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -87,7 +102,7 @@ void    Bureaucrat::executeForm(const AForm& form) const
     try
     {
         form.execute(*this);
-        std::cout << this->_name << " executed " << form.getName() << std::endl;
+        std::cout << this->_name << " executed " << form.getTarget() << std::endl;
     }
     catch (std::exception& e)
     {

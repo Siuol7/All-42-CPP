@@ -6,13 +6,13 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:43:06 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 16:19:09 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:21:40 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PPF.default", 0, 25, 5),
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 0, 25, 5),
                                                                     _target(target)
 {LOG_GREEN("PresidentialPardonForm : Constructor called");}
 

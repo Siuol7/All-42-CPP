@@ -6,13 +6,13 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:24 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 16:19:04 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:20:57 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("SCF.default", 0, 145, 137),
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 0, 145, 137),
                                                                     _target(target)
 {LOG_GREEN("ShrubberyCreationForm : Constructor called");}
 
