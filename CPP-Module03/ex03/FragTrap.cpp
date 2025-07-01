@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 10:34:20 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/26 23:54:21 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 11:00:25 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	this->_name = "Undefined FragTrap";
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
@@ -23,7 +22,6 @@ FragTrap::FragTrap() : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name.empty() ? "Undefined FragTrap" : name;
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;

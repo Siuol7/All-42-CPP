@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 16:19:02 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/26 23:54:36 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 11:00:33 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 ScravTrap::ScravTrap() : ClapTrap()
 {
-	this->_name = "Undefined ScravTrap";
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
@@ -23,7 +22,6 @@ ScravTrap::ScravTrap() : ClapTrap()
 
 ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name.empty() ? "Undefined ScravTrap" : name;
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;

@@ -6,7 +6,7 @@
 #    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 16:16:05 by caonguye          #+#    #+#              #
-#    Updated: 2025/06/27 00:05:42 by siuol            ###   ########.fr        #
+#    Updated: 2025/07/01 10:24:05 by siuol            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME 	= 3
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
-SRCS	= ClapTrap.cpp	\
-		  ScravTrap.cpp	\
-		  FragTrap.cpp	\
+SRCS	= ClapTrap.cpp		\
+		  ScravTrap.cpp		\
+		  FragTrap.cpp		\
+		  DiamondTrap.cpp	\
 		  main.cpp
 OBJS	= ${SRCS:.cpp=.o}
 
