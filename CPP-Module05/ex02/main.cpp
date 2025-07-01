@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 00:22:51 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 13:40:23 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(void)
     try
     {
         Bureaucrat  A("A" , 2);
-        Form        FA("FA", 0, 1, 150);
+        AForm        AF1("FA", 0, 1, 150);
         std::cout << A << std::endl;
-        std::cout << FA;
+        std::cout << AF1;
         A.signForm(FA);
         A.gradeIncrement();
         std::cout << A << std::endl;
