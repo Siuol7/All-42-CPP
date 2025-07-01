@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 00:22:45 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 14:05:53 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
             private :
                 const std::string _err;
         };
-        
+
         class GradeTooLowException  : public std::exception
         {
             public :
@@ -53,9 +53,9 @@ class Bureaucrat
         unsigned int        getGrade() const;
         void                gradeIncrement();
         void                gradeDecrement();
-        
-        void    signForm(Form& form) const;
-        
+
+        void    signForm(AForm& form) const;
+
     private :
         const std::string _name;
         unsigned int _grade;

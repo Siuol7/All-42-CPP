@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/30 00:22:47 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 14:05:27 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,18 @@ const std::string& Bureaucrat::getName() const{return this->_name;}
 
 unsigned int Bureaucrat::getGrade() const{return this->_grade;}
 
-void    Bureaucrat::signForm(Form& form) const
+void    Bureaucrat::signForm(AForm& AForm) const
 {
     try
     {
-        form.beSigned(*this);
-        std::cout << this->_name << " signed " << form.getName() << std::endl;
+        AForm.beSigned(*this);
+        std::cout << this->_name << " signed " << AForm.getName() << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-    
+
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
