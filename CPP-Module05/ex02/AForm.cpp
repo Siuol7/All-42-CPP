@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 22:10:57 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 19:03:43 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/02 00:19:47 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	AForm::execute(const Bureaucrat& executor) const
 	if (executor.getGrade() > this->_excGrade)
 		throw GradeTooLowException(executor.getName() + " couldn't execute "
                                 + this->_name + " because " + "Required to Execute Grade : Too low");
-    this->execute(executor);
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm& src)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 19:42:24 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 23:42:22 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
 
-//OCF
+//Excption
 Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string& err) : _err(err){}
 
 const char* Bureaucrat::GradeTooHighException::what() const noexcept{return this->_err.c_str();}
@@ -25,6 +25,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string& err) :
 
 const char* Bureaucrat::GradeTooLowException::what() const noexcept{return this->_err.c_str();}
 
+//OCF
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name)
 {
     LOG_GREEN("Bureaucrat : Default constructor called");
@@ -79,8 +80,12 @@ unsigned int Bureaucrat::getGrade() const{return this->_grade;}
 static  std::string formType(const AForm& form)
 {
     if (const ShrubberyCreationForm* scf = dynamic_cast<const ShrubberyCreationForm*>(&form))
-        return ("Shrub")
-        
+        return ("ShrubberyCreationForm -" + scf->getTarget());
+    if (const RobotomyRequestForm* rbt = dynamic_cast<const RobotomyRequestForm*>(&form))
+        return ("RobotomyRequestForm - " + rbt->getTarget());
+    if (const PresidentialPardonForm* ppr = dynamic_cast<const PresidentialPardonForm*>(&form))
+        return ("PresidentialPardonForm - " + ppr->getTarget());
+    return "UndefinedForm"; 
 }
 
 void    Bureaucrat::signForm(AForm& form) const
@@ -88,13 +93,12 @@ void    Bureaucrat::signForm(AForm& form) const
     try
     {
         form.beSigned(*this);
-        std::cout << this->_name << " signed " << form.getTarget() << std::endl;
+        std::cout << this->getName() << " signed " << formType(form) << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-
 }
 
 void    Bureaucrat::executeForm(const AForm& form) const
@@ -102,12 +106,12 @@ void    Bureaucrat::executeForm(const AForm& form) const
     try
     {
         form.execute(*this);
-        std::cout << this->_name << " executed " << form.getTarget() << std::endl;
+        std::cout << this->_name << " executed " << formType(form) << std::endl;
     }
     catch (std::exception& e)
     {
         LOG_RED(e.what());
-    }
+    } 
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
