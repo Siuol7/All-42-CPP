@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:24 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 01:22:12 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 01:50:27 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){LOG_GREEN("ShrubberyCreationForm
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other),
                                                                                     _target(other._target)
 {LOG_GREEN("ShrubberyCreationForm : Copy constructor called");}
+
+void    ShrubberyCreationForm::execute(const Bureaucrat& executor) const
+{
+    AForm::execute(executor);
+}
 
