@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 20:05:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 14:05:53 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 19:01:01 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
 
-class Form;
+class AForm;
 class Bureaucrat
 {
     public  :
@@ -55,6 +55,7 @@ class Bureaucrat
         void                gradeDecrement();
 
         void    signForm(AForm& form) const;
+        void    executeForm(AForm const& form) const;
 
     private :
         const std::string _name;

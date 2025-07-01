@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 17:08:34 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 18:54:38 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,31 @@ const std::string& Bureaucrat::getName() const{return this->_name;}
 
 unsigned int Bureaucrat::getGrade() const{return this->_grade;}
 
-void    Bureaucrat::signForm(AForm& AForm) const
+void    Bureaucrat::signForm(AForm& form) const
 {
     try
     {
-        AForm.beSigned(*this);
-        std::cout << this->_name << " signed " << AForm.getName() << std::endl;
+        form.beSigned(*this);
+        std::cout << this->_name << " signed " << form.getName() << std::endl;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
 
+}
+
+void    Bureaucrat::executeForm(const AForm& form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception& e)
+    {
+        LOG_RED(e.what());
+    }
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
