@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,14 +16,14 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScravTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
 	public:
-		ScravTrap();
-		ScravTrap(std::string name);
-		~ScravTrap() override;
-		ScravTrap(const ScravTrap& other);
-		ScravTrap& operator=(const ScravTrap& other);
+		ScavTrap();
+		ScavTrap(std::string name);
+		~ScavTrap() override;
+		ScavTrap(const ScavTrap& other);
+		ScavTrap& operator=(const ScavTrap& other);
 
 		void	attack(const std::string& target) override;
 		void	guardGate();

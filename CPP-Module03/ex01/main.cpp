@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:14:04 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/13 10:45:19 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:15:02 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ScravTrap	st1;
+	ScavTrap	st1;
 	ClapTrap	ct2("A");
 	ClapTrap	ct3("B");
-	ScravTrap	st2("C");
-	ScravTrap 	st3(st2);
+	ScavTrap	st2("C");
+	ScavTrap 	st3(st2);
 
 	std::cout << std::endl << "First match" << std::endl;
 

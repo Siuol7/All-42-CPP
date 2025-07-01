@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 10:03:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/01 10:53:59 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:15:02 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScravTrap()
+DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
 {
 	LOG_GREEN("DiamondTrap : Default constructor called");
 	this->_name = "Undefined DiamondTrap";
 	ClapTrap::_name = "Undefined DM _clap_name";
 	this->_hit_points =	FragTrap::_hit_points;
-	this->_energy_points = ScravTrap::_energy_points;
+	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_damage =	FragTrap::_attack_damage;
 };
 
 DiamondTrap::DiamondTrap(const std::string name) :	ClapTrap(name + "_clap_name"),
 													FragTrap(name),
-													ScravTrap(name),
+													ScavTrap(name),
 													_name(name)
 {
 	   std::cout << "DEBUG 1 - ClapTrap name after member init: " 
               << this->ClapTrap::_name << std::endl;
 	LOG_GREEN("DiamondTrap : Constructor called");
 	this->_hit_points =	FragTrap::_hit_points;
-	this->_energy_points = ScravTrap::_energy_points;
+	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_damage =	FragTrap::_attack_damage;
 	std::cout << "DEBUG 2 - ClapTrap name after constructor body: " 
               << this->ClapTrap::_name << std::endl;
@@ -41,12 +41,12 @@ DiamondTrap::~DiamondTrap(){LOG_GREEN("DiamondTrap : Default destructor called")
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other),
 													FragTrap(other),
-													ScravTrap(other)
+													ScavTrap(other)
 {
 	LOG_GREEN("DiamondTrap : Copy constructor called");
 	this->_name = other._name;
 	this->_hit_points =	FragTrap::_hit_points;
-	this->_energy_points = ScravTrap::_energy_points;
+	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_damage =	FragTrap::_attack_damage;
 }
 
@@ -55,7 +55,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
 	LOG_GREEN("DiamondTrap : Copy assignment called");
 	ClapTrap::operator=(other);
 	FragTrap::operator=(other);
-	ScravTrap::operator=(other);
+	ScavTrap::operator=(other);
 	if(this != &other)
 	{
 		this->_name = other._name;

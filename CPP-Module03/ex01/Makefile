@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
+#    By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/09 16:16:05 by caonguye          #+#    #+#              #
-#    Updated: 2025/06/27 00:05:33 by siuol            ###   ########.fr        #
+#    Updated: 2025/07/01 16:15:02 by caonguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
 SRCS	= ClapTrap.cpp	\
-		  ScravTrap.cpp	\
+		  ScavTrap.cpp	\
 		  main.cpp
 OBJS	= ${SRCS:.cpp=.o}
 

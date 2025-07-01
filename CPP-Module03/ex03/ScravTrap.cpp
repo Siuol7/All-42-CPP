@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.cpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,56 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
-ScravTrap::ScravTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
-	LOG_GREEN("ScravTrap : Default constructor called");
+	LOG_GREEN("ScavTrap : Default constructor called");
 }
 
-ScravTrap::ScravTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
-	LOG_GREEN("ScravTrap : Default constructor called");
+	LOG_GREEN("ScavTrap : Default constructor called");
 }
 
-ScravTrap::~ScravTrap(){LOG_GREEN("ScravTrap : Default destructor called");}
+ScavTrap::~ScavTrap(){LOG_GREEN("ScavTrap : Default destructor called");}
 
-ScravTrap::ScravTrap(const ScravTrap& other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-	LOG_GREEN("ScravTrap : Copy constructor called");
+	LOG_GREEN("ScavTrap : Copy constructor called");
 }
 
-ScravTrap& ScravTrap::operator=(const ScravTrap& other)
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-	LOG_GREEN("ScravTrap : Copy assignment called");
+	LOG_GREEN("ScavTrap : Copy assignment called");
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return *this;
 }
 
-void	ScravTrap::attack(const std::string& target)
+void	ScavTrap::attack(const std::string& target)
 {
 	if (!this->_energy_points)
-		std::cout << "ScravTrap " << this->_name << " has no energy points to attack" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " has no energy points to attack" << std::endl;
 	else if (!this->_hit_points)
-		std::cout << "ScravTrap " << this->_name << " has been defeated" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " has been defeated" << std::endl;
 	else
 	{
-		std::cout << "ScravTrap " << this->_name << " caused " << this->_attack_damage << " points of DMG to " << target << std::endl;
+		std::cout << "ScavTrap " << this->_name << " caused " << this->_attack_damage << " points of DMG to " << target << std::endl;
 		this->_energy_points--;
 	}
 }
 
-void	ScravTrap::guardGate()
+void	ScavTrap::guardGate()
 {
 	if (!this->_hit_points)
-		std::cout << "ScravTrap " << this->_name << " has been defeated" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " has been defeated" << std::endl;
 	else
-		std::cout << "ScravTrap " << this->_name << " is on Gate keeper mode" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " is on Gate keeper mode" << std::endl;
 }

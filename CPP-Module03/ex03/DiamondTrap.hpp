@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 10:04:17 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/01 10:55:43 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:15:02 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScravTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 	public:
 		DiamondTrap();
