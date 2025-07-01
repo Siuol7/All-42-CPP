@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:59 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 01:31:16 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:19:09 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm& operator=(const PresidentialPardonForm& other) = delete;
 
         virtual void    execute(const Bureaucrat& executor) const override;
+        std::string    getTarget(void) const;
 
     private:
         std::string _target;

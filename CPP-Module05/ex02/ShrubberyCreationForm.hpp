@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:17 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 13:43:35 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:19:06 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other) = delete;
 
         virtual void    execute(const Bureaucrat& executor) const override;
+        std::string    getTarget(void) const;
 
     private:
         std::string _target;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:24 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 14:06:36 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:19:04 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){LOG_GREEN("ShrubberyCreationForm
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other),
                                                                                     _target(other._target)
 {LOG_GREEN("ShrubberyCreationForm : Copy constructor called");}
+
+std::string    ShrubberyCreationForm::getTarget(void) const
+{return this->_target;}
 
 void    ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {

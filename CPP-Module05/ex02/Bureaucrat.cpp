@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:25:23 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 14:05:27 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:08:34 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ void    Bureaucrat::signForm(AForm& AForm) const
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& src)
 {
-    std::cout << src.getName() << ", bureaucrat grade " << src.getGrade() << ".";
+    out << src.getName() << ", bureaucrat grade " << src.getGrade() << ".";
     return out;
 }

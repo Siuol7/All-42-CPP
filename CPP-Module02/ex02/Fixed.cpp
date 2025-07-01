@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 15:35:22 by caonguye          #+#    #+#             */
-/*   Updated: 2025/05/19 15:35:03 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:24:09 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	Fixed::getRawBits(void) const {return _value;}
 
 void	Fixed::setRawBits(int const raw) {_value = raw;}
 
-float	Fixed::toFloat(void) const {return _value / (1 << _frac_bits);}
+float	Fixed::toFloat(void) const {return (float)_value / (1 << _frac_bits);}
 
 int		Fixed::toInt(void) const {return _value >> _frac_bits;}
 

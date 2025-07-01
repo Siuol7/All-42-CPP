@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:46 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 14:23:33 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:19:09 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ RobotomyRequestForm::~RobotomyRequestForm(){LOG_GREEN("RobotomyRequestForm : Def
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other),
                                                                                     _target(other._target)
 {LOG_GREEN("RobotomyRequestForm : Copy constructor called");}
+
+std::string    RobotomyRequestForm::getTarget(void) const
+{return this->_target;}
 
 void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
