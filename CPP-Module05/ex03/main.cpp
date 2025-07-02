@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/02 01:38:21 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/02 23:53:19 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
     try
     {
-        Bureaucrat                  A("A" , 30);
-        AForm       *SCF1 = new ShrubberyCreationForm("SCF1");
-        AForm       *SCF2 = new ShrubberyCreationForm("SCF2");
-        AForm       *RRF1 = new RobotomyRequestForm("RRF1");
-        AForm       *RRF2 = new RobotomyRequestForm("RRF2");
-        AForm       *PPF1 = new PresidentialPardonForm("PPF1");
-        AForm       *PPF2 = new PresidentialPardonForm("PPF2");
+        Bureaucrat  A("A" , 30);
+        Intern      I;
+        AForm       *SCF1 = I.makeForm("ShrubberyCreationForm", "SCF1");
+        AForm       *SCF2 = I.makeForm("ShrubberyCreationForm", "SCF2");
+        AForm       *RRF1 = I.makeForm("RobotomyRequestForm", "RRF1");
+        AForm       *RRF2 = I.makeForm("RobotomyRequestForm", "RRF2");
+        AForm       *PPF1 = I.makeForm("PresidentialPardonForm", "PPF1");
+        AForm       *PPF2 = I.makeForm("PresidentialPardonForm", "PPF2");
         std::cout << A << std::endl;
         A.signForm(*SCF1);
         A.executeForm(*SCF1);
