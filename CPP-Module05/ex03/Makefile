@@ -6,11 +6,11 @@
 #    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/27 09:49:41 by siuol             #+#    #+#              #
-#    Updated: 2025/07/02 23:53:38 by siuol            ###   ########.fr        #
+#    Updated: 2025/07/03 00:54:19 by siuol            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= 2
+NAME 	= 3
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
