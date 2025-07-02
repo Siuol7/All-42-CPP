@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:48 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/03 01:15:32 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/03 01:17:33 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,7 @@ class ScalarConverter
         ~ScalarConverter() = delete;
         ScalarConverter(const ScalarConverter& other) = delete;
         ScalarConverter& operator=(const ScalarConverter& other) = delete;
+
+    public  :
+        static void convert(std::string& org);
 };
