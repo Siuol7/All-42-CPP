@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 16:14:04 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/01 16:15:02 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/03 00:18:06 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	main(void)
 	ScavTrap	st1("ST1");
 	ScavTrap	st2(st1);
 	FragTrap	ft1("FT1");
+	std::cout << std::endl;
 
 	st2.guardGate();
 	ft1.highFivesGuys();
+	std::cout << std::endl;
 }
