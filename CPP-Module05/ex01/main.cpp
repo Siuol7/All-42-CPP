@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 19:03:18 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/03 00:14:13 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
     {
         Bureaucrat  A("A" , 2);
         Form        FA("FA", 0, 1, 150);
+        std::cout << std::endl;
         std::cout << A << std::endl;
         std::cout << FA;
         A.signForm(FA);
@@ -29,6 +30,7 @@ int main(void)
         std::cout << A << std::endl;;
         A.gradeIncrement();
         std::cout << A << std::endl;
+        std::cout << std::endl;
     }
     catch(const std::exception& e)
     {
