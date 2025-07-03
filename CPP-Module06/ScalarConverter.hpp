@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:48 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/03 01:17:33 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/04 01:57:05 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,7 @@ class ScalarConverter
     public  :
         static void convert(std::string& org);
 };
+
+bool    checker(const std::string& org);
+void    digitConverter(const std::string& org);
+void    charConverter(const std::string& org);
