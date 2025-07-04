@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:48 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/04 15:30:13 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/04 18:21:25 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 #include <iostream>
 #include <string>
+
+#define INT_RGX = (R"(^(-?[0-9]+)$)")
+#define FLOAT_RGX = (R"(^(-?[0-9]+(\.[0-9]+)$)")
+#define CHAR_RGX = (R"(^(.)$)")
+#define NAN_RGX = (R"(^(nan|NaN|NAN)$)")
+#define INF_RFX = (R"(^(-|\+)?inff?)$)")
+
 
 class ScalarConverter
 {
