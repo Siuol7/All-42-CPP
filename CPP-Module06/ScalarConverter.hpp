@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:48 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/04 14:12:40 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/04 15:30:13 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,18 @@ class ScalarConverter
         ScalarConverter(const ScalarConverter& other) = delete;
         ScalarConverter& operator=(const ScalarConverter& other) = delete;
 
+        enum Type{
+            CHAR,
+            INTEGER, 
+            FLOAT,
+            DOUBLE,
+            PSEUDO,
+            INVALID
+        };
+        static Type    checker(const std::string& org);
+        static void    digitConverter(const std::string& org);
+        static void    charConverter(const std::string& org);
+        
     public  :
         static void convert(const std::string& org);
 };
-
-bool    checker(const std::string& org);
-void    digitConverter(const std::string& org);
-void    charConverter(const std::string& org);
