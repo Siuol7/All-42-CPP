@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/04 18:20:06 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/04 19:12:58 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,21 @@
 
 ScalarConverter::Type    ScalarConverter::checker(const std::string& org)
 {
-    if (org.length() == 1 && '0' <= org[0] && org[0] <= '9')
+    const std::regex regex_int(INT_RGX);
+    const std::regex regex_float(FLOAT_RGX);
+    const std::regex regex_char(CHAR_RGX);
+    const std::regex regex_pseudo(PSD_RGX);
+    
+    if (std::regex_match(org, regex_int))
         return INTEGER;
+    else if ((std::regex_match(org, regex_float)))
+        return FLOAT;
+    else if ((std::regex_match(org, regex_char)))
+        return CHAR;
+    else if ((std::regex_match(org, regex_pseudo)))
+        return PSEUDO;
+    else
+        return INVALID;
 }
 
 void    ScalarConverter::convert(const std::string& org)
