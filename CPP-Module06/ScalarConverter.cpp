@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/06 00:28:56 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/06 00:29:12 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void    ScalarConverter::charConverter(const std::string& org, Type flag)
             }
         }
     }
-    
 }
 
 void    ScalarConverter::digitConverter(const std::string& org, Type flag)
