@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:48 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/05 03:27:11 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/05 03:43:59 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <regex>
 
 #define INT_RGX R"(^(-?[0-9]+)$)"
-#define FLOAT_RGX R"(^(-?[0-9]+(\.[0-9]+)?f?)$)"
+#define FLOAT_RGX R"(^(-?[0-9]+\.[0-9]+f)$)"
+#define DBL_RGX R"(^(-?[0-9]+\.[0-9]+)$)"
 #define CHAR_RGX R"(^(.)$)"
 #define PSD_RGX R"(^((nan|NaN|NAN)|(-|\+)?inff?)$)"
 
