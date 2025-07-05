@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:48 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/04 19:09:46 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/05 03:27:11 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ class ScalarConverter
             INVALID
         };
         static Type    checker(const std::string& org);
-        static void    digitConverter(const std::string& org);
-        static void    charConverter(const std::string& org);
+        static void    digitConverter(const std::string& org, Type flag);
+        static void    charConverter(const std::string& org, Type flag);
         
     public  :
         static void convert(const std::string& org);

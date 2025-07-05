@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/04 19:12:58 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/05 03:27:20 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ ScalarConverter::Type    ScalarConverter::checker(const std::string& org)
 
 void    ScalarConverter::convert(const std::string& org)
 {
-    if (ScalarConverter::checker(org) == INVALID)
+    ScalarConverter::Type flag = ScalarConverter::checker(org);
+    if (flag == INVALID)
     {
         std::cout << "char   : impossible" << std::endl;
         std::cout << "int    : impossible" << std::endl;
@@ -42,7 +43,7 @@ void    ScalarConverter::convert(const std::string& org)
         return;
     }
     
-    ScalarConverter::digitConverter(org);
-    ScalarConverter::charConverter(org);
+    ScalarConverter::digitConverter(org, flag);
+    ScalarConverter::charConverter(org, flag);
     std::cout << std::endl;
 }
