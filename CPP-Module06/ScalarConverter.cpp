@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/05 03:47:21 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/05 05:38:05 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,34 @@ ScalarConverter::Type    ScalarConverter::checker(const std::string& org)
         return INVALID;
 }
 
+void    ScalarConverter::charConverter(const std::string& org, Type flag)
+{
+    std::cout << "char    : ";
+    switch (flag)
+    {
+        case CHAR:
+            std::cout << "'" << org << "'" << std::endl;
+        case PSEUDO:
+            std::cout << "'impossible'" << std::endl;
+        default :
+        {
+            std::string cleaned = (flag == FLOAT) ? org.substr(0, org.length() - 1) : org;
+            
+            int value = static_cast<int>(std::stod(cleaned));
+            if (value < 0 || value > 127)
+                std::cout << "impossible" << std::endl;
+            else if (!std::isprint(value))
+                std::cout << "Non displayable" << std::endl;
+            else
+                std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
+        }
+    }
+    
+}
+
 void    ScalarConverter::convert(const std::string& org)
 {
-    ScalarConverter::Type flag = ScalarConverter::checker(org);
+    Type flag = ScalarConverter::checker(org);
     if (flag == INVALID)
     {
         std::cout << "char   : impossible" << std::endl;
