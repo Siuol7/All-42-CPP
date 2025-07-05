@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/05 05:38:05 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/06 00:28:56 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,34 @@ void    ScalarConverter::charConverter(const std::string& org, Type flag)
     {
         case CHAR:
             std::cout << "'" << org << "'" << std::endl;
+            break ;
         case PSEUDO:
-            std::cout << "'impossible'" << std::endl;
+            std::cout << "impossible" << std::endl;
+            break ;
         default :
         {
-            std::string cleaned = (flag == FLOAT) ? org.substr(0, org.length() - 1) : org;
-            
-            int value = static_cast<int>(std::stod(cleaned));
-            if (value < 0 || value > 127)
+            try
+            {
+                std::string cleaned = (flag == FLOAT) ? org.substr(0, org.length() - 1) : org; 
+                int value = static_cast<int>(std::stod(cleaned));
+                if (value < 0 || value > 127)
+                    std::cout << "impossible" << std::endl;
+                else if (!std::isprint(value))
+                    std::cout << "Non displayable" << std::endl;
+                else
+                    std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
+            }
+            catch (std::exception &e)
+            {
                 std::cout << "impossible" << std::endl;
-            else if (!std::isprint(value))
-                std::cout << "Non displayable" << std::endl;
-            else
-                std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
+            }
         }
     }
+    
+}
+
+void    ScalarConverter::digitConverter(const std::string& org, Type flag)
+{
     
 }
 
