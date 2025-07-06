@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/06 23:12:10 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/06 23:26:08 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ScalarConverter::Type    ScalarConverter::checker(const std::string& org)
 
 void    ScalarConverter::charConverter(const std::string& org, Type flag)
 {
-    std::cout << "char    : ";
+    std::cout << "char   : ";
     switch (flag)
     {
         case CHAR:
@@ -80,7 +80,7 @@ void    ScalarConverter::digitConverter(const std::string& org, Type flag)
         
         std::cout << "int    : " << value_int << std::endl;
         std::cout << "float  : " << std::fixed << std::setprecision(1) << value_float << "f" << std::endl;
-        std::cout << "double : " << std::fixed << std::setprecision(1) << value_double << std::endl;
+        std::cout << "double : " << std::fixed << std::setprecision(1) << value_double;
         
         return ;
     }
@@ -111,7 +111,7 @@ void    ScalarConverter::digitConverter(const std::string& org, Type flag)
     try
     {
         value_double = std::stod(org);
-        std::cout << "double : " << std::fixed << std::setprecision(1) << value_double << std::endl;
+        std::cout << "double : " << std::fixed << std::setprecision(1) << value_double;
     }
     catch(std::exception& e)
     {
@@ -127,7 +127,7 @@ void    ScalarConverter::convert(const std::string& org)
         std::cout << "char   : impossible" << std::endl;
         std::cout << "int    : impossible" << std::endl;
         std::cout << "float  : impossible" << std::endl;
-        std::cout << "double : impossible" << std::endl;
+        std::cout << "double : impossible";
         return;
     }
     
