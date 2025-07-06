@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/06 02:26:11 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/06 11:30:25 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ void    ScalarConverter::digitConverter(const std::string& org, Type flag)
         value_int = static_cast<int>(('0' <= org[0] && org[0] <= '9') ? org[0] - '0' : org[0]);
         value_float = static_cast<float>(('0' <= org[0] && org[0] <= '9') ? org[0] - '0' : org[0]);
         value_double = static_cast<double>(('0' <= org[0] && org[0] <= '9') ? org[0] - '0' : org[0]);
+        
+        std::cout << "int    : " << value_int << std::endl;
+        std::cout << "float  : " << std::setprecision(1) << value_float << "f" << std::endl;
+        std::cout << "double : " << std::setprecision(1) << value_float << std::endl;
+        
+        return ;
     }
 }
 
