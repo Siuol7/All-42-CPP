@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/06 11:30:25 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/06 23:12:10 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,43 @@ void    ScalarConverter::digitConverter(const std::string& org, Type flag)
         value_double = static_cast<double>(('0' <= org[0] && org[0] <= '9') ? org[0] - '0' : org[0]);
         
         std::cout << "int    : " << value_int << std::endl;
-        std::cout << "float  : " << std::setprecision(1) << value_float << "f" << std::endl;
-        std::cout << "double : " << std::setprecision(1) << value_float << std::endl;
+        std::cout << "float  : " << std::fixed << std::setprecision(1) << value_float << "f" << std::endl;
+        std::cout << "double : " << std::fixed << std::setprecision(1) << value_double << std::endl;
         
         return ;
+    }
+
+    //INT
+    try
+    {
+        value_int = std::stoi(org);
+        std::cout << "int    : " << value_int << std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cout << "int    : impossible" << std::endl;
+    }
+
+    //FLOAT
+    try
+    {
+        value_float = std::stof(org);
+        std::cout << "float  : " << std::fixed << std::setprecision(1) << value_float << "f" << std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cout << "float  : impossible" << std::endl;
+    }
+
+    //DOUBLE
+    try
+    {
+        value_double = std::stod(org);
+        std::cout << "double : " << std::fixed << std::setprecision(1) << value_double << std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cout << "double : impossible" << std::endl;
     }
 }
 
