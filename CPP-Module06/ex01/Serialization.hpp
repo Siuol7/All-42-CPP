@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:50:39 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/07 20:30:24 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/07 20:59:23 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <cstdint>
 #include "Data.hpp"
+
+#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 
 class   Serialization
 {
