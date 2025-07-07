@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 22:52:29 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/08 00:35:30 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/08 00:43:32 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,29 +55,23 @@ void    identify(Base& p)
     {
         dynamic_cast<A&>(p);
         std::cout << "A" << std::endl;
+        return ;
     }
-    catch (std::exception& e)
-    {
-        LOG_RED("Bad cast");
-    }
+    catch (std::exception& e){}
 
     try
     {
         dynamic_cast<B&>(p);
         std::cout << "B" << std::endl;
+        return ;
     }
-    catch (std::exception& e)
-    {
-        LOG_RED("Bad cast");
-    }
+    catch (std::exception& e){}
 
     try
     {
         dynamic_cast<C&>(p);
         std::cout << "C" << std::endl;
+        return ;
     }
-    catch (std::exception& e)
-    {
-        LOG_RED("Bad cast");
-    }
+    catch (std::exception& e){}
 }

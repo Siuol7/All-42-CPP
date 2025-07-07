@@ -6,7 +6,7 @@
 #    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/07 22:52:38 by siuol             #+#    #+#              #
-#    Updated: 2025/07/08 00:35:43 by siuol            ###   ########.fr        #
+#    Updated: 2025/07/08 00:40:11 by siuol            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 	= 2
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
-SRCS	= Serialization.cpp	\
+SRCS	= Base.cpp	\
 		  main.cpp
 OBJS	= ${SRCS:.cpp=.o}
 
