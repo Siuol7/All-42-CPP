@@ -6,7 +6,16 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 22:52:31 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/07 22:52:32 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/07 23:26:33 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
+#include "Base.hpp"
+
+class A : public Base{};
+
+class B : public Base{};
+
+class C : public Base{};
