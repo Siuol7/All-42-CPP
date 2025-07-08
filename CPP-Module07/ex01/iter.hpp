@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 14:25:07 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/08 14:37:49 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:04:11 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 template<typename T, typename def>
 void    iter(T* array, std::size_t len, def function)
 {
-    for (int i = 0; i < len; i++)
+    for (size_t i = 0; i < len; i++)
         function(array[i]);
 }

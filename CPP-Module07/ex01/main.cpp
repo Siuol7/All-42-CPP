@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 14:25:05 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/08 14:57:49 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:11:06 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ namespace test
             test(const test& other) = default;
             test& operator=(const test& other) = default;
             void        generate(const int i);
-            void        increment(test& src);
+            void        increment(void);
             int         getValue() const;
             std::string getName() const;
 
@@ -40,7 +40,7 @@ namespace test
             this->_name = std::string(1, static_cast<char>(i + 32));
     }
 
-    void    test::increment(test& src)
+    void    test::increment(void)
     {
         this->_value++;
     }
@@ -49,10 +49,24 @@ namespace test
     
     std::string test::getName() const{return this->_name;}
     
+    void    callIncrement(test& src)
+    {
+        src.increment();
+    }
+
     std::ostream& operator<<(std::ostream& out, const test& src)
     {
         out << "name : " << src.getName() << " value : " << src.getValue() << std::endl;
+        return out;
     }
     
 }
 
+int main()
+{
+    test::test    arr[10];
+    for (int i = 30; i < 40; i++)
+        arr[i].generate(i);
+    iter(&arr, 10, test::callIncrement);
+    iter(&arr, 10, test::operator<<);
+}
