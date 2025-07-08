@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 14:25:05 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/08 16:11:06 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:40:44 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ namespace test
     
     std::string test::getName() const{return this->_name;}
     
-    void    callIncrement(test& src)
-    {
-        src.increment();
-    }
+    void    callIncrement(test& src) {src.increment();}
 
     std::ostream& operator<<(std::ostream& out, const test& src)
     {
@@ -60,13 +57,22 @@ namespace test
         return out;
     }
     
+    void    print(const test& src) {std::cout << src;}
+    
 }
 
 int main()
 {
-    test::test    arr[10];
-    for (int i = 30; i < 40; i++)
-        arr[i].generate(i);
-    iter(&arr, 10, test::callIncrement);
-    iter(&arr, 10, test::operator<<);
+    try
+    {
+        test::test    arr[10];
+        for (int i = 0; i < 10; i++)
+            arr[i + 30].generate(i + 30);
+        iter(arr, 10, test::callIncrement);
+        iter(arr, 10, test::print);
+    }
+    catch(std::exception& e)
+    {
+        LOG_RED(std::string("Exception caught : ") + e.what());
+    }
 }
