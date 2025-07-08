@@ -3,10 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:17:41 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/08 01:17:42 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/08 14:02:09 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "whatever.hpp"
+
+int main(void)
+{
+    LOG_GREEN("--SWAPPING INT--");
+    int a = 1;
+    int b = 2;
+    swap(a, b);
+    std::cout << "a = " << a << std::endl << "b = " << b;   
+}
