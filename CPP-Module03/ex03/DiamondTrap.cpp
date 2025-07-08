@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 10:03:54 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/01 16:15:02 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:22:42 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,10 @@ DiamondTrap::DiamondTrap(const std::string name) :	ClapTrap(name + "_clap_name")
 													ScavTrap(name),
 													_name(name)
 {
-	   std::cout << "DEBUG 1 - ClapTrap name after member init: " 
-              << this->ClapTrap::_name << std::endl;
 	LOG_GREEN("DiamondTrap : Constructor called");
 	this->_hit_points =	FragTrap::_hit_points;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_damage =	FragTrap::_attack_damage;
-	std::cout << "DEBUG 2 - ClapTrap name after constructor body: " 
-              << this->ClapTrap::_name << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(){LOG_GREEN("DiamondTrap : Default destructor called");}
