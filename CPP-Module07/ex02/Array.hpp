@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 17:06:00 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/09 01:07:42 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 01:57:54 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ template<typename T>
 class Array
 {
     public :
+    //OCF
         Array() : _arr(nullptr), _size(0){};
         Array(const unsigned int n) : _arr(new T[n]()), _size(n){};
         ~Array(){delete []_arr;}
@@ -42,7 +43,23 @@ class Array
             }  
         }
         
+    //Operator
+        T&  operator[](unsigned int i)
+        {
+            if (i > this->_size)
+                throw std::out_of_range("Index out of bounds");
+            return this->_arr[i];
+        }
         
+        const T& operator[](unsigned int i) const
+        {
+            if (i > this->_size)
+                throw std::out_of_range("Index out of bounds");
+            return this->_arr[i];
+        }
+
+        const unsigned int size() const {return this->_size;}
+    
     private :
         T*  _arr;
         unsigned int    _size;
