@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:58:03 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 08:58:16 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 15:42:39 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,8 @@ std::string const& AMateria::getType() const
     return this->_type;
 }
 
-void    AMateria::use(ICharacter& target){LOG_GREEN("AMateria : use() called");} 
+void    AMateria::use(ICharacter& target)
+{
+    LOG_GREEN("AMateria : use() called");
+    std::cout << "AMateria use " << target.getName() << std::endl;
+} 

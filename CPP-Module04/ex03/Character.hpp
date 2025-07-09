@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:12 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/25 20:39:11 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 15:47:00 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class Character : public ICharacter
 
         
     private :
+        std::string     _name;
         uint             _storageSize;
         uint             _storageID;
-        std::string     _name;
         AMateria*       _inventory[4];
         AMateria**       _storage;
         

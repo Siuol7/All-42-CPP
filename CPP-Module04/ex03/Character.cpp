@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:01:05 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 15:48:17 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Character::Character(const Character& other) :  _name(other._name),
             this->_inventory[i] = nullptr;
     }
     this->_storage = new AMateria*[other._storageSize];
-    for (int i = 0; i < other._storageSize; i++)
+    for (uint i = 0; i < other._storageSize; i++)
     {
         if (other._storage[i])
             this->_storage[i] = other._storage[i]->clone();
@@ -82,7 +82,7 @@ Character& Character::operator=(const Character& other)
         this->_storageSize = other._storageSize;
         this->_storageID = other._storageID;
         this->_storage = new AMateria*[other._storageSize];
-        for (int i = 0; i < other._storageSize; i++)
+        for (uint i = 0; i < other._storageSize; i++)
         {
             if (other._storage[i])
                 this->_storage[i] = other._storage[i]->clone();
@@ -101,7 +101,7 @@ std::string const& Character::getName() const
 
 void    Character::cleanStorage(void)
 {
-    for (int i = 0; i < this->_storageID; i++)
+    for (uint i = 0; i < this->_storageID; i++)
         delete this->_storage[i];
     delete [] this->_storage;   
 }
@@ -112,9 +112,9 @@ void    Character::store(AMateria* m)
     {
         this->_storageSize += 5;
         AMateria**  temp = new AMateria*[this->_storageSize];
-        for (int i = 0; i < this->_storageID; i++)
+        for (uint i = 0; i < this->_storageID; i++)
             temp[i] = this->_storage[i];
-        for (int i = this->_storageID + 1; i < this->_storageSize; i++)
+        for (uint i = this->_storageID + 1; i < this->_storageSize; i++)
             temp[i] = nullptr;
         delete [] this->_storage;
         this->_storage = temp;

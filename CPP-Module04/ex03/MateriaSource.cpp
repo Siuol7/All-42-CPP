@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:02:05 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:05:51 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 15:49:27 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ MateriaSource&  MateriaSource::operator=(const MateriaSource& other)
                 this->_inventory[i] = nullptr; 
         }
     }
+    return *this;
 }
 
 void    MateriaSource::learnMateria(AMateria* src)

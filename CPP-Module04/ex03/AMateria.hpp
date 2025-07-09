@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 18:58:21 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 08:55:18 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 15:17:08 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include "system.hpp"
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
