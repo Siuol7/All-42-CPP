@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/19 13:42:13 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 16:00:14 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,23 @@ static void	ft_sound(Animal& target)
 
 int	main(void)
 {
-	Animal a = Animal();
-	Animal *c = new Cat();
-	Dog d;
-	Dog e(d);
-	WrongAnimal *wc = new WrongCat();
-	
-	ft_sound(d);
-	ft_sound(e);
-	c->makeSound();
-	ft_del(c);
-	wc->makeSound();
-	delete wc;
+	try
+	{
+		Animal a = Animal();
+		Animal *c = new Cat();
+		Dog d;
+		Dog e(d);
+		WrongAnimal *wc = new WrongCat();
+		
+		ft_sound(d);
+		ft_sound(e);
+		c->makeSound();
+		ft_del(c);
+		wc->makeSound();
+		delete wc;
+	}
+	catch(std::exception& e)
+	{
+		LOG_RED(e.what());
+	}
 }
