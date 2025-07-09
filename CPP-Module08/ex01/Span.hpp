@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:30:32 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/09 16:40:05 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/10 01:11:50 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <climits>
 
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
@@ -31,6 +32,17 @@ class Span
         void            addNumber(int n);
         unsigned int    shortestSpan();
         unsigned int    longestSpan();
+        
+        template<typename T>
+        void    addNumber(T begin, T end)
+        {
+            unsigned int size = std::distance(begin, end);
+
+            if (_storage.size() + size > UINT_MAX || _storage.size() + size > _N)
+                throw std::runtime_error("No space left");
+
+            std::insert(_storage.end(), begin, end);
+        }
         
     private :
         unsigned int        _N;
