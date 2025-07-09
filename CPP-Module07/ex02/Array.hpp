@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 17:06:00 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/09 02:12:36 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/09 22:48:15 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ class Array
         {
             if (this != &other)
             {
-                delete []this->_arr;
-                this->_size = other._size;
-                this->_arr = new T[other._size]();
+                T* temp = new T[other._size]();
                 for (unsigned int i = 0; i < other._size; i++)
-                    this->_arr[i] = other._arr[i];
-            }  
+                    temp[i] = other._arr[i];
+                delete []this->_arr;
+                this->_arr = temp;
+                this->_size = other._size;
+            }
+            return *this;
         }
         
     //Operator
