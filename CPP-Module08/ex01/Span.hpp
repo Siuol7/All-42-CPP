@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:30:32 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/10 01:11:50 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/11 00:48:20 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <vector>
 #include <climits>
+#include <cmath>
 
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
