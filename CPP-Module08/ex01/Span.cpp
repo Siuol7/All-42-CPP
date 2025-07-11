@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:30:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/11 02:40:49 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/11 03:04:44 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ unsigned int    Span::shortestSpan()
     std::vector<int> sorted = this->_storage;
     std::sort(sorted.begin(), sorted.end());
     
-    for (std::size_t i = 0; i < this->_storage.size(); i++)
+    for (std::size_t i = 0; i < this->_storage.size() - 1; i++)
     {
         unsigned int gap = sorted[i + 1] - sorted[i];
         res = std::min(res, gap);
@@ -38,20 +38,8 @@ unsigned int    Span::shortestSpan()
 
 unsigned int    Span::longestSpan()
 {
-    {
     if (this->_storage.size() < 2)
         throw std::runtime_error("Cannot find longest span of 1 element");
-        
-    unsigned int res = UINT_MAX;
-    std::vector<int> sorted = this->_storage;
-    std::sort(sorted.begin(), sorted.end());
-    
-    for (std::size_t i = 0; i < this->_storage.size(); i++)
-    {
-        unsigned int gap = sorted[i + 1] - sorted[i];
-        res = std::max(res, gap);
-    }
-    return res;
-}
-    
+    return *std::max_element(this->_storage.begin(), this->_storage.end())
+            - *std::min_element(this->_storage.begin(), this->_storage.end());   
 }
