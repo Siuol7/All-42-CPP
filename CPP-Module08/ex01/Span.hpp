@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:30:32 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/11 03:10:46 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/12 03:37:07 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Span
 {
     public  :
         Span() = default;
+        Span(unsigned int N);
         ~Span() = default;
         Span(const Span& other) = default;
         Span& operator=(const Span& other) = default;
@@ -42,7 +43,7 @@ class Span
             if (_storage.size() + size > UINT_MAX || _storage.size() + size > _N)
                 throw std::runtime_error("No space left");
 
-            std::inserter(_storage.end(), begin, end);
+            this->_storage.insert(_storage.end(), begin, end);
         }
         
     private :

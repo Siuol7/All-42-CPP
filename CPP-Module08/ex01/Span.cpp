@@ -6,11 +6,13 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:30:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/11 03:04:44 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/12 03:21:43 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+Span::Span(unsigned int N) : _N(N){_storage.reserve(N);}
 
 void    Span::addNumber(int n)
 {
