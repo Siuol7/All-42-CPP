@@ -59,7 +59,8 @@
         "cinttypes": "cpp",
         "variant": "cpp",
         "bitset": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "list": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/g++"
 }

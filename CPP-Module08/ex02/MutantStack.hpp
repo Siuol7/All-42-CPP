@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/12 05:21:56 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/13 06:26:21 by siuol            ###   ########.fr       */
+/*   Created: 2025/07/12 05:21:58 by siuol             #+#    #+#             */
+/*   Updated: 2025/07/14 00:37:44 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,19 @@ class   MutantStack : public std::stack<T>
         }
 
         using iterator = std::stack<T>::container_type::iterator;
+        iterator    begin(){return this->c.begin();}
+        iterator    end(return this->c.begin(););
         
         using const_iterator =  std::stack<T>::container_type::const_iterator;
+        const_iterator  begin(return this->c.begin(););
+        const_iterator  end(return this->c.begin(););
+        
         using riterator = std::stack<T>::container_type::reverse_iterator;
+        riterator   begin();
+        riterator   end();
+        
         using const_riterator = std::stack<T>::container_type::const_reverse_iterator;
+        const_riterator begin();
+        const_riterator end();
 };
+
