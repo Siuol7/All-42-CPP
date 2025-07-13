@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 05:21:56 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/13 03:12:13 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/13 04:47:36 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,13 @@ template<typename T>
 class   MutantStack : public std::stack<T>
 {
     public :
-        MutantStack();
-        ~MutantStack();
-        MutantStack(const other& MutantStack);
-        MutantStack& operator=(const other& MutantStack);
+        MutantStack() : std::stack<T>(){};
+        ~MutantStack() : ~std::stack<T>(){};
+        MutantStack(const other& MutantStack) : std::stack<T>(other){};
+        MutantStack& operator=(const other& MutantStack)
+        {
+            if (this != other)
+                std::stack<T>::operator=(other);
+            return *this;
+        }
 };
