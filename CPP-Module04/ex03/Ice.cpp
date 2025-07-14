@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 01:15:17 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/27 09:03:42 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/14 17:37:39 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice()
 {
     LOG_GREEN("Ice : Default constructor called");
-    this->_type = "Ice";
+    this->_type = "ice";
 }
 
 Ice::Ice(std::string const& type) : AMateria(type)

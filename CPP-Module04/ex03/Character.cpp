@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/09 15:48:17 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/14 17:38:45 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ Character& Character::operator=(const Character& other)
 
 std::string const& Character::getName() const
 {
-    LOG_GREEN("Character : getName() called");
     return this->_name;
 }
 
