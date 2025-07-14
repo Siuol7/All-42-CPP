@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/01 19:00:16 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 00:13:27 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ class AForm
     private :
         const std::string   _name;
         bool                _iSigned;
-        unsigned int  _signGrade;
-        unsigned int  _excGrade; 
+        const unsigned int  _signGrade;
+        const unsigned int  _excGrade; 
 };
 
 std::ostream& operator<<(std::ostream &out, const AForm& src);

@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 04:00:51 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 17:57:11 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/14 22:57:45 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ class Form
     private :
         const std::string   _name;
         bool                _iSigned;
-        unsigned int  _signGrade;
-        unsigned int  _excGrade; 
+        const unsigned int  _signGrade;
+        const unsigned int  _excGrade; 
 };
 
 std::ostream& operator<<(std::ostream &out, const Form& src);

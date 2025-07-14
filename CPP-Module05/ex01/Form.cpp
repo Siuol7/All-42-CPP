@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 22:10:57 by siuol             #+#    #+#             */
-/*   Updated: 2025/06/29 19:02:57 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/15 00:11:55 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ static unsigned int gradeCheck(unsigned int grade, const std::string& type)
 //OCF
 Form::Form(const std::string& name, bool iSigned,
             unsigned int signGrade, unsigned int excGrade) :
-            _name(name), _iSigned(iSigned)
+            _name(name), _iSigned(iSigned), _signGrade(signGrade), _excGrade(excGrade)
 {
     LOG_GREEN("Form : Default constructor called");
-    this->_signGrade = gradeCheck(signGrade, "Form " + name + " : Required to Sign");
-    this->_excGrade = gradeCheck(excGrade, "Form " + name + " : Required to Execute");
+    gradeCheck(signGrade, "Form " + name + " : Required to Sign");
+    gradeCheck(excGrade, "Form " + name + " : Required to Execute");
 }
 
 Form::~Form(){LOG_GREEN("Form : Default destructor called");}

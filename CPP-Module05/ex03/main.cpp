@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/03 00:13:16 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/15 00:07:56 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,38 @@ int main(void)
         std::cout << std::endl;
         std::cout << A << std::endl;
         std::cout << std::endl;
-        A.signForm(*SCF1);
-        A.executeForm(*SCF1);
-        A.executeForm(*SCF2);
+        
+        if (SCF1 != nullptr)
+        {
+            A.signForm(*SCF1);
+            A.executeForm(*SCF1);
+        }
+        if (SCF2 != nullptr)
+            A.executeForm(*SCF2);
         std::cout << std::endl;
-        A.signForm(*RRF1);
-        A.executeForm(*RRF1);
-        A.executeForm(*RRF2);
+        
+        if (RRF1 != nullptr)
+        {
+            A.signForm(*RRF1);
+            A.executeForm(*RRF1);
+        }
+        if (RRF2 != nullptr)
+            A.executeForm(*RRF2);
         std::cout << std::endl;
-        A.signForm(*PPF1);
-        A.executeForm(*PPF1);
-        A.executeForm(*PPF2);
+
+        if (PPF1 != nullptr)
+        {
+            A.signForm(*PPF1);
+            A.executeForm(*PPF1);
+        }
+        if (PPF2 != nullptr)
+            A.executeForm(*PPF2);
         std::cout << std::endl;
+
+        LOG_GREEN("---FAIL CASE---");
+        AForm   *wrong = I.makeForm("nonsense", "nonsense");
+        if (wrong != nullptr)
+            A.signForm(*wrong);
     }
     catch(const std::exception& e)
     {
