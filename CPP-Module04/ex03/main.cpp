@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 22:55:38 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/15 22:01:12 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 01:10:57 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main()
         a.equip(tmp);
         Character b(a);
         bob = new Character("bob");
+        a.~Character();
         b.use(0, *bob);
         me->use(0, *bob);
         me->use(1, *bob);

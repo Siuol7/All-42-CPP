@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 09:07:01 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/03 00:13:41 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/16 01:00:08 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,21 @@
 
 int main(void)
 {
+    AForm       *SCF1 = nullptr;
+    AForm       *SCF2 = nullptr;
+    AForm       *RRF1 = nullptr;
+    AForm       *RRF2 = nullptr;
+    AForm       *PPF1 = nullptr;
+    AForm       *PPF2 = nullptr;
     try
     {
         Bureaucrat                  A("A" , 30);
-        AForm       *SCF1 = new ShrubberyCreationForm("SCF1");
-        AForm       *SCF2 = new ShrubberyCreationForm("SCF2");
-        AForm       *RRF1 = new RobotomyRequestForm("RRF1");
-        AForm       *RRF2 = new RobotomyRequestForm("RRF2");
-        AForm       *PPF1 = new PresidentialPardonForm("PPF1");
-        AForm       *PPF2 = new PresidentialPardonForm("PPF2");
+        SCF1 = new ShrubberyCreationForm("SCF1");
+        SCF2 = new ShrubberyCreationForm("SCF2");
+        RRF1 = new RobotomyRequestForm("RRF1");
+        RRF2 = new RobotomyRequestForm("RRF2");
+        PPF1 = new PresidentialPardonForm("PPF1");
+        PPF2 = new PresidentialPardonForm("PPF2");
         std::cout << std::endl;
         std::cout << A << std::endl;
         std::cout << std::endl;
@@ -42,9 +48,21 @@ int main(void)
         A.executeForm(*PPF1);
         A.executeForm(*PPF2);
         std::cout << std::endl;
+        delete SCF1;
+        delete SCF2;
+        delete RRF1;
+        delete RRF2;
+        delete PPF1;
+        delete PPF2;
     }
     catch(const std::exception& e)
     {
         LOG_RED(e.what());
+        delete SCF1;
+        delete SCF2;
+        delete RRF1;
+        delete RRF2;
+        delete PPF1;
+        delete PPF2;
     }
 }
