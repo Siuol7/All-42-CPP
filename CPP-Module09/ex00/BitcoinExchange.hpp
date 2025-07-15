@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:31 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 16:34:07 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:58:57 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@
 class BitcoinExchange
 {
     public  :
+        //OCF
         BitcoinExchange();
         ~BitcoinExchange();
-        BitcoinExchange(const BitcoinExchange& other);
-        BitcoinExchange& operator=(const BitcoinExchange& other);
+        BitcoinExchange(const BitcoinExchange& other) = default ;
+        BitcoinExchange& operator=(const BitcoinExchange& other) = default;
 
-        void    mapSetup(std::string file, std::string deli, std::map<std::string, double> map, bool data);
+        void    mapData(std::string file, std::string deli);
         
     private :
         std::map<std::string, double> _data;
