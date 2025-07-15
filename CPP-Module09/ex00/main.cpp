@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:33 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 17:27:50 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 01:45:50 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char **av)
         BitcoinExchange btc;
 
         btc.mapData("data.csv", ",");
-        (void)av;
+        btc.display(av[1], " | ");
     }
     catch(std::exception& e)
     {

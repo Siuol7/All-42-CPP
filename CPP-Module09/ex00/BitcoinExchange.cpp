@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 20:08:53 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 01:46:17 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ BitcoinExchange::~BitcoinExchange(){};
 bool    BitcoinExchange::valiDate(std::string date)
 {
     struct tm input = {};
-    
-    if (!strptime(date.c_str(), "%Y-%m-%d", &input))
+
+    if (date.size() != 10 || !strptime(date.c_str(), "%Y-%m-%d", &input))
         return (0);
     struct tm org = input;
     time_t  modified = mktime(&input);
@@ -37,7 +37,11 @@ bool    BitcoinExchange::valiDate(std::string date)
 
 double  BitcoinExchange::getDataValue(std::string date)
 {
-    
+    auto it = this->_data.upper_bound(date);
+    if (it == this->_data.begin())
+        throw std::runtime_error("No value on " + date);
+    it--;
+    return it->second;
 }
 
 void    BitcoinExchange::display(std::string file, std::string deli)
@@ -70,7 +74,7 @@ void    BitcoinExchange::display(std::string file, std::string deli)
         }
         try
         {
-            value = std::stod(line.substr(pos + 1));
+            value = std::stod(line.substr(pos + 3));
         }
         catch(const std::exception& e)
         {
@@ -87,8 +91,15 @@ void    BitcoinExchange::display(std::string file, std::string deli)
             std::cerr << "Error : too large a number." << std::endl;
             continue ;
         }
+        try
+        {
+            std::cout << key << " => " << value << " = " << value * this->getDataValue(key) << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cout << e.what() << std::endl;
+        }
     }
-    std::cout << key << " => " << value << " = " << value * this->getDataValue(key) << std::endl;
 }
 
 void    BitcoinExchange::mapData(std::string file, std::string deli)
