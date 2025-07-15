@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:31 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 17:08:42 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 19:15:18 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ class BitcoinExchange
         BitcoinExchange(const BitcoinExchange& other) = default ;
         BitcoinExchange& operator=(const BitcoinExchange& other) = default;
 
+        bool    valiDate(std::string date);
         void    mapData(std::string file, std::string deli);
-
         void    display(std::string file, std::string deli);
+        double  getDataValue(std::string date);
         
     private :
         std::map<std::string, double> _data;

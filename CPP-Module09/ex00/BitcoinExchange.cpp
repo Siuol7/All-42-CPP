@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 17:36:33 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 19:23:18 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ BitcoinExchange::~BitcoinExchange(){};
 
 // BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other){};
 
+
+bool    BitcoinExchange::valiDate(std::string date)
+{
+    
+}
+
+double  BitcoinExchange::getDataValue(std::string date)
+{
+    
+}
 
 void    BitcoinExchange::display(std::string file, std::string deli)
 {
@@ -45,6 +55,11 @@ void    BitcoinExchange::display(std::string file, std::string deli)
             continue ;
         }
         key = line.substr(0, pos);
+        if (!valiDate(key))
+        {
+            std::cerr << "Error : invalid date => " << key << std::endl;
+            continue ;
+        }
         try
         {
             value = std::stod(line.substr(pos + 1));
@@ -65,6 +80,7 @@ void    BitcoinExchange::display(std::string file, std::string deli)
             continue ;
         }
     }
+    std::cout << key << " => " << value << " = " << value * this->getDataValue(key) << std::endl;
 }
 
 void    BitcoinExchange::mapData(std::string file, std::string deli)
@@ -87,6 +103,8 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
         if (pos == std::string::npos)
             throw std::runtime_error("DB Error : no value");
         key = line.substr(0, pos);
+        if (!valiDate(key))
+            throw std::runtime_error("DB Error : invalid date" + key);
         try
         {
             value = std::stod(line.substr(pos + 1));
@@ -99,6 +117,4 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
             throw std::runtime_error("DB Error : outrange value.");
         this->_data[key] = value;
     }
-    for (auto& it : this->_data)
-        std::cout << "Key : " << it.first << " Value : " << it.second << std::endl;
 }
