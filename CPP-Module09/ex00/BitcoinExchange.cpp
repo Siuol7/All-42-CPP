@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 19:23:18 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 20:08:53 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,15 @@ BitcoinExchange::~BitcoinExchange(){};
 
 bool    BitcoinExchange::valiDate(std::string date)
 {
+    struct tm input = {};
     
+    if (!strptime(date.c_str(), "%Y-%m-%d", &input))
+        return (0);
+    struct tm org = input;
+    time_t  modified = mktime(&input);
+    if (modified == -1 || org.tm_year != input.tm_year || org.tm_mon != input.tm_mon || org.tm_mday != input.tm_mday)
+        return (0);
+    return (1);
 }
 
 double  BitcoinExchange::getDataValue(std::string date)
