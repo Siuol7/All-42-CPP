@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/06/23 18:12:18 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/15 21:51:43 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(void)
 	
 	std::cout << "Array of Animal" << std::endl;
 	Animal* arr[ac];
+	for (int i = 0; i < ac; i++)
+		arr[i] = nullptr;
 	std::cout << std::endl;
 
 	std::cout << "Dog generated" << std::endl;
@@ -35,12 +37,13 @@ int	main(void)
 		{
 			std::cout << "Time " << i << ": ";
 			arr[i] = new Dog();
+			//throw std::runtime_error("TEST SUDDEN THROW");
 			arr[i]->makeSound();
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << "Bad alloc" << std::endl;
-			ft_clean(arr, i);
+			ft_clean(arr, ac);
 			return (1);
 		}
 	}
@@ -58,7 +61,7 @@ int	main(void)
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << "Bad alloc" << std::endl;
-			ft_clean(arr, i);
+			ft_clean(arr, ac);
 			return (1);
 		}
 	}

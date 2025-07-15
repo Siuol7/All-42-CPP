@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/09 16:00:14 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 21:52:02 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,19 @@ static void	ft_sound(Animal& target)
 	target.makeSound();
 }
 
+Animal *c = nullptr;
+WrongAnimal *wc = nullptr;
+
 int	main(void)
 {
 	try
 	{
 		Animal a = Animal();
-		Animal *c = new Cat();
+		c = new Cat();
+		//throw std::runtime_error("TEST SUDDEN THROW");
 		Dog d;
 		Dog e(d);
-		WrongAnimal *wc = new WrongCat();
+		wc = new WrongCat();
 		
 		ft_sound(d);
 		ft_sound(e);
@@ -46,5 +50,7 @@ int	main(void)
 	catch(std::exception& e)
 	{
 		LOG_RED(e.what());
+		delete wc;
+		delete c;
 	}
 }

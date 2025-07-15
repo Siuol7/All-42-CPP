@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 02:16:04 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/14 17:38:45 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 21:58:14 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void    Character::store(AMateria* m)
         this->_storageSize += 5;
         AMateria**  temp = new AMateria*[this->_storageSize];
         for (uint i = 0; i < this->_storageID; i++)
-            temp[i] = this->_storage[i];
+            temp[i] = this->_storage[i]->clone();
         for (uint i = this->_storageID + 1; i < this->_storageSize; i++)
             temp[i] = nullptr;
         delete [] this->_storage;

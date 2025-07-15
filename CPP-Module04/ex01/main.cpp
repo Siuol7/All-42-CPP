@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 19:51:37 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/09 15:58:22 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 21:51:52 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-void	ft_clean(Animal** arr, int lim)
+void	ft_clean(Animal** arr, int ac)
 {
-	for (int i = 0; i < lim; i++)
+	for (int i = 0; i < ac; i++)
 		delete arr[i];
 }
 
@@ -26,6 +26,8 @@ int	main(void)
 	
 	std::cout << "Array of Animal" << std::endl;
 	Animal* arr[ac];
+	for (int i = 0; i < ac; i++)
+		arr[i] = nullptr;
 	std::cout << std::endl;
 
 	std::cout << "Dog generated" << std::endl;
@@ -35,12 +37,13 @@ int	main(void)
 		{
 			std::cout << "Time " << i << ": ";
 			arr[i] = new Dog();
+			//throw std::runtime_error("TEST SUDDEN THROW");
 			arr[i]->makeSound();
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << "Bad alloc" << std::endl;
-			ft_clean(arr, i);
+			ft_clean(arr, ac);
 			return (1);
 		}
 	}
@@ -53,12 +56,13 @@ int	main(void)
 		{
 			std::cout << "Time " << i << ": ";
 			arr[i] = new Cat();
+			throw std::runtime_error("TEST SUDDEN THROW");
 			arr[i]->makeSound();
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << "Bad alloc" << std::endl;
-			ft_clean(arr, i);
+			ft_clean(arr, ac);
 			return (1);
 		}
 	}
