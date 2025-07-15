@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:33 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 16:45:21 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 17:27:50 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 int main(int ac, char **av)
 {
     if (ac != 2)
-        std::cerr << "Error : Invalid argument" << std::endl;
+    {
+        LOG_RED("Error : Invalid argument");
+        return (1);
+    }
     try
     {
         BitcoinExchange btc;
 
-        btc.mapSetup(av[1], "|", btc.getMap("input"), false);
-        btc.mapSetup("data.csv", ",", btc.getMap("data"), true);
+        btc.mapData("data.csv", ",");
+        (void)av;
     }
     catch(std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+       LOG_RED(e.what());
     }
 }

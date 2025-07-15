@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/15 16:58:58 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/15 17:36:33 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ BitcoinExchange::~BitcoinExchange(){};
 // BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other){};
 
 
-void    BitcoinExchange::mapSetup(std::string file, std::string deli, std::map<std::string, double>& map, bool data)
+void    BitcoinExchange::display(std::string file, std::string deli)
 {
     std::ifstream   inf;
     std::string     line;
@@ -59,12 +59,11 @@ void    BitcoinExchange::mapSetup(std::string file, std::string deli, std::map<s
             std::cerr << "Error : not a possitive number." << std::endl;
             continue ;
         }
-        if (value > 1000 && !data)
+        if (value > 1000)
         {
             std::cerr << "Error : too large a number." << std::endl;
             continue ;
         }
-        map[key] = value;
     }
 }
 
@@ -78,7 +77,7 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
 
     inf.open(file);
     if (!inf)
-        throw std::runtime_error("Cannot open " + file);
+        throw std::runtime_error("DB Error : Cannot open " + file);
     getline(inf, line);
     while (getline(inf, line))
     {
@@ -86,10 +85,7 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
             continue ;
         pos = line.find(deli);
         if (pos == std::string::npos)
-        {
-            std::cerr << "Error : bad input => " << line << std::endl;
-            continue ;
-        }
+            throw std::runtime_error("DB Error : no value");
         key = line.substr(0, pos);
         try
         {
@@ -97,14 +93,12 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
         }
         catch(const std::exception& e)
         {
-            std::cerr << "Error : invalid value (" + line.substr(pos + 1) + ")" << std::endl;
-            continue ;
+            throw std::runtime_error("DB Error : invalid value (" + line.substr(pos + 1) + ")");
         }
-        if (value < 0)
-        {
-            std::cerr << "Error : not a possitive number." << std::endl;
-            continue ;
-        }
+        if (value < 0 || value > 100000000)
+            throw std::runtime_error("DB Error : outrange value.");
         this->_data[key] = value;
     }
+    for (auto& it : this->_data)
+        std::cout << "Key : " << it.first << " Value : " << it.second << std::endl;
 }
