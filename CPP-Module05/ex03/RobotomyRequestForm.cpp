@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 00:42:46 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/15 00:04:02 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/15 14:19:20 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	AForm::execute(executor);
 	std::cout << "Some drilling noises" << std::endl;
 	srand(time(NULL));
-	if (rand()%100 %2 == 0)
+	if (rand() % 100 % 2 == 0)
 		std::cout << this->_target << "'s robotomization completed" << std::endl;
 	else
 		std::cout << this->_target << "'s robotomization failed" << std::endl;
