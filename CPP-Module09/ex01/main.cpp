@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:07 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/16 18:28:57 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:16:40 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 int main(int ac, char **av)
 {
     if (ac != 2)
+    {
         LOG_RED("Error : Invalid arguments");
+        return 1;
+    }
     RPN rpn;
     try
     {
@@ -25,5 +28,5 @@ int main(int ac, char **av)
     {
         LOG_RED(e.what());
     }
-    
+    return 0;
 }
