@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/16 14:15:04 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 17:28:00 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,65 @@ RPN::RPN(const RPN& other){};
 
 RPN& RPN::operator=(const RPN& other){};
 
+static double digitCheck(std::string token)
+{
+    double  value;
+    try 
+    {
+        value = std::stod(token);   
+    }
+    catch(std::exception& e)
+    {
+        throw std::runtime_error("Error : Inavalid token" + token);
+    }
+    if (-9 > value || value >9)
+        throw std::runtime_error("Error : Out support range (-9 -> 9)");
+    return value;
+}
+
+static bool operatorCheck(std::string token)
+{
+    if (token == "+" || token == "-" || token == "*" || token =="/")
+        return (1);
+    return (0);
+}
+
 void    RPN::calculateRPN(std::string exp)
 {
-    std::istringstream  input;
+    std::istringstream  input(exp);
     std::string         token;
     
     
     while (input >> token)
     {
-         
+        if (operatorCheck(token))
+        {
+            double b = this->_stack.top();
+            this->_stack.pop();
+            double a =  this->_stack.top();
+            this->_stack.pop();
+            try
+            {
+                double res = cal(a, b, token);
+                std::cout << res << std::endl;
+            }
+            catch(const std::exception& e)
+            {
+                LOG_RED(e.what());
+            }
+        }
+        else
+        {            
+            try
+            {
+                digitCheck(token);
+                this->_stack.push(std::stod(token));
+            }
+            catch(const std::exception& e)
+            {
+                LOG_RED(e.what());
+                return;
+            }
+        }
     }
 }
