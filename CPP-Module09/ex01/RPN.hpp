@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:13 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/17 00:25:20 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/17 00:50:50 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class RPN
         RPN(const RPN& other);
         RPN& operator=(const RPN& other);
 
-        void    calculateRPN(std::string exp);
+        void    calculateRPN(const std::string& exp);
 
     private :
         std::stack<int>  _stack;

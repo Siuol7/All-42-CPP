@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/17 00:45:49 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/17 00:54:40 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ RPN::~RPN(){};
 
 static bool digitCheck(const std::string& token)
 {
-    int  value;
     std::regex form("^-?[0-9]$");
     if (!std::regex_match(token, form))
         throw std::runtime_error("Error : Only support input [-9 -> 9] not " + token);
-    try 
+    try
     {
-        value = std::stoi(token);   
+        int value = std::stoi(token);
+        (void) value;
     }
-    catch(std::exception& e)
+    catch(const std::exception& e)
     {
-        throw std::runtime_error("Error : Inavalid token " + token);
+        throw std::runtime_error("Error : Invalid token " + token);
     }
     return true;
 }
@@ -79,7 +79,7 @@ static int cal(int a, int b, const std::string& op)
     return (int)res;
 }
 
-void    RPN::calculateRPN(std::string exp)
+void    RPN::calculateRPN(const std::string& exp)
 {
     std::istringstream  input(exp);
     std::string         token;
@@ -107,5 +107,7 @@ void    RPN::calculateRPN(std::string exp)
     }
     if (this->_stack.size() > 1)
         throw std::runtime_error("Error : Stack has more than one element to get result");
+    else if (this->_stack.empty())
+        throw std::runtime_error("Error : Stack has no element to get result");
     std::cout << this->_stack.top() << std::endl;
 }
