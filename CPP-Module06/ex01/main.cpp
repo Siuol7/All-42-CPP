@@ -3,42 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 20:24:14 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/07 21:34:15 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/16 19:19:58 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serialization.hpp"
+#include "Serializer.hpp"
 #include "Data.hpp"
 
 int main()
 {
     Data ptr{"A", 42};
 
-    LOG_GREEN("--Before Serialization--");
-    uintptr_t   Serialized = Serialization::serialize(&ptr);
+    LOG_GREEN("--Before Serializer--");
+    uintptr_t   Serialized = Serializer::serialize(&ptr);
     std::cout << "Original address   : " << &ptr << std::endl;
     std::cout << "Original name      : " << ptr.name << std::endl;
     std::cout << "Original value     : " << ptr.value << std::endl;
     std::cout << "serialized         : " << Serialized << std::endl;
     
-    LOG_GREEN("--After Serialization--");
-    Data*       deSerialized  = Serialization::deserialize(Serialized);
+    LOG_GREEN("--After Serializer--");
+    Data*       deSerialized  = Serializer::deserialize(Serialized);
     std::cout << "deSerialized       : " << deSerialized << std::endl;
     std::cout << "deSerialized name  : " << deSerialized->name << std::endl;
     std::cout << "deSerialized value : " << deSerialized->value << std::endl << std::endl;
 
     ptr.name = "B";
     ptr.value = 43;
-    LOG_GREEN("--Before Serialization--");
+    LOG_GREEN("--Before Serializer--");
     std::cout << "Original address   : " << &ptr << std::endl;
     std::cout << "Original name      : " << ptr.name << std::endl;
     std::cout << "Original value     : " << ptr.value << std::endl;
     std::cout << "serialized         : " << Serialized << std::endl;
     
-    LOG_GREEN("--After Serialization--");
+    LOG_GREEN("--After Serializer--");
     std::cout << "deSerialized       : " << deSerialized << std::endl;
     std::cout << "deSerialized name  : " << deSerialized->name << std::endl;
     std::cout << "deSerialized value : " << deSerialized->value << std::endl;

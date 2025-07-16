@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/16 18:08:38 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 18:30:04 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ RPN::RPN(){};
 
 RPN::~RPN(){};
 
-RPN::RPN(const RPN& other){};
+//RPN::RPN(const RPN& other){};
 
-RPN& RPN::operator=(const RPN& other){};
+//RPN& RPN::operator=(const RPN& other){};
 
 static bool digitCheck(std::string token)
 {
@@ -35,7 +35,7 @@ static bool digitCheck(std::string token)
     }
     if (-9 > value || value >9)
         throw std::runtime_error("Error : Out support range (-9 -> 9)");
-    return true
+    return true;
 }
 
 static bool operatorCheck(std::string token)
@@ -62,24 +62,25 @@ static std::function<double(double a, double b)> typeCal[]
 
 static double cal(double a, double b, std::string op)
 {
+    double res;
     for (int i = 0; i < 4; i++)
     {
         if (op == type[i])
         {
             try
             {
-                double res =  typeCal[i](a , b);
+                res =  typeCal[i](a , b);
                 if (std::isnan(res) || std::isinf(res))
                     throw std::runtime_error("Error : Calculation's result out range");
-                return res;
             }
             catch(const std::exception& e)
             {
-                LOG_RED(e.what());
+                throw ;
             }
             
         }
     }
+    return res;
 }
 
 void    RPN::calculateRPN(std::string exp)
@@ -92,6 +93,8 @@ void    RPN::calculateRPN(std::string exp)
     {
         if (operatorCheck(token))
         {
+            if (this->_stack.size() < 2)
+                throw std::runtime_error("Error : Not enough element for calculation");
             double b = this->_stack.top();
             this->_stack.pop();
             double a =  this->_stack.top();
@@ -103,7 +106,7 @@ void    RPN::calculateRPN(std::string exp)
             }
             catch(const std::exception& e)
             {
-                LOG_RED(e.what());
+                throw;
             }
         }
         else
@@ -115,8 +118,7 @@ void    RPN::calculateRPN(std::string exp)
             }
             catch(const std::exception& e)
             {
-                LOG_RED(e.what());
-                return;
+                throw ;
             }
         }
     }

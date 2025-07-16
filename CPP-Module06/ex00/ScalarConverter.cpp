@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 01:11:52 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/06 23:26:08 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/16 19:22:45 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void    ScalarConverter::convert(const std::string& org)
         std::cout << "char   : impossible" << std::endl;
         std::cout << "int    : impossible" << std::endl;
         std::cout << "float  : impossible" << std::endl;
-        std::cout << "double : impossible";
+        std::cout << "double : impossible" << std::endl;
         return;
     }
     

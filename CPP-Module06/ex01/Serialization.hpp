@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialization.hpp                                  :+:      :+:    :+:   */
+/*   Serializer.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -19,15 +19,15 @@
 
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 
-class   Serialization
+class   Serializer
 {
     public  :
         static uintptr_t   serialize(Data* ptr);
         static Data*       deserialize(uintptr_t raw);
 
     private :
-        Serialization() = delete;
-        ~Serialization() = delete;
-        Serialization(const Serialization& other) = delete;
-        Serialization& operator=(const Serialization& other) = delete;
+        Serializer() = delete;
+        ~Serializer() = delete;
+        Serializer(const Serializer& other) = delete;
+        Serializer& operator=(const Serializer& other) = delete;
 };
