@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/16 01:46:17 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/16 01:59:36 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,12 @@ void    BitcoinExchange::display(std::string file, std::string deli)
         }
         catch(const std::exception& e)
         {
-            std::cerr << "Error : invalid value (" + line.substr(pos + 1) + ")" << std::endl;
+            std::cerr << "Error : invalid value (" + line.substr(pos + deli.length()) + ")" << std::endl;
             continue ;
         }
         if (value < 0)
         {
-            std::cerr << "Error : not a possitive number." << std::endl;
+            std::cerr << "Error : not a positive number." << std::endl;
             continue ;
         }
         if (value > 1000)
@@ -130,7 +130,7 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
         }
         catch(const std::exception& e)
         {
-            throw std::runtime_error("DB Error : invalid value (" + line.substr(pos + 1) + ")");
+            throw std::runtime_error("DB Error : invalid value (" + line.substr(pos + deli.length()) + ")");
         }
         if (value < 0 || value > 100000000)
             throw std::runtime_error("DB Error : outrange value.");
