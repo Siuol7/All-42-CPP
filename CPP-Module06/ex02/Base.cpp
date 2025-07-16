@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 22:52:29 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/08 01:06:11 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/16 14:10:37 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,24 +54,27 @@ void    identify(Base& p)
 {
     try
     {
-        dynamic_cast<A&>(p);
+        A& a = dynamic_cast<A&>(p);
         std::cout << "A" << std::endl;
+        (void)a;
         return ;
     }
     catch (std::exception& e){}
 
     try
     {
-        dynamic_cast<B&>(p);
+        B& b = dynamic_cast<B&>(p);
         std::cout << "B" << std::endl;
+        (void)b;
         return ;
     }
     catch (std::exception& e){}
 
     try
     {
-        dynamic_cast<C&>(p);
+        C& c = dynamic_cast<C&>(p);
         std::cout << "C" << std::endl;
+        (void)c;
         return ;
     }
     catch (std::exception& e){}

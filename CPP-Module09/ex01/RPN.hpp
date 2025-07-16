@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:13 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/16 13:05:33 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/16 13:48:53 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,7 @@ class RPN
         RPN& operator=(const RPN& other);
 
         void    calculateRPN(std::string exp);
+
+    private :
+        std::stack<double>  _stack;
 };
