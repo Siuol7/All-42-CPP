@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:13 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/16 23:34:41 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/17 00:25:20 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ class RPN
         void    calculateRPN(std::string exp);
 
     private :
-        std::stack<double>  _stack;
+        std::stack<int>  _stack;
 };

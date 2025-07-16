@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/17 00:21:07 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/17 00:45:49 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ RPN::~RPN(){};
 
 //RPN& RPN::operator=(const RPN& other){};
 
-static bool digitCheck(std::string token)
+static bool digitCheck(const std::string& token)
 {
     int  value;
     std::regex form("^-?[0-9]$");
     if (!std::regex_match(token, form))
-        throw std::runtime_error("Error : Invalid token " + token);
+        throw std::runtime_error("Error : Only support input [-9 -> 9] not " + token);
     try 
     {
         value = std::stoi(token);   
@@ -36,12 +36,10 @@ static bool digitCheck(std::string token)
     {
         throw std::runtime_error("Error : Inavalid token " + token);
     }
-    if (-9 > value || value >9)
-        throw std::runtime_error("Error : Out support range (-9 -> 9)");
     return true;
 }
 
-static bool operatorCheck(std::string token)
+static bool operatorCheck(const std::string& token)
 {
     if (token == "+" || token == "-" || token == "*" || token =="/")
         return true;
@@ -63,27 +61,22 @@ static std::function<int(int a, int b)> typeCal[]
     }   
 };
 
-static int cal(int a, int b, std::string op)
+static int cal(int a, int b, const std::string& op)
 {
-    int res;
+    long long res;
     for (int i = 0; i < 4; i++)
     {
         if (op == type[i])
         {
-            try
-            {
-                res =  typeCal[i](a , b);
-                if (std::isnan(res) || std::isinf(res))
-                    throw std::runtime_error("Error : Calculation's result out range");
-            }
-            catch(const std::exception& e)
-            {
-                throw ;
-            }
-            
+            res =  typeCal[i](a , b);
+            if (res < INT32_MIN || res > INT32_MAX)
+                throw std::runtime_error("Error : Calculation's result out range");
+            break;
         }
+        if (i == 3)
+            throw std::runtime_error("Error : No operator matches");
     }
-    return res;
+    return (int)res;
 }
 
 void    RPN::calculateRPN(std::string exp)
@@ -98,32 +91,18 @@ void    RPN::calculateRPN(std::string exp)
         if (operatorCheck(token))
         {
             if (this->_stack.size() < 2)
-            throw std::runtime_error("Error : Not enough element for calculation");
+                throw std::runtime_error("Error : Not enough element for calculation");
             int b = this->_stack.top();
             this->_stack.pop();
             int a =  this->_stack.top();
             this->_stack.pop();
-            try
-            {
-                res = cal(a, b, token);
-                this->_stack.push(res);
-            }
-            catch(const std::exception& e)
-            {
-                throw;
-            }
+            res = cal(a, b, token);
+            this->_stack.push(res);
         }
         else
         {            
-            try
-            {
-                digitCheck(token);
-                this->_stack.push(std::stod(token));
-            }
-            catch(const std::exception& e)
-            {
-                throw ;
-            }
+            digitCheck(token);
+            this->_stack.push(std::stoi(token));
         }
     }
     if (this->_stack.size() > 1)
