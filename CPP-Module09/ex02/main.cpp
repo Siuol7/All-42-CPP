@@ -3,10 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:02 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/19 05:34:03 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/19 18:11:45 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PMergeMe.hpp"
+
+int main (int ac, char **av)
+{
+    if (ac < 2)
+    {
+        LOG_RED("Error : Lack of argument(s)");
+        return (1);
+    }
+    
+}
