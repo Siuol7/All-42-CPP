@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
+#    By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/07 20:37:17 by siuol             #+#    #+#              #
-#    Updated: 2025/07/07 20:37:54 by siuol            ###   ########.fr        #
+#    Updated: 2025/07/19 16:28:56 by caonguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 	= 1
 CC		= c++
 FLAG	= -Wall -Wextra -Werror -std=c++20
 RM		= rm -rf
-SRCS	= Serialization.cpp	\
+SRCS	= Serializer.cpp	\
 		  main.cpp
 OBJS	= ${SRCS:.cpp=.o}
 
