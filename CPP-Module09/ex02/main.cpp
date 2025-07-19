@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:02 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/19 18:11:45 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/19 19:02:29 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,14 @@ int main (int ac, char **av)
         LOG_RED("Error : Lack of argument(s)");
         return (1);
     }
-    
+    try
+    {
+        PmergeMe pm(av + 1);
+        pm.sort(); 
+    }
+    catch(std::exception& e)
+    {
+        LOG_RED(e.what());      
+    }
+    return (0);
 }
