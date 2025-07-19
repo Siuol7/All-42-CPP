@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/16 01:59:36 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/17 01:17:56 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ BitcoinExchange::~BitcoinExchange(){};
 // BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other){};
 
 
-bool    BitcoinExchange::valiDate(std::string date)
+bool    BitcoinExchange::validateDate(std::string& date)
 {
     struct tm input = {};
 
@@ -35,7 +35,7 @@ bool    BitcoinExchange::valiDate(std::string date)
     return (1);
 }
 
-double  BitcoinExchange::getDataValue(std::string date)
+double  BitcoinExchange::getDataValue(std::string& date)
 {
     auto it = this->_data.upper_bound(date);
     if (it == this->_data.begin())
@@ -44,7 +44,7 @@ double  BitcoinExchange::getDataValue(std::string date)
     return it->second;
 }
 
-void    BitcoinExchange::display(std::string file, std::string deli)
+void    BitcoinExchange::display(const std::string& file, const std::string& deli)
 {
     std::ifstream   inf;
     std::string     line;
@@ -67,7 +67,7 @@ void    BitcoinExchange::display(std::string file, std::string deli)
             continue ;
         }
         key = line.substr(0, pos);
-        if (!valiDate(key))
+        if (!validateDate(key))
         {
             std::cerr << "Error : invalid date => " << key << std::endl;
             continue ;
@@ -102,7 +102,7 @@ void    BitcoinExchange::display(std::string file, std::string deli)
     }
 }
 
-void    BitcoinExchange::mapData(std::string file, std::string deli)
+void    BitcoinExchange::mapData(const std::string& file, const std::string& deli)
 {
     std::ifstream   inf;
     std::string     line;
@@ -122,7 +122,7 @@ void    BitcoinExchange::mapData(std::string file, std::string deli)
         if (pos == std::string::npos)
             throw std::runtime_error("DB Error : no value");
         key = line.substr(0, pos);
-        if (!valiDate(key))
+        if (!validateDate(key))
             throw std::runtime_error("DB Error : invalid date" + key);
         try
         {
