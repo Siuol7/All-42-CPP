@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 14:25:05 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/20 14:26:58 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,10 @@ PmergeMe::PmergeMe(char **av)
         av++;
     }
 }
+
+PmergeMe::~PmergeMe(){};
+
+PmergeMe::PmergeMe(const PmergeMe& other){};
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& other){};
+
