@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 20:21:50 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/20 21:12:30 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class PmergeMe
 {
     public :
         PmergeMe(char **av);
-        ~PmergeMe();
-        PmergeMe(const PmergeMe& other);
-        PmergeMe& operator=(const PmergeMe& other);
+        ~PmergeMe() = default;
+        PmergeMe(const PmergeMe& other) = default;
+        PmergeMe& operator=(const PmergeMe& other) = default;
 
     private :
         std::vector<int> _vector;
