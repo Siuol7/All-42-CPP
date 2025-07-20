@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 13:38:11 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/20 14:20:29 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ class PmergeMe
         PmergeMe& operator=(const PmergeMe& other);
 
     private :
-        
+        int _vector;
+        int _list;
 };
