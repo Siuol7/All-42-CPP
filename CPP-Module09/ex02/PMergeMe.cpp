@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 14:23:50 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/20 14:25:05 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ PmergeMe::PmergeMe(char **av)
                 throw std::runtime_error("Error : [" + std::to_string(value) + "] is not a positive integer");
             else if (std::find(this->_vector.begin(), this->_vector.end(), value) != this->_vector.end())
                 throw std::runtime_error("Error : [" + std::to_string(value) + "] appears twice");
-            if (value_ptr.ec == std::errc())
-                continue;
+            this->_vector.push(value);
+            this->_list.push(value);
         }
+        av++;
     }
 }
