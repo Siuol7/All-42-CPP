@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PMergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 14:26:58 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/20 20:29:08 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ PmergeMe::PmergeMe(char **av)
 
             if (value_ptr.ec == std::errc::invalid_argument)
                 throw std::runtime_error("Error : Not an integer");
+            
             else if (value_ptr.ec == std::errc::result_out_of_range)
                 throw std::runtime_error("Error : Out of range number");
             else if (value < 0)
                 throw std::runtime_error("Error : [" + std::to_string(value) + "] is not a positive integer");
             else if (std::find(this->_vector.begin(), this->_vector.end(), value) != this->_vector.end())
                 throw std::runtime_error("Error : [" + std::to_string(value) + "] appears twice");
-            this->_vector.push(value);
-            this->_list.push(value);
+            this->_vector.push_back(value);
+            this->_list.push_back(value);
         }
         av++;
     }
