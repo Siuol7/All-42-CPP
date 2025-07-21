@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/21 01:59:20 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/21 11:20:34 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
 
 using Time = std::chrono::duration<double, std::milli>;
+using Timer = std::chrono::high_resolution_clock;
 
 class PmergeMe
 {
