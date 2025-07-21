@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/21 22:07:00 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 01:44:09 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include <list>
 #include <chrono>
 
-#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
+#define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m"
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
 
 using Time = std::chrono::duration<double, std::milli>;
@@ -39,13 +39,17 @@ class PmergeMe
     private :
         std::vector<int> _vector;
         std::list<int>   _list;
-        std::vector<int> _jacobsthal;
         
-        Time    sorting(std::vector<int>& container);
-        Time    sorting(std::list<int>& container);
+        void    sorting();
+        
+        Time    vectorSort(std::vector<int>& container);
+        Time    listSort(std::list<int>& container);
         
         template<typename Container>
-        void    inserting(Container& main, Container& pending);
-        
-        void    jacobGenerate();
+        void    inserting(Container& main, Container& pending)
+        {
+            
+        }      
+
+          
 };

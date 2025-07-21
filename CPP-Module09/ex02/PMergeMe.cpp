@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/21 12:58:02 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 02:00:03 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,37 @@ PmergeMe::PmergeMe(char **av)
     }
     LOG_GREEN("Previous sequence :");
     for (auto nb : this->_vector)
-        std::cout << nb << " ";
+        std::cout << " " << nb;
     std::cout << std::endl;
 }
 
-void    PMergeMe::jacobGenerate()
+void    PmergeMe::sorting()
 {
-    std::cout <<endl;
+    Time vSortTime = vectorSort(this->_vector);
+    Time lSortTime = listSort(this->_list);
+    auto    vIt = this->_vector.begin();
+    auto    lIt = this->_list.begin();
+
+    if (this->_vector.size() != this->_list.size())
+        throw std::runtime_error("Error : Sorting failed");
+    
+    LOG_GREEN("Sorted container:");   
+    for(; vIt != this->_vector.end(); vIt++, lIt++)
+    {
+        if (*vIt != *lIt)
+            throw std::runtime_error("Error : vector value [" + std::to_string(*vIt)
+                        +"] different from list value [" + std::to_string(*lIt) +"]");
+        std::cout << " " << *vIt;
+    }
+    std::cout << std::endl;
+    
+    LOG_GREEN("Time to process a range of ");
+    LOG_GREEN(std::to_string(this->_vector.size()));
+    LOG_GREEN(" elements with std::vector : ");
+    std::cout << std::fixed << std::setprecision(4) << vSortTime.count() << "us" << std::endl;
+
+     LOG_GREEN("Time to process a range of ");
+    LOG_GREEN(std::to_string(this->_list.size()));
+    LOG_GREEN(" elements with std::list : ");
+    std::cout << std::fixed << std::setprecision(4) << lSortTime.count() << "us" << std::endl;
 }
