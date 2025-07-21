@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/21 11:45:02 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/21 22:07:00 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ class PmergeMe
         std::vector<int> _vector;
         std::list<int>   _list;
         std::vector<int> _jacobsthal;
-
-        template<typename Container>
-        Time    sorting(Container& container);
-
+        
+        Time    sorting(std::vector<int>& container);
+        Time    sorting(std::list<int>& container);
+        
         template<typename Container>
         void    inserting(Container& main, Container& pending);
         
-        void    jascobGenerate();
+        void    jacobGenerate();
 };

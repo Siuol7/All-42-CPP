@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 21:36:35 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/21 12:58:02 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ PmergeMe::PmergeMe(char **av)
     std::cout << std::endl;
 }
 
-
-
+void    PMergeMe::jacobGenerate()
+{
+    std::cout <<endl;
+}
