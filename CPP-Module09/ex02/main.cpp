@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:02 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/19 19:02:29 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/20 21:13:51 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main (int ac, char **av)
     try
     {
         PmergeMe pm(av + 1);
-        pm.sort(); 
+        //pm.sort(); 
     }
     catch(std::exception& e)
     {

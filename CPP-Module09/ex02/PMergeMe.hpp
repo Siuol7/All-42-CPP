@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 21:12:30 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/21 01:59:20 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@
 #include <map>
 #include <vector>
 #include <list>
+#include <chrono>
 
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m" << std::endl
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
+
+using Time = std::chrono::duration<double, std::milli>;
 
 class PmergeMe
 {
@@ -35,4 +38,7 @@ class PmergeMe
     private :
         std::vector<int> _vector;
         std::list<int>   _list;
+
+        template<typename Container>
+        Time sort(Container* container);
 };

@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/20 21:12:34 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/20 21:36:35 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ PmergeMe::PmergeMe(char **av)
     std::string         token;
     while (*av != NULL)
     {
+        stream.clear();
+        stream.str(*av);
         while (stream >> token)
         {
-            stream.str(*av);
             auto value_ptr = std::from_chars(token.data(), token.data() + token.length(), value);
             
 
@@ -45,4 +46,6 @@ PmergeMe::PmergeMe(char **av)
         std::cout << nb << " ";
     std::cout << std::endl;
 }
+
+
 
