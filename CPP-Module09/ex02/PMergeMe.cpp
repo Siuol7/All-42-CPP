@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PMergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 11:57:52 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 13:58:30 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ Time    PmergeMe::_vectorSort(std::vector<int>& container)
         main.push_back(container.back());
     _vectorSort(main);
 
-    PmergeMe::_vectorInset(main, pending);
+    PmergeMe::_vectorInsert(main, pending);
     container = main;
     return Timer::now() - start;
 }
@@ -129,4 +129,15 @@ Time    PmergeMe::_listSort(std::list<int>& container)
     PmergeMe::_listInsert(main, pending);
     container = main;
     return Timer::now() - start; 
+}
+
+void    PmergeMe::_vectorInsert(std::vector<int>& main, std::vector<int>& pending)
+{
+    std::vector<int> jacob = _jacobGenerate(pending);
+       
+}
+
+void    PmergeMe::_listInsert(std::list<int>& main, std::list<int>& pending)
+{
+    
 }

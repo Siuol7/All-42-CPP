@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PMergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 11:21:22 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 13:58:44 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,15 @@ class PmergeMe
         Time    _vectorSort(std::vector<int>& container);
         Time    _listSort(std::list<int>& container);
         
-        void    _vectorInset(std::vector<int>& main, std::vector<int>& pending);
+        void    _vectorInsert(std::vector<int>& main, std::vector<int>& pending);
         void    _listInsert(std::list<int>& main, std::list<int>& pending);
 
+
         template<typename Container>
-        Container   _jacobGenerate(int size)
+        Container   _jacobGenerate(Container container)
         {
             Container   jacob;
+            auto size = container.size();
             
             jacob.push_back(0);
             jacob.push_back(1);
