@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PMergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 14:08:52 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/23 00:18:10 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,10 +134,25 @@ Time    PmergeMe::_listSort(std::list<int>& container)
 void    PmergeMe::_vectorInsert(std::vector<int>& main, std::vector<int>& pending)
 {
     std::vector<int> jacob = _jacobGenerate(pending);
-    
+    for (auto i = 2; i < jacob.size(); i++)
+    {
+        if (jacob[i] - 1 < pending.size() && pending[jacob[i] - 1] != -1)
+        {
+            auto mark = std::lower_bound(main.begin(), main.end(), pending[jacob[i] - 1]);
+            main.insert(mark, pending[jacob[i] - 1]);
+            pending[jacob[i] - 1] = -1;
+        }
+    }
+    for (auto i = 0; i < pending.size(); i++)
+    {
+        if (pending[i] == -1)
+            continue ;
+        auto mark = std::lower_bound(main.begin(), main.end(), pending[i]);
+        main.insert(mark, pending[i]);
+    }
 }
 
 void    PmergeMe::_listInsert(std::list<int>& main, std::list<int>& pending)
 {
-    
+    std::list<int> jacob = _jacobGenerate(pending);
 }
