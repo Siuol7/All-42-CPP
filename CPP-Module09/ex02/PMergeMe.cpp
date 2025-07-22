@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 11:24:46 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 11:49:54 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,28 +82,51 @@ Time    PmergeMe::_vectorSort(std::vector<int>& container)
 {
     auto start = Timer::now();
     
-    if (this->_vector.size() <= 1)
+    if (container.size() <= 1)
         return Timer::now() - start;
     
     std::vector<int>    main;
     std::vector<int>    pending;
     
-    for (int i = 0; i + 1 < this->_vector.size() ; i += 2)
+    for (int i = 0; i + 1 < container.size() ; i += 2)
     {
-        main.push_back(std::max(this->_vector[i], this->_vector[i + 1]));
-        pending.push_back(std::min(this->_vector[i], this->_vector[i + 1]));
+        main.push_back(std::max(container[i], container[i + 1]));
+        pending.push_back(std::min(container[i], container[i + 1]));
     }
 
-    if (this->_vector.size() % 2 != 0)
-        main.push_back(this->_vector.back());
+    if (container.size() % 2 != 0)
+        main.push_back(container.back());
     _vectorSort(main);
 
     PmergeMe::_vectorInset(main, pending);
-    this->_vector = main;
+    container = main;
     return Timer::now() - start;
 }
 
 Time    PmergeMe::_listSort(std::list<int>& container)
 {
+    auto start = Timer::now();
     
+    if (container.size() <= 1)
+        return Timer::now() - start;
+        
+    std::list<int>  main;
+    std::list<int>  pending;
+
+    for(auto lIt = container.begin(); lIt != container.end(); )
+    {
+        auto next  = std::next(lIt, 1);
+        if (next == container.end())
+            break;
+        main.push_back(std::max(*lIt, *next));
+        pending.push_back(std::min(*lIt, *next));
+        std::advance(lIt, 2);
+    }
+    if (container.size() % 2 != 0)
+        main.push_back(container.back());
+    _listSort(main);
+    
+    PmergeMe::_listInsert(main, pending);
+    container = main;
+    return Timer::now() - start; 
 }
