@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/23 00:57:56 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/23 01:00:52 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,5 +170,12 @@ void    PmergeMe::_listInsert(std::list<int>& main, std::list<int>& pending)
             *pIt = -1;
         }   
     }
-    
+    auto pIt = pending.begin();
+    for (; pIt != pending.end(); pIt++)
+    {
+        if (*pIt == -1)
+            continue;
+        auto mark = std::lower_bound(main.begin(), main.end(), *pIt);
+        main.insert(mark, *pIt);
+    }
 }
