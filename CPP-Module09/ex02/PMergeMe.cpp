@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 11:49:54 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 11:57:52 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ Time    PmergeMe::_vectorSort(std::vector<int>& container)
     std::vector<int>    main;
     std::vector<int>    pending;
     
-    for (int i = 0; i + 1 < container.size() ; i += 2)
+    for (auto i = 0u; i + 1 < container.size() ; i += 2)
     {
         main.push_back(std::max(container[i], container[i + 1]));
         pending.push_back(std::min(container[i], container[i + 1]));
