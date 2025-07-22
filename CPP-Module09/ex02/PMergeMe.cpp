@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/23 01:04:49 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/23 01:11:24 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,16 +134,16 @@ Time    PmergeMe::_listSort(std::list<int>& container)
 void    PmergeMe::_vectorInsert(std::vector<int>& main, std::vector<int>& pending)
 {
     std::vector<int> jacob = _jacobGenerate(pending);
-    for (auto i = 2; i < jacob.size(); i++)
+    for (auto i = 2u; i < jacob.size(); i++)
     {
-        if (jacob[i] - 1 < pending.size() && pending[jacob[i] - 1] != -1)
+        if (jacob[i] - 1u < pending.size() && pending[jacob[i] - 1] != -1)
         {
             auto mark = std::lower_bound(main.begin(), main.end(), pending[jacob[i] - 1]);
             main.insert(mark, pending[jacob[i] - 1]);
             pending[jacob[i] - 1] = -1;
         }
     }
-    for (auto i = 0; i < pending.size(); i++)
+    for (auto i = 0u; i < pending.size(); i++)
     {
         if (pending[i] == -1)
             continue ;
@@ -161,7 +161,7 @@ void    PmergeMe::_listInsert(std::list<int>& main, std::list<int>& pending)
     for (; jIt!= jacob.end(); jIt++)
     {
         auto pIt = pending.begin();
-        if (*jIt - 1 < pending.size())
+        if (*jIt - 1u < pending.size())
         {            
             std::advance(pIt, *jIt - 1);
             if (*pIt != - 1)

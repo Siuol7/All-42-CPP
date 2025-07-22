@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/23 00:07:58 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/23 01:13:44 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ class PmergeMe
             jacob.push_back(0);
             jacob.push_back(1);
             
-            while (jacob.back() < size)
+            while (jacob.back() < static_cast<int>(size))
             {
                 auto last = jacob.back();
                 auto second = *std::prev(jacob.end() , 2);
