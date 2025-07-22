@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 02:00:03 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 11:00:28 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ PmergeMe::PmergeMe(char **av)
     std::cout << std::endl;
 }
 
-void    PmergeMe::sorting()
+void    PmergeMe::sort()
 {
     Time vSortTime = vectorSort(this->_vector);
     Time lSortTime = listSort(this->_list);

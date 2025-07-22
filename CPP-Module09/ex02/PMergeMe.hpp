@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 02:09:34 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 11:00:16 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <vector>
 #include <list>
 #include <chrono>
+#include <iomanip>
 
 #define LOG_GREEN(msg) std::cout << "\033[32m" << msg << "\033[0m"
 #define LOG_RED(msg)   std::cerr << "\033[31m" << msg << "\033[0m" << std::endl
@@ -36,20 +37,18 @@ class PmergeMe
         PmergeMe(const PmergeMe& other) = default;
         PmergeMe& operator=(const PmergeMe& other) = default;
 
+        void    sort();
+        
     private :
         std::vector<int> _vector;
         std::list<int>   _list;
         
-        void    sorting();
         
         Time    vectorSort(std::vector<int>& container);
         Time    listSort(std::list<int>& container);
         
-        template<typename Container>
-        void    inserting(Container& main, Container& pending)
-        {
-            
-        }
+        void    vectorInset(std::vector<int>& main, std::vector<int>& pending);
+        void    listInsert(std::list<int>& main, std::list<int>& pending);
 
         template<typename Container>
         Container   jacobGenerate(int size)
@@ -59,7 +58,7 @@ class PmergeMe
             jacob.push_back(0);
             jacob.push_back(1);
             
-            while (jacob.back() < n)
+            while (jacob.back() < size)
             {
                 auto last = jacob.back();
                 auto second = *std::prev(jacob.end() , 2);
