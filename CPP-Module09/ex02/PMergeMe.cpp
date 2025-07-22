@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/23 00:18:10 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/23 00:57:56 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,4 +155,20 @@ void    PmergeMe::_vectorInsert(std::vector<int>& main, std::vector<int>& pendin
 void    PmergeMe::_listInsert(std::list<int>& main, std::list<int>& pending)
 {
     std::list<int> jacob = _jacobGenerate(pending);
+    auto jIt = jacob.begin();
+    std::advance(jIt, 2);
+
+    for (; jIt!= jacob.end(); jIt++)
+    {
+        auto pIt = pending.begin();
+        if (*jIt - 1 < pending.size())
+            std::advance(pIt, *jIt - 1);
+        if (*pIt != - 1)
+        {
+            auto mark = std::lower_bound(main.begin(), main.end(), *pIt);
+            main.insert(mark, *pIt);
+            *pIt = -1;
+        }   
+    }
+    
 }
