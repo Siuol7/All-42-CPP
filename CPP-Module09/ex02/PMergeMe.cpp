@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 13:58:30 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/22 14:08:52 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ Time    PmergeMe::_listSort(std::list<int>& container)
 void    PmergeMe::_vectorInsert(std::vector<int>& main, std::vector<int>& pending)
 {
     std::vector<int> jacob = _jacobGenerate(pending);
-       
+    
 }
 
 void    PmergeMe::_listInsert(std::list<int>& main, std::list<int>& pending)
