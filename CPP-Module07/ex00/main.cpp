@@ -6,7 +6,7 @@
 /*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 01:17:41 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/08 14:11:05 by caonguye         ###   ########.fr       */
+/*   Updated: 2025/07/22 14:22:49 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ int main(void)
     LOG_GREEN("--MAX FLOAT--");
     float a5 = 1.5;
     float b5 = -2.3;
-    std::cout << "max = " << max(a5, b5);
+    std::cout << "max = " << max(a5, b5) << std::endl;
     
 }
