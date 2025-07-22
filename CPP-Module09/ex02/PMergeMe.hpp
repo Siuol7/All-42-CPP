@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:10 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 11:00:16 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 11:21:22 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ class PmergeMe
         std::list<int>   _list;
         
         
-        Time    vectorSort(std::vector<int>& container);
-        Time    listSort(std::list<int>& container);
+        Time    _vectorSort(std::vector<int>& container);
+        Time    _listSort(std::list<int>& container);
         
-        void    vectorInset(std::vector<int>& main, std::vector<int>& pending);
-        void    listInsert(std::list<int>& main, std::list<int>& pending);
+        void    _vectorInset(std::vector<int>& main, std::vector<int>& pending);
+        void    _listInsert(std::list<int>& main, std::list<int>& pending);
 
         template<typename Container>
-        Container   jacobGenerate(int size)
+        Container   _jacobGenerate(int size)
         {
             Container   jacob;
             

@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 05:34:08 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/22 11:00:28 by siuol            ###   ########.fr       */
+/*   Updated: 2025/07/22 11:24:46 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ PmergeMe::PmergeMe(char **av)
 
 void    PmergeMe::sort()
 {
-    Time vSortTime = vectorSort(this->_vector);
-    Time lSortTime = listSort(this->_list);
+    Time vSortTime = _vectorSort(this->_vector);
+    Time lSortTime = _listSort(this->_list);
     auto    vIt = this->_vector.begin();
     auto    lIt = this->_list.begin();
 
@@ -76,4 +76,34 @@ void    PmergeMe::sort()
     LOG_GREEN(std::to_string(this->_list.size()));
     LOG_GREEN(" elements with std::list : ");
     std::cout << std::fixed << std::setprecision(4) << lSortTime.count() << "us" << std::endl;
+}
+
+Time    PmergeMe::_vectorSort(std::vector<int>& container)
+{
+    auto start = Timer::now();
+    
+    if (this->_vector.size() <= 1)
+        return Timer::now() - start;
+    
+    std::vector<int>    main;
+    std::vector<int>    pending;
+    
+    for (int i = 0; i + 1 < this->_vector.size() ; i += 2)
+    {
+        main.push_back(std::max(this->_vector[i], this->_vector[i + 1]));
+        pending.push_back(std::min(this->_vector[i], this->_vector[i + 1]));
+    }
+
+    if (this->_vector.size() % 2 != 0)
+        main.push_back(this->_vector.back());
+    _vectorSort(main);
+
+    PmergeMe::_vectorInset(main, pending);
+    this->_vector = main;
+    return Timer::now() - start;
+}
+
+Time    PmergeMe::_listSort(std::list<int>& container)
+{
+    
 }
