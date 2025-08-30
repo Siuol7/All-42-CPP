@@ -6,7 +6,7 @@
 /*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 14:00:28 by caonguye          #+#    #+#             */
-/*   Updated: 2025/07/17 01:17:56 by siuol            ###   ########.fr       */
+/*   Updated: 2025/08/30 04:18:55 by siuol            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 BitcoinExchange::BitcoinExchange(){};
 
 BitcoinExchange::~BitcoinExchange(){};
-
-// BitcoinExchange::BitcoinExchange(const BitcoinExchange& other){};
-
-// BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other){};
-
 
 bool    BitcoinExchange::validateDate(std::string& date)
 {
