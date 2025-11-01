@@ -3,37 +3,42 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: siuol <siuol@student.42.fr>                +#+  +:+       +#+         #
+#    By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/19 05:34:05 by siuol             #+#    #+#              #
-#    Updated: 2025/07/19 05:38:32 by siuol            ###   ########.fr        #
+#    Updated: 2025/11/01 16:12:17 by caonguye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= PMergeMe
-CC		= c++
-FLAG	= -Wall -Wextra -Werror -std=c++20
-RM		= rm -rf
-SRCS	= main.cpp				\
-		  PMergeMe.cpp
-OBJS	= ${SRCS:.cpp=.o}
+NAME    = PMergeMe
+CC      = c++
+FLAG    = -Wall -Wextra -Werror -std=c++20
+RM      = rm -rf
+SRCS    = main.cpp PMergeMe.cpp
+OBJS    = ${SRCS:.cpp=.o}
 
 all : $(NAME)
 
 %.o : %.cpp
-		@$(CC) $(FLAG) -c $< -o $@
+	@if [ ! -f $@ ]; then \
+		$(CC) $(FLAG) -c $< -o $@; \
+		echo "Compiled $@"; \
+	fi
 
 $(NAME) : $(OBJS)
-		@echo "Compiled"
-		@$(CC) $(FLAG) $(OBJS) -o $(NAME)
+	@if [ ! -f $(NAME) ]; then \
+		$(CC) $(FLAG) $(OBJS) -o $(NAME); \
+		echo "Linked $(NAME)"; \
+	fi
 
 clean :
-		@$(RM) $(OBJS)
+	@$(RM) $(OBJS)
+	@echo "Object files removed"
 
 fclean : clean
-		@echo "Clear"
-		@$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "Program removed"
 
-re :fclean all
+re : fclean all
 
 .PHONY : all clean fclean re
