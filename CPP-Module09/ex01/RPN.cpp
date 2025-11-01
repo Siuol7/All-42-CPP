@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siuol <siuol@student.42.fr>                +#+  +:+       +#+        */
+/*   By: caonguye <caonguye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 10:20:16 by siuol             #+#    #+#             */
-/*   Updated: 2025/07/17 00:54:40 by siuol            ###   ########.fr       */
+/*   Updated: 2025/11/01 15:04:29 by caonguye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static std::function<int(int a, int b)> typeCal[]
 static int cal(int a, int b, const std::string& op)
 {
     long long res;
+    res = 0;
     for (int i = 0; i < 4; i++)
     {
         if (op == type[i])
